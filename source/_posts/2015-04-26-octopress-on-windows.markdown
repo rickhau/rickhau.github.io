@@ -8,7 +8,7 @@ categories: markdown, blog
 ## Environment
 Windows 7
 
-### Pre-requisite ###    
+### Pre-requisite ###
 - This article is to setup my Windows 7 environment to write blog posts    
 - Use octopress environment pushed by MacOS
 - You have python 2.7 installed on your Windows 7
@@ -20,7 +20,7 @@ Windows 7
 
 ### Configure environment ###
 
-**STEP 1: Install RubyInstaller**    
+####STEP 1: Install RubyInstaller
 
 - Download and install rubyinstaller.exe
 
@@ -30,9 +30,9 @@ Windows 7
   
   [2.1.4(x64)](http://dl.bintray.com/oneclick/rubyinstaller/rubyinstaller-2.1.4-x64.exe)   
   
-**STEP 2: Install Ruby Development Kit**
+####STEP 2: Install Ruby Development Kit
 
-- Download and install DevKit-mingw64-64-4.7.2-20130224-1432-sfx
+- Download and install `DevKit-mingw64-64-4.7.2-20130224-1432-sfx`
 
   I installed Ruby 2.1.4(x64), so the development kit I have to use is:    
   
@@ -41,7 +41,7 @@ Windows 7
   I extract to `C:\Ruby21-Devkit` where my ruby was installed under `C:\Ruby21-x64`    
   
     
-**STEP 3: Create ruby config.yml**
+####STEP 3: Create ruby config.yml
 
 - Open your windows terminal 
 
@@ -64,7 +64,7 @@ Windows 7
     > ruby dk.rb install
 ```
   
-**STEP 4: Update gem**
+####STEP 4: Update gem
 
 - Run the following command:
 
@@ -87,12 +87,12 @@ Windows 7
 
   1) Download RubyGems based on the gem version you have installed. 
   
-     Picked up 2.2.x due to my system reports 2.2.2    
-     [2.2.x](https://github.com/rubygems/rubygems/releases/tag/v2.2.3)    
+   Picked up 2.2.x due to my system reports 2.2.2    
+   * [2.2.x](https://github.com/rubygems/rubygems/releases/tag/v2.2.3)    
   
-     Others:    
-     [1.8.x](https://github.com/rubygems/rubygems/releases/tag/v1.8.30)
-     [2.0.x](https://github.com/rubygems/rubygems/releases/tag/v2.0.15)
+   Others:    
+   * [1.8.x](https://github.com/rubygems/rubygems/releases/tag/v1.8.30)   
+   * [2.0.x](https://github.com/rubygems/rubygems/releases/tag/v2.0.15)
   
   2) Run the following commands:
   
@@ -111,7 +111,7 @@ Windows 7
   Reference link:
   >- [SSL issue](https://gist.github.com/luislavena/f064211759ee0f806c88)
 
-**STEP 5: Clone your git repository**
+####STEP 5: Clone your git repository
 
 - Please git clone your "source" branch not "master" branch    
   You can configure your github page using "source" as the default branch
@@ -131,7 +131,7 @@ Windows 7
 
   Go to http://localhost:4000 to browse your old posts
 
-**STEP 6: Write your new post**
+####STEP 6: Write your new post
 
 ```
     > rake new_post["Your new post title"]
@@ -140,7 +140,7 @@ Windows 7
   Go to `source\_posts\` directory to edit your new markdown file for new article.
   
 
-**STEP 7: Configure the UTF-8 encoding**
+####STEP 7: Configure the UTF-8 encoding
 
 ```
     set LC_ALL=zh_TW.UTF-8
