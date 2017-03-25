@@ -14,8 +14,10 @@ Mac OS
 
 ** STEP 2: Install Octopress **    
 - Install RVM (Use RVM to install ruby later)     
-  
+
+```  
     curl -L https://get.rvm.io | bash -s stable --ruby
+```
 
 - Install ruby and relative stuff
 
@@ -31,14 +33,14 @@ Mac OS
 ** STEP 3: Deploy to Github **
 - Initialize your new github pages    
 
+```
     $ rake setup_github_pages
-
-  Input your Github page repository you created in step 1    
-  Ex: `git@github.com:rickhau/rickhau.github.io.git`   
+```
+> Input your Github page repository you created in step 1    
+> Ex: `git@github.com:rickhau/rickhau.github.io.git`   
 
 - Edit `_config.yml`
-
-  tailor this configuration file to your needs
+> tailor this configuration file to your needs
 
 - Deploy to github   
 ```
@@ -50,38 +52,41 @@ Mac OS
 ```
 ** STEP 4: Write New Post ** 
 
+```
     $ rake new_post["Your blog post title"]
-
-   Then, it will create a markdown file under `source/_posts`.    
-   Please edit this .markdown to write your new article
+```
+> Then, it will create a markdown file under `source/_posts`.  
+> Please edit this .markdown to write your new article
 
 ** STEP 5: Enable your Octopress to support table sytanx **
 
-- Add data-table.css to `source/stylesheets`    
-  
-  {% gist 1993032 data-table.css %}
+- Add data-table.css to `source/stylesheets`  
 
-  [data-table.css](https://gist.githubusercontent.com/programus/1993032/raw/data-table.css)    
+> [data-table.css](https://gist.githubusercontent.com/programus/1993032/raw/data-table.css)    
 
 - Add the following informaiton into `source/_include/head.html`    
+
 ```
-    <link href="/stylesheets/data-table.css" media="screen, projection" rel="stylesheet" type="text/css" />
+<link href="/stylesheets/data-table.css" media="screen, projection" rel="stylesheet" type="text/css" />
 ```
-  Like this:    
+  
+Like this:    
 ```
-    <head>
-      ...
-      <script src="{{ root_url }}/javascripts/octopress.js" type="text/javascript"></script>
-      <link href="/stylesheets/data-table.css" media="screen, projection" rel="stylesheet" type="text/css" />
-      ...
-    </head>     
+<head>
+...
+   <script src="{{ root_url }}/javascripts/octopress.js" type="text/javascript"></script>
+   <link href="/stylesheets/data-table.css" media="screen, projection" rel="stylesheet" type="text/css" />
+...
+</head>     
 ```
 ** STEP 6: Publish your new post  **
 
+```
     $ rake generate
     $ rake preview  
     # Check your post preview by `http://localhost:4000`
     # Modify your post until done
+```
 
 - Publish    
 ```   
@@ -98,9 +103,9 @@ Mac OS
 
 
 Reference links:    
->- http://samwize.com/2012/09/11/how-to-setup-octopress-on-github-pages    
->- http://samwize.com/2012/09/24/octopress-table-stylesheet    
->- http://octopress.org/docs/deploying/github/    
->- http://zerodie.github.io/blog/2012/01/19/octopress-github-pages    
->- http://shaching.github.io/2014/06/25/how-to-install-octopress-blog-with-github    
->- https://gist.github.com/benbalter/5555251
+- http://samwize.com/2012/09/11/how-to-setup-octopress-on-github-pages    
+- http://samwize.com/2012/09/24/octopress-table-stylesheet    
+- http://octopress.org/docs/deploying/github/    
+- http://zerodie.github.io/blog/2012/01/19/octopress-github-pages    
+- http://shaching.github.io/2014/06/25/how-to-install-octopress-blog-with-github    
+- https://gist.github.com/benbalter/5555251

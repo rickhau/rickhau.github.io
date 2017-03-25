@@ -1,12 +1,9 @@
 ---
-title: "Install libnfs-python library"
+title: Install libnfs-python on Fedora 20
 date: 2015-05-08 23:10:51 +0800
 category: python
 slug: libnfs-python
 ---
-
-## Install libnfs-python on Fedora 20
-=====================================
 
 ### 0 - Pre-requisite
 
@@ -136,19 +133,18 @@ Congratulations!!! You can enjoy this powerful NFS python library.
 
   In the beginning, I did not install the latest libnfs package. I ran into some issue while doing the compilation. 
   
->- Need to add `-I/home/fitbranded/include` to Makefile
+> Need to add `-I/home/fitbranded/include` to Makefile
 
->```make
->  INCLUDE    = -I/usr/include -I/home/fitbranded/include
->```
+```make
+  INCLUDE    = -I/usr/include -I/home/fitbranded/include
+```
 
 **Note:**   
-Please run the `make clean` before `make` again!  
-
+> Please run the `make clean` before `make` again!  
 
 2) Tells setup.py where to include the library for `libnfs-python` package
 
-   Edit setup.py and add one more include file
+> Edit setup.py and add one more include file
 
 ```python
 _libnfs = Extension(name='libnfs._libnfs',
@@ -160,10 +156,10 @@ _libnfs = Extension(name='libnfs._libnfs',
 
 3) GNU Autotools
 
-   libnfs packages requires GNU Autotools. If you want to know more about it, you can refer to the following resources.
+> libnfs packages requires GNU Autotools. If you want to know more about it, you can refer to the following resources.
    
->- [ArchLinux](https://bbs.archlinux.org/viewtopic.php?id=161452)    
->- [Compile Kodi on Fedora](http://kodi.wiki/view/HOW-TO:Compile_Kodi_for_Linux_on_Fedora_Red_Hat_Enterprise_Linux_CentOS)
+- [ArchLinux](https://bbs.archlinux.org/viewtopic.php?id=161452)    
+- [Compile Kodi on Fedora](http://kodi.wiki/view/HOW-TO:Compile_Kodi_for_Linux_on_Fedora_Red_Hat_Enterprise_Linux_CentOS)
 
 ```
 $ sudo pacman -S pkg-config xorg-server-devel libtool automake
