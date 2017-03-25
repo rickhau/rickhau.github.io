@@ -179,5 +179,3 @@ Reference
 1) [Discussion with Author](https://github.com/sahlberg/libnfs-python/issues/1)    
 2) [Step-by-Step Video](https://asciinema.org/a/19474)   
 3) [Python Build](https://docs.python.org/2/extending/building.html)
-
-![Test Image](https://github.com/rickhau/rickhau.github.io/raw/master/images/test.png)
