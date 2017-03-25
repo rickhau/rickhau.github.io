@@ -56,8 +56,8 @@ Mac OS
     $ rake new_post["Your blog post title"]
 ```
 > Then, it will create a markdown file under `source/_posts`.  
-> Please edit this .markdown to write your new article
-
+> Please edit this .markdown to write your new article  
+   
 ** STEP 5: Enable your Octopress to support table sytanx **
 
 - Add data-table.css to `source/stylesheets`  
