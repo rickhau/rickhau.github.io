@@ -19,7 +19,7 @@ GITHUB_COMMIT_MSG=$(shell git --no-pager log --format=%s -n 1)
 # ADD
 travis: publish
     git clone https://github.com/getpelican/pelican-plugins.git
-	git clone https://github.com/fle/pelican-simplegrey pelican-theme/simplegrey 
+	git clone https://github.com/fle/pelican-simplegrey pelican-themes/simplegrey 
 
 	git config --global user.name rickhau
 	git config --global user.email rickhau@gmail.com
