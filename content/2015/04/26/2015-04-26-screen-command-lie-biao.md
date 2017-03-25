@@ -1,9 +1,9 @@
 ---
-layout: post
-title: "Screen command 列表"
+title: Screen command 列表
 date: 2015-04-26 12:58:45 +0800
-comments: true
-categories: Linux
+category: Linux
+tag: Linux, screen
+slug: screen-cmds
 ---
 ### Screen command usage & COM port
 
@@ -37,7 +37,7 @@ categories: Linux
 - Close session    
   * cmd: **ctrl + a + k**    
 - Kill session    
-  * cmd: **ctrl + a + \**    
+  * cmd: `ctrl + a + \`    
 
 ##### Summary Table
 

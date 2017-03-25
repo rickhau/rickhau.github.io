@@ -1,9 +1,9 @@
 ---
-layout: post
-title: "How to write your blog using Octopress + Github"
+title: How to write your blog using Octopress + Github
 date: 2015-04-26 14:49:35 +0800
-comments: true
-categories: markdown, blog
+category: blog
+tag: blog, octopress
+slug: octopress-blog
 ---
 
 ## Environment

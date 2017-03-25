@@ -1,9 +1,8 @@
 ---
-layout: post
 title: "Install libnfs-python library"
 date: 2015-05-08 23:10:51 +0800
-comments: true
-categories: Python
+category: python
+tag: libnfs, python
 slug: libnfs-python
 ---
 

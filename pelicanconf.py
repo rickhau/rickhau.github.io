@@ -3,7 +3,7 @@
 from __future__ import unicode_literals
 
 AUTHOR = u'rickhau'
-SITENAME = u'\u96a8\u610f\u96dc\u8a18(Casual Notes)'
+SITENAME = u'\u96a8\u610f\u96dc\u8a18 (Casual Notes)'
 SITEURL = 'http://rickhau.github.io'
 
 PATH = 'content'
@@ -25,8 +25,7 @@ CATEGORY_FEED_RSS = None
 # Blogroll
 LINKS = (('Pelican', 'http://getpelican.com/'),
          ('Python.org', 'http://python.org/'),
-         ('Jinja2', 'http://jinja.pocoo.org/'),
-         ('You can modify those links in your config file', '#'),)
+         ('Jinja2', 'http://jinja.pocoo.org/'),)
 
 # Social widget
 SOCIAL = (('github', 'https://github.com/rickhau'),
@@ -43,10 +42,10 @@ PLUGIN_PATHS = ['pelican-plugins']
 #PLUGINS = ['assets', 'i18n-subsites']
 #JINJA_EXTENSIONS = ['jinja2.ext.i18n']
 
-ARTICLE_URL = 'posts/{date:%Y}/{date:%m}/{date:%d}/{slug}/'
-ARTICLE_SAVE_AS = 'posts/{date:%Y}/{date:%m}/{date:%d}/{slug}/index.html'
-PAGE_URL = 'pages/{slug}/'
-PAGE_SAVE_AS = 'pages/{slug}/index.html'
+ARTICLE_URL = 'posts/{date:%Y}/{date:%m}/{date:%d}/'
+ARTICLE_SAVE_AS = 'posts/{date:%Y}/{date:%m}/{date:%d}/index.html'
+#PAGE_URL = 'pages/{slug}/'
+#PAGE_SAVE_AS = 'pages/{slug}/index.html'
 
 #YEAR_ARCHIVE_SAVE_AS = 'posts/{date:%Y}/index.html'
 #MONTH_ARCHIVE_SAVE_AS = 'posts/{date:%Y}/{date:%b}/index.html'

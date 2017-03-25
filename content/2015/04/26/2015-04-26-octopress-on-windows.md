@@ -1,9 +1,9 @@
 ---
-layout: post
 title: "Octopress on Windows"
 date: 2015-04-26 17:18:10 +0800
-comments: true
-categories: markdown, blog
+category: blog
+tag: blog, octopress
+slug: octopress-windows
 ---
 ## Environment
 Windows 7

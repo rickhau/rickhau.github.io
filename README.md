@@ -3,6 +3,6 @@ Rickhau's Technical Memos
 
 Github Blogger CI
 
-[![Build Status](https://travis-ci.org/rickhau/rickhau.github.io.svg?branch=master)](https://travis-ci.org/rickhau/rickhau.github.io)
+[![Build Status](https://travis-ci.org/rickhau/rickhau.github.io.svg?branch=source)](https://travis-ci.org/rickhau/rickhau.github.io)
 
 This is mainly the CI blogger page
