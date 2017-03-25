@@ -38,7 +38,7 @@ DEFAULT_PAGINATION = 10
 #RELATIVE_URLS = True
 
 #THEME = "pelican-themes/pelican-bootstrap3"
-THEME = "pelican-themes/simplegrey"
+THEME = "simplegrey"
 PLUGIN_PATHS = ['pelican-plugins']
 #PLUGINS = ['assets', 'i18n-subsites']
 #JINJA_EXTENSIONS = ['jinja2.ext.i18n']

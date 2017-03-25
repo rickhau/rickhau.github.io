@@ -116,7 +116,7 @@ github: publish
 travis: publish
 	# Check out pelican-plugins, pelican-themes
 	git clone https://github.com/getpelican/pelican-plugins.git pelican-plugins
-	git clone https://github.com/fle/pelican-simplegrey.git pelican-themes/simplegrey
+	git clone https://github.com/fle/pelican-simplegrey.git simplegrey
 	git config --global user.name rickhau
 	git config --global user.email rickhau@gmail.com
 	ghp-import -n -r $(GITHUB_REMOTE_NAME) -b $(GITHUB_PAGES_BRANCH) -m "$(GITHUB_COMMIT_MSG)" $(OUTPUTDIR)
