@@ -9,4 +9,6 @@ script:
 - git clone https://github.com/getpelican/pelican-plugins.git
 # git clone --recursive https//github.com/getpelican/pelican-themes ~/pelican-themes
 - git clone https://github.com/fle/pelican-simplegrey.git ~/pelican-themes/pelican-simplegrey
+- pwd
+- cd ~/pelican-themes
 - make travis
