@@ -42,10 +42,10 @@ PLUGIN_PATHS = ['pelican-plugins']
 #PLUGINS = ['assets', 'i18n-subsites']
 #JINJA_EXTENSIONS = ['jinja2.ext.i18n']
 
-ARTICLE_URL = 'posts/{date:%Y}/{date:%m}/{date:%d}/'
-ARTICLE_SAVE_AS = 'posts/{date:%Y}/{date:%m}/{date:%d}/ndex.html'
-#PAGE_URL = 'pages/{slug}/'
-#PAGE_SAVE_AS = 'pages/{slug}/index.html'
+ARTICLE_URL = 'posts/{date:%Y}/{date:%m}/{date:%d}/{slug}/'
+ARTICLE_SAVE_AS = 'posts/{date:%Y}/{date:%m}/{date:%d}/{slug}/index.html'
+PAGE_URL = 'pages/{slug}/'
+PAGE_SAVE_AS = 'pages/{slug}/index.html'
 
 #YEAR_ARCHIVE_SAVE_AS = 'posts/{date:%Y}/index.html'
 #MONTH_ARCHIVE_SAVE_AS = 'posts/{date:%Y}/{date:%b}/index.html'
