@@ -29,7 +29,7 @@ LINKS = (('Pelican', 'http://getpelican.com/'),
 
 # Social widget
 SOCIAL = (('github', 'https://github.com/rickhau'),
-          ('twitter', 'https://twitter.com/rickhau'),)
+          ('twitter', 'https://twitter.com/rickhau0912'),)
 
 DEFAULT_PAGINATION = 10
 
