@@ -114,9 +114,6 @@ github: publish
 
 # ADD
 travis: publish
-# /home/travis/build/rickhau/rickhau.github.io/
-	git clone https://github.com/getpelican/pelican-plugins.git
-	git clone https://github.com/fle/pelican-simplegrey.git
 	git config --global user.name rickhau
 	git config --global user.email rickhau@gmail.com
 	ghp-import -n -r $(GITHUB_REMOTE_NAME) -b $(GITHUB_PAGES_BRANCH) -m "$(GITHUB_COMMIT_MSG)" $(OUTPUTDIR)

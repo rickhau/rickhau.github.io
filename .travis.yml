@@ -6,4 +6,7 @@ install:
 - pip install pelican markdown ghp-import
 
 script:
+# /home/travis/build/rickhau/rickhau.github.io/
+- git clone https://github.com/getpelican/pelican-plugins.git
+- git clone https://github.com/fle/pelican-simplegrey.git
 - make travis
