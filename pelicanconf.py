@@ -43,7 +43,7 @@ PLUGIN_PATHS = ['pelican-plugins']
 #JINJA_EXTENSIONS = ['jinja2.ext.i18n']
 
 ARTICLE_URL = 'posts/{date:%Y}/{date:%m}/{date:%d}/'
-ARTICLE_SAVE_AS = 'posts/{date:%Y}/{date:%m}/{date:%d}/index.html'
+ARTICLE_SAVE_AS = 'posts/{date:%Y}/{date:%m}/{date:%d}/ndex.html'
 #PAGE_URL = 'pages/{slug}/'
 #PAGE_SAVE_AS = 'pages/{slug}/index.html'
 
