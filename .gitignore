@@ -3,5 +3,5 @@ pelican-themes
 *.pyc
 *.pid
 cache
-DS_Store
+.DS_Store
 pelican-simplegrey
