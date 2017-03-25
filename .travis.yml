@@ -1,5 +1,10 @@
-language: ruby
-rvm:
-  - 2.0.0
-  - 1.9.3
-script: bundle exec rake install; bundle exec rake generate
+language: python
+python:
+- '2.7'
+- '3.4'
+
+install:
+- pip install pelican markdown ghp-import
+
+script:
+- make travis
