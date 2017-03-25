@@ -16,16 +16,6 @@ GITHUB_COMMIT_MSG=$(shell git --no-pager log --format=%s -n 1)
 # Click Generate new token
 # Use Travis CI to setup the environment variable: GITHUB_TOKEN
 
-# ADD
-travis: publish
-    git clone https://github.com/getpelican/pelican-plugins.git
-	git clone https://github.com/fle/pelican-simplegrey.git pelican-themes/simplegrey 
-    # github push
-	git config --global user.name rickhau
-	git config --global user.email rickhau@gmail.com
-	ghp-import -n -r $(GITHUB_REMOTE_NAME) -b $(GITHUB_PAGES_BRANCH) -m "$(GITHUB_COMMIT_MSG)" $(OUTPUTDIR)
-	@git push -fq https://${GITHUB_TOKEN}@github.com/$(GITHUB_REPO_SLUG).git $(GITHUB_PAGES_BRANCH) > /dev/null
-
 DEBUG ?= 0
 ifeq ($(DEBUG), 1)
 	PELICANOPTS += -D
@@ -121,3 +111,13 @@ github: publish
 	git push origin $(GITHUB_PAGES_BRANCH)
 
 .PHONY: html help clean regenerate serve serve-global devserver stopserver publish ssh_upload rsync_upload dropbox_upload ftp_upload s3_upload cf_upload github
+
+# ADD
+travis: publish
+	# Check out pelican-plugins, pelican-themes
+	git clone https://github.com/getpelican/pelican-plugins.git pelican-plugins
+	git clone https://github.com/fle/pelican-simplegrey.git pelican-themes/simplegrey
+	git config --global user.name rickhau
+	git config --global user.email rickhau@gmail.com
+	ghp-import -n -r $(GITHUB_REMOTE_NAME) -b $(GITHUB_PAGES_BRANCH) -m "$(GITHUB_COMMIT_MSG)" $(OUTPUTDIR)
+	@git push -fq https://${GITHUB_TOKEN}@github.com/$(GITHUB_REPO_SLUG).git $(GITHUB_PAGES_BRANCH) > /dev/null
