@@ -180,4 +180,4 @@ Reference
 2) [Step-by-Step Video](https://asciinema.org/a/19474)   
 3) [Python Build](https://docs.python.org/2/extending/building.html)
 
-![Test Image](https://github.com/rickhau/rickhau.github.io/tree/source/content/images/test.jpg)
+![Test Image](https://github.com/rickhau/rickhau.github.io/blob/master/images/test.png)
