@@ -7,6 +7,12 @@
 # Create Article: python make_entry.py "Your Title"
 # Edit your "Your Title".md
 # Run ./gitpush.sh
+#
+# Image:
+# Put your image(test.jpg) under content/images folder
+# The path will be as following
+# ![Test Image](https://github.com/rickhau/rickhau.github.io/raw/master/images/test.png)
+
 
 # Use "source" branch to create new post under "content" folder
 # Commit and push back to remote origin/source branch
