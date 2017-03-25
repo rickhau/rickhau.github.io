@@ -2,7 +2,6 @@
 title: "Install libnfs-python library"
 date: 2015-05-08 23:10:51 +0800
 category: python
-tag: libnfs, python
 slug: libnfs-python
 ---
 

@@ -2,8 +2,7 @@
 title: Screen command 列表
 date: 2015-04-26 12:58:45 +0800
 category: Linux
-tag: Linux, screen
-slug: screen-cmds
+slug: linux-screen
 ---
 ### Screen command usage & COM port
 
