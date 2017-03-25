@@ -10,7 +10,7 @@ PUBLISHCONF=$(BASEDIR)/publishconf.py
 
 GITHUB_REPO_SLUG=rickhau/rickhau.github.io
 GITHUB_REMOTE_NAME=origin
-GITHUB_PAGES_BRANCH=source
+GITHUB_PAGES_BRANCH=master
 GITHUB_COMMIT_MSG=$(shell git --no-pager log --format=%s -n 1)
 # GITHUB_TOKEN: Go to https://github.com/settings/tokens
 # Click Generate new token
