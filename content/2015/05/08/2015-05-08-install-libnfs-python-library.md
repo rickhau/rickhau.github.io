@@ -117,13 +117,12 @@ $ make
 Then, re-run the python to import libnfs and test NFS service.
 
 ```python
-#!python
-    import libnfs
-    nfs = libnfs.NFS('nfs://127.0.0.1/data/tmp/')
-    a = nfs.open('/foo-test', mode='w+')
-    a.write("Test string")
-    a.close()
-    print nfs.open('/foo-test', mode='r').read()
+import libnfs
+nfs = libnfs.NFS('nfs://127.0.0.1/data/tmp/')
+a = nfs.open('/foo-test', mode='w+')
+a.write("Test string")
+a.close()
+print nfs.open('/foo-test', mode='r').read()
 ```
 
 Congratulations!!! You can enjoy this powerful NFS python library.
