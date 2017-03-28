@@ -42,6 +42,9 @@ PLUGIN_PATHS = ['pelican-plugins']
 #PLUGINS = ['assets', 'i18n-subsites']
 #JINJA_EXTENSIONS = ['jinja2.ext.i18n']
 
+# Enable CodeHilite extension
+MD_EXTENSIONS = ['codehilite(linenums = True)']
+
 ARTICLE_URL = 'posts/{date:%Y}/{date:%m}/{date:%d}/{slug}'
 ARTICLE_SAVE_AS = 'posts/{date:%Y}/{date:%m}/{date:%d}/{slug}/index.html'
 #PAGE_URL = 'pages/{slug}/'
