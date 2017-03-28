@@ -42,6 +42,8 @@ PLUGIN_PATHS = ['pelican-plugins']
 #PLUGINS = ['assets', 'i18n-subsites']
 #JINJA_ENVIRONMENT = ['jinja2.ext.i18n']
 
+# Specify pygments-css style: monokai.css
+PYGMENTS_STYLE = 'monokai'
 # Enable CodeHilite extension
 MARKDOWN = {
     'extension_configs': {
