@@ -40,10 +40,17 @@ DEFAULT_PAGINATION = 10
 THEME = "pelican-simplegrey"
 PLUGIN_PATHS = ['pelican-plugins']
 #PLUGINS = ['assets', 'i18n-subsites']
-#JINJA_EXTENSIONS = ['jinja2.ext.i18n']
+#JINJA_ENVIRONMENT = ['jinja2.ext.i18n']
 
 # Enable CodeHilite extension
-MD_EXTENSIONS = ['codehilite(linenums = True)']
+MARKDOWN = {
+    'extension_configs': {
+        'markdown.extensions.codehilite': {'css_class': 'highlight'},
+        'markdown.extensions.extra': {},
+        'markdown.extensions.meta': {},
+    },
+    'output_format': 'html5',
+}
 
 ARTICLE_URL = 'posts/{date:%Y}/{date:%m}/{date:%d}/{slug}'
 ARTICLE_SAVE_AS = 'posts/{date:%Y}/{date:%m}/{date:%d}/{slug}/index.html'
