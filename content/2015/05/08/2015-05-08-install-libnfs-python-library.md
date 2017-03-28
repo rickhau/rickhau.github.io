@@ -117,6 +117,7 @@ $ make
 Then, re-run the python to import libnfs and test NFS service.
 
 ```python
+#!python
 import libnfs
 nfs = libnfs.NFS('nfs://127.0.0.1/data/tmp/')
 a = nfs.open('/foo-test', mode='w+')
