@@ -52,6 +52,9 @@ MARKDOWN = {
     'output_format': 'html5',
 }
 
+# Enable Typogirfy
+TYPOGRIFY = True
+
 ARTICLE_URL = 'posts/{date:%Y}/{date:%m}/{date:%d}/{slug}'
 ARTICLE_SAVE_AS = 'posts/{date:%Y}/{date:%m}/{date:%d}/{slug}/index.html'
 #PAGE_URL = 'pages/{slug}/'
