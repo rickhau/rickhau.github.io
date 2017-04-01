@@ -41,14 +41,14 @@ DEFAULT_PAGINATION = 10
 # Change theme name here and update the .travis.xml to the corresponding theme git repository
 
 #THEME = "pelican-bootstrap3"
-THEME = "pelican-simplegrey"
 #THEME = "octopress" # like Github Flavored Markdown theme
+THEME = "pelican-simplegrey"
 
 PLUGIN_PATHS = ['pelican-plugins']
 
 # For pelican-bootstrap3 theme settings
 # FAVICON= "images/favicon.ico"
-#PLUGINS = ['assets', 'i18n-subsites']  # i18n-subtitles: this is for pelican-bootstrap3 theme
+PLUGINS = ['assets', 'i18n-subsites']  # i18n-subtitles: this is for pelican-bootstrap3 theme
 #JINJA_ENVIRONMENT = {
 #    'extensions': ['jinja2.ext.i18n'], #this is for pelican-bootstrap3 theme
 #} 
