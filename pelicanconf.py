@@ -36,11 +36,22 @@ DEFAULT_PAGINATION = 10
 # Uncomment following line if you want document-relative URLs when developing
 #RELATIVE_URLS = True
 
-#THEME = "pelican-themes/pelican-bootstrap3"
+# Theme list
+# https://github.com/getpelican/pelican-themes
+# Change theme name here and update the .travis.xml to the corresponding theme git repository
+
+#THEME = "pelican-bootstrap3"
 THEME = "pelican-simplegrey"
+#THEME = "octopress" # like Github Flavored Markdown theme
+
 PLUGIN_PATHS = ['pelican-plugins']
-#PLUGINS = ['assets', 'i18n-subsites']
-#JINJA_ENVIRONMENT = ['jinja2.ext.i18n']
+
+# For pelican-bootstrap3 theme settings
+# FAVICON= "images/favicon.ico"
+#PLUGINS = ['assets', 'i18n-subsites']  # i18n-subtitles: this is for pelican-bootstrap3 theme
+#JINJA_ENVIRONMENT = {
+#    'extensions': ['jinja2.ext.i18n'], #this is for pelican-bootstrap3 theme
+#} 
 
 # Specify pygments-css style: monokai.css
 PYGMENTS_STYLE = 'monokai'
