@@ -49,7 +49,7 @@ PLUGIN_PATHS = ['pelican-plugins']
 
 # For pelican-bootstrap3 theme settings
 # FAVICON= "images/favicon.ico"
-PLUGINS = ['pelican_comment_system']
+PLUGINS = ['disqus_static']
 # PLUGINS = ['assets', 'i18n-subsites']  # i18n-subtitles: this is for pelican-bootstrap3 theme
 #JINJA_ENVIRONMENT = {
 #    'extensions': ['jinja2.ext.i18n'], #this is for pelican-bootstrap3 theme
