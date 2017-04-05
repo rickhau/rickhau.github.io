@@ -7,6 +7,7 @@ install:
 
 script:
 # /home/travis/build/rickhau/rickhau.github.io/
+# git clone https://github.com/fle/pelican-simplegrey.git
 - git clone https://github.com/getpelican/pelican-plugins.git
-- git clone https://github.com/fle/pelican-simplegrey.git
+- git clone https://github.com/fle/pelican-sober.git
 - make travis
