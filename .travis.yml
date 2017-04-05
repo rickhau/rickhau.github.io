@@ -3,6 +3,7 @@ python:
 - '2.7'
 
 install:
+- sudo apt-get install libjpeg libjpeg-dev libfreetype6 libfreetype6-dev zlib1g-dev
 - pip install pelican markdown ghp-import typogrify pygments PIL
 
 script:
