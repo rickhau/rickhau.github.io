@@ -3,8 +3,7 @@ python:
 - '2.7'
 
 install:
-- sudo apt-get install libjpeg libjpeg-dev libfreetype6 libfreetype6-dev zlib1g-dev  # For PIL
-- pip install pelican markdown ghp-import typogrify pygments PIL
+- pip install pelican markdown ghp-import typogrify pygments
 
 script:
 # /home/travis/build/rickhau/rickhau.github.io/
