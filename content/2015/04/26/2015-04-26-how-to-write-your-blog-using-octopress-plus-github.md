@@ -2,6 +2,7 @@
 title: How to write your blog using Octopress + Github
 date: 2015-04-26 14:49:35 +0800
 category: blog
+comments: True
 slug: octopress-blog
 ---
 
