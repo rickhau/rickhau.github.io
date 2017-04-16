@@ -41,9 +41,9 @@ DEFAULT_PAGINATION = 10
 # Change theme name here and update the .travis.xml to the corresponding theme git repository
 
 #THEME = "pelican-bootstrap3"
-#THEME = "octopress" # like Github Flavored Markdown theme
+THEME = "pelican-octopress-theme" # like Github Flavored Markdown theme
 #THEME = "pelican-simplegrey"
-THEME = "pelican-sober"
+#THEME = "pelican-sober"
 
 PLUGIN_PATHS = ['pelican-plugins']
 
@@ -79,5 +79,7 @@ ARTICLE_SAVE_AS = 'posts/{date:%Y}/{date:%m}/{date:%d}/{slug}/index.html'
 #MONTH_ARCHIVE_SAVE_AS = 'posts/{date:%Y}/{date:%b}/index.html'
 
 # THEME: pelican-sober
-PELICAN_SOBER_ABOUT = 'rickhau'
-PELICAN_SOBER_STICKY_SIDEBAR = True
+#PELICAN_SOBER_ABOUT = 'rickhau'
+#PELICAN_SOBER_STICKY_SIDEBAR = True
+
+
