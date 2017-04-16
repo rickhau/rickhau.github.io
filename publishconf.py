@@ -19,6 +19,7 @@ CATEGORY_FEED_ATOM = 'feeds/%s.atom.xml'
 DELETE_OUTPUT_DIRECTORY = True
 
 # Following items are often useful when publishing
+# https://github.com/DandyDev/pelican-bootstrap3/issues/219
 
-DISQUS_SITENAME = "rickhau-blog.disqus.com"
+DISQUS_SITENAME = "https://rickhau-blog.disqus.com"
 GOOGLE_UNIVERSAL_ANALYTICS = "UA-96861038-1"
