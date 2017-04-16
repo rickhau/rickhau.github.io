@@ -20,6 +20,9 @@ DELETE_OUTPUT_DIRECTORY = True
 
 # Following items are often useful when publishing
 # https://github.com/DandyDev/pelican-bootstrap3/issues/219
+# http://leafwind.tw/20141111-using-pelican-to-build-blog.html
+#   Admin -> Settings ->Your website's shortname is XXX 
+#   DISQUS_SITENAME = 'shortname'
 
 DISQUS_SITENAME = "rickhau-github-io"
 GOOGLE_UNIVERSAL_ANALYTICS = "UA-96861038-1"

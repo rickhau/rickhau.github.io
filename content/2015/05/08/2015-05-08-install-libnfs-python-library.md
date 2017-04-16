@@ -2,7 +2,6 @@
 title: Install libnfs-python on Fedora 20
 date: 2015-05-08 23:10:51 +0800
 category: python
-comments: True
 slug: libnfs-python
 ---
 
