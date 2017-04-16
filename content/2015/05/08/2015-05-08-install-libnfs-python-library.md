@@ -91,8 +91,7 @@ Finished processing dependencies for libnfs==1.0-1
 
 You can try `import libnfs` to see if you hit any error.
 
-```
-#! python
+```python
 Python 2.7.5 (default, Nov  3 2014, 14:26:24)
 [GCC 4.8.3 20140911 (Red Hat 4.8.3-7)] on linux2
 Type "help", "copyright", "credits" or "license" for more information.
