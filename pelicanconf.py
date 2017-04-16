@@ -61,7 +61,8 @@ PYGMENTS_STYLE = 'monokai'
 # http://pythonhosted.org/Markdown/extensions/code_hilite.html#syntax
 MARKDOWN = {
     'extension_configs': {
-        'markdown.extensions.codehilite': {'css_class': 'highlight', 'linenums': True},
+        #'markdown.extensions.codehilite': {'css_class': 'highlight', 'linenums': True},
+        'markdown.extensions.codehilite': {'linenums': True},
         'markdown.extensions.extra': {},
         'markdown.extensions.meta': {},
     },
