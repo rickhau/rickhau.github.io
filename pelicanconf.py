@@ -34,7 +34,7 @@ SOCIAL = (('github', 'https://github.com/rickhau'),
 DEFAULT_PAGINATION = 10
 
 # Uncomment following line if you want document-relative URLs when developing
-RELATIVE_URLS = False
+# RELATIVE_URLS = False
 
 # Theme list
 # https://github.com/getpelican/pelican-themes
