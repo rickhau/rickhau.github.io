@@ -14,6 +14,7 @@ TEMPLATE = """
 {title}
 date: {year}-{month:02d}-{day} {hour}:{minute:02d}
 category:
+comments: True
 slug: {slug}
 ---
 

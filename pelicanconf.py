@@ -82,4 +82,5 @@ ARTICLE_SAVE_AS = 'posts/{date:%Y}/{date:%m}/{date:%d}/{slug}/index.html'
 #PELICAN_SOBER_ABOUT = 'rickhau'
 #PELICAN_SOBER_STICKY_SIDEBAR = True
 
-
+# THEME: octopress
+SEARCH_BOX = True
