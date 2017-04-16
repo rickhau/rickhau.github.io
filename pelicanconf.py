@@ -58,6 +58,7 @@ PLUGIN_PATHS = ['pelican-plugins']
 # Specify pygments-css style: monokai.css
 PYGMENTS_STYLE = 'monokai'
 # Enable CodeHilite extension
+# http://pythonhosted.org/Markdown/extensions/code_hilite.html#syntax
 MARKDOWN = {
     'extension_configs': {
         'markdown.extensions.codehilite': {'css_class': 'highlight', 'linenums': True},
