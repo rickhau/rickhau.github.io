@@ -23,9 +23,10 @@ FEED_ALL_RSS = None
 CATEGORY_FEED_RSS = None
 
 # Blogroll
-LINKS = (('Pelican', 'http://getpelican.com/'),
-         ('Python.org', 'http://python.org/'),
-         ('Jinja2', 'http://jinja.pocoo.org/'),)
+LINKS = (('Online Compiler', 'http://rextester.com/'),
+         ('UEFI Resource', 'http://www.lab-z.com/'),
+         ('Brendan Gregg', 'http://www.brendangregg.com/blog/'),
+         ('Colin Ian King', 'http://smackerelofopinion.blogspot.tw/'),)
 
 # Social widget
 SOCIAL = (('github', 'https://github.com/rickhau'),
