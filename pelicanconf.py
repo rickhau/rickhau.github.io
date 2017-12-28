@@ -91,3 +91,6 @@ ARTICLE_SAVE_AS = 'posts/{date:%Y}/{date:%m}/{date:%d}/{slug}/index.html'
 
 # THEME: octopress
 SEARCH_BOX = True
+
+# THEME: blue-penguin
+# https://github.com/jody-frankowski/blue-penguin
