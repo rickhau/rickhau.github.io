@@ -39,6 +39,7 @@ DEFAULT_PAGINATION = 10
 
 # Theme list
 # https://github.com/getpelican/pelican-themes
+# Visual Theme: http://www.pelicanthemes.com/
 # Change theme name here and update the .travis.xml to the corresponding theme git repository
 
 #THEME = "pelican-bootstrap3"
@@ -63,7 +64,7 @@ PYGMENTS_STYLE = 'monokai'
 MARKDOWN = {
     'extension_configs': {
         #'markdown.extensions.codehilite': {'linenums': True}, # Doesn't support inline linue nums
-        'markdown.extensions.codehilite': {'css_class': 'highlight'},
+        'markdown.extensions.codehilite': {'css_class': 'codehilite'},
         'markdown.extensions.extra': {},
         'markdown.extensions.meta': {},
     },
