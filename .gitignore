@@ -5,3 +5,4 @@ pelican-themes
 cache
 .DS_Store
 pelican-simplegrey
+.vscode
