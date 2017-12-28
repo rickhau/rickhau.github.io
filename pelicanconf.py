@@ -63,8 +63,8 @@ PYGMENTS_STYLE = 'monokai'
 # http://pythonhosted.org/Markdown/extensions/code_hilite.html#syntax
 MARKDOWN = {
     'extension_configs': {
-        'markdown.extensions.codehilite': {'linenums': True}, # Doesn't support inline linue nums
-        'markdown.extensions.codehilite': {'css_class': 'codehilite'},
+        # 'markdown.extensions.codehilite': {'linenums': True}, # Doesn't support inline linue nums
+        'markdown.extensions.codehilite': {'linenums': True, 'css_class': 'highlight'},
         'markdown.extensions.extra': {},
         'markdown.extensions.meta': {},
     },
