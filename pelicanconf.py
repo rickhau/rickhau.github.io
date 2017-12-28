@@ -61,6 +61,8 @@ PLUGIN_PATHS = ['pelican-plugins']
 PYGMENTS_STYLE = 'monokai'
 # Enable CodeHilite extension
 # http://pythonhosted.org/Markdown/extensions/code_hilite.html#syntax
+# https://pythonhosted.org/Markdown/extensions/index.html
+# http://docs.getpelican.com/en/3.6.3/faq.html
 MARKDOWN = {
     'extension_configs': {
         # 'markdown.extensions.codehilite': {'linenums': True}, # Doesn't support inline linue nums
