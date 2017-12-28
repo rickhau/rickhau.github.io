@@ -43,9 +43,10 @@ DEFAULT_PAGINATION = 10
 # Change theme name here and update the .travis.xml to the corresponding theme git repository
 
 #THEME = "pelican-bootstrap3"
-THEME = "pelican-octopress-theme" # like Github Flavored Markdown theme
 #THEME = "pelican-simplegrey"
 #THEME = "pelican-sober"
+#THEME = "pelican-octopress-theme" # like Github Flavored Markdown theme
+THEME = "blue-penguin"
 
 PLUGIN_PATHS = ['pelican-plugins']
 
