@@ -11,4 +11,5 @@ script:
 # - git clone https://github.com/fle/pelican-sober.git
 - git clone https://github.com/getpelican/pelican-plugins.git
 - git clone https://github.com/MrSenko/pelican-octopress-theme.git
+- pygmentize -S default -f html -a .codehilite > style.css
 - make travis
