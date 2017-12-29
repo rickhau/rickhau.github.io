@@ -52,24 +52,26 @@
             <ul>
             {% block ephemeral_nav %}{% endblock %}
                 {% if DISPLAY_HOME or DISPLAY_HOME is not defined %}
-                <li{% if output_file == "index.html" %} class="selected"{% endif %}><a href="../../../">Home</a></li>
+                <li{% if output_file == "index.html" %} class="selected"{% endif %}><a href="{{ SITEURL }}">Home</a></li>
                 {% endif %}
                 {% if DISPLAY_PAGES_ON_MENU %}
                 {% for p in pages %}
-                <li{% if p == page %} class="selected"{% endif %}><a href="{{ SITEURL }}/{{ p.url }}">{{ p.title }}</a></li>
+                <!-- <li{% if p == page %} class="selected"{% endif %}><a href="{{ SITEURL }}/{{ p.url }}">{{ p.title }}</a></li> -->
+                <li{% if p == page %} class="selected"{% endif %}><a href="{{ SITEURL }}">{{ p.title }}</a></li>
                 {% endfor %}
                 {% endif %}
                 {% for title, link in MENUITEMS %}
                 <li><a href="{{ link }}">{{ title }}</a></li>
                 {% endfor %}
                 {% for name, link, file in MENU_INTERNAL_PAGES %}
-                <li{% if output_file == file %} class="selected"{% endif %}><a href="{{ SITEURL }}/{{ link }}">{{ name }}</a></li>
+                <!-- <li{% if output_file == file %} class="selected"{% endif %}><a href="{{ SITEURL }}/{{ link }}">{{ name }}</a></li> -->
+                <li{% if output_file == file %} class="selected"{% endif %}><a href="{{ SITEURL }}">{{ name }}</a></li>
                 {% endfor %}
             </ul>
         </nav>
         {% endif %}
         <div class="header_box">
-            <h1><a href="../../../">{{ SITENAME }}</a></h1>
+            <h1><a href="{{ SITEURL }}">{{ SITENAME }}</a></h1>
             {% if SITESUBTITLE %}
             <h2>{{ SITESUBTITLE }}</h2>
             {% endif %}
