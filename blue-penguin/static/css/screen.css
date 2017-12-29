@@ -342,5 +342,5 @@ footer p { margin: 0; }
 .clear { clear: both; }
 
 sp {
-	white-space: pre-wrap;
+	text-indent: 2em;
 }
