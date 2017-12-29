@@ -16,9 +16,13 @@ Markdwon Cheatsheet
 
 ```
   1. Use "pre" html tag to preserve the format w/o rendering
-  2. Use CSS to render <space> tag with white-space: pre-wrap;
-    space {
-        whitespace: pre-wrap;
+  2. Use CSS to render <sp> and <tab> tag with text-indent values
+    sp {
+      text-indent: 2em;
+    }
+
+    tab {
+      text-indent: 4em;
     }
   3. `&nbsp;` : space
   4. `&ensp;` : 2 space
