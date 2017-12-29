@@ -97,10 +97,11 @@ SEARCH_BOX = True
 # THEME: blue-penguin
 # https://github.com/jody-frankowski/blue-penguin
 # all defaults to True.
-DISPLAY_HEADER = True
-DISPLAY_FOOTER = True
-DISPLAY_HOME   = True
-DISPLAY_MENU   = True
+# DISPLAY_HEADER = True
+# DISPLAY_FOOTER = True
+# DISPLAY_HOME   = True
+# DISPLAY_MENU   = True
+
 # provided as examples, they make ‘clean’ urls. used by MENU_INTERNAL_PAGES.
 # HOME_URL = 'index'
 # HOME_SAVE_AS = 'index.html'
