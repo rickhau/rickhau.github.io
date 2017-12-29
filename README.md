@@ -18,11 +18,7 @@ Markdwon Cheatsheet
   1. Use "pre" html tag to preserve the format w/o rendering
   2. Use CSS to render <sp> and <tab> tag with text-indent values
     sp {
-      text-indent: 2em;
-    }
-
-    tab {
-      text-indent: 4em;
+      padding-left: 10px;
     }
   3. `&nbsp;` : space
   4. `&ensp;` : 2 space
