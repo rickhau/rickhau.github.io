@@ -1,5 +1,5 @@
 ---
-title: "Octopress on Windows"
+title: Octopress on Windows
 date: 2015-04-26 17:18:10 +0800
 category: blog
 comments: True
