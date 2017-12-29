@@ -20,28 +20,30 @@ Windows 7
 
 ### Configure environment ###
 
-####STEP 1: Install RubyInstaller
+#### STEP 1: Install RubyInstaller
 
 - Download and install rubyinstaller.exe
-
+<pre>
   [rubyinstaller](http://rubyinstaller.org/downloads/)
   
   I picked up ruby-2.1.4(x64) to install   
   
   [2.1.4(x64)](http://dl.bintray.com/oneclick/rubyinstaller/rubyinstaller-2.1.4-x64.exe)   
+</pre>
   
-####STEP 2: Install Ruby Development Kit
+#### STEP 2: Install Ruby Development Kit
 
 - Download and install `DevKit-mingw64-64-4.7.2-20130224-1432-sfx`
-
+<pre>
   I installed Ruby 2.1.4(x64), so the development kit I have to use is:    
   
   [For use with Ruby 2.0 and 2.1 (x64 - 64bits only)](http://dl.bintray.com/oneclick/rubyinstaller/DevKit-mingw64-64-4.7.2-20130224-1432-sfx.exe)
   
-  I extract to `C:\Ruby21-Devkit` where my ruby was installed under `C:\Ruby21-x64`    
+  I extract to `C:\Ruby21-Devkit` where my ruby was installed under `C:\Ruby21-x64`
+</pre> 
   
     
-####STEP 3: Create ruby config.yml
+#### STEP 3: Create ruby config.yml
 
 - Open your windows terminal 
 
@@ -71,8 +73,9 @@ Windows 7
 ```
     > gem update --system
 ```
- 
+<pre>
   Then, you will see the following messages:
+</pre>
   
 ```
     SSL_connect returned=1 errno=0 state=SSLv3 read server certificate B: certificate verify failed
@@ -86,13 +89,15 @@ Windows 7
 ```
 
   1) Download RubyGems based on the gem version you have installed. 
-  
+
+<pre>
    Picked up 2.2.x due to my system reports 2.2.2    
    * [2.2.x](https://github.com/rubygems/rubygems/releases/tag/v2.2.3)    
   
    Others:    
    * [1.8.x](https://github.com/rubygems/rubygems/releases/tag/v1.8.30)   
    * [2.0.x](https://github.com/rubygems/rubygems/releases/tag/v2.0.15)
+</pre>
   
   2) Run the following commands:
   
@@ -104,10 +109,11 @@ Windows 7
 
   Congratulations! 
   
-  3) Now, let's update gem 
-  
+  3) Now, let's update gem  
+
+```
      gem update --system
-    
+```
   Reference link:
   >- [SSL issue](https://gist.github.com/luislavena/f064211759ee0f806c88)
 
