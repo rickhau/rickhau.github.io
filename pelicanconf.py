@@ -102,11 +102,10 @@ DISPLAY_FOOTER = True
 DISPLAY_HOME   = True
 DISPLAY_MENU   = True
 # provided as examples, they make ‘clean’ urls. used by MENU_INTERNAL_PAGES.
-HOME_URL = 'index'
-HOME_SAVE_AS = 'index.html'
+# HOME_URL = 'index'
+# HOME_SAVE_AS = 'index.html'
 
 # use those if you want pelican standard pages to appear in your menu
-MENU_INTERNAL_PAGES = (
-    ('HOME', HOME_URL, HOME_SAVE_AS),
-    ('Archives', ARTICLE_URL, ARTICLE_SAVE_AS)
-)
+# MENU_INTERNAL_PAGES = (
+#     ('Archives', ARTICLE_URL, ARTICLE_SAVE_AS)
+# )
