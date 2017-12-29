@@ -23,6 +23,7 @@ REM - Run pelicanconf first (So, you have to checkout git repo in .travis.yml be
 REM - Then, use ghp-import to push the compiled source back to master branch
 
 REM Create source post in content folder and run the following commands
+set GITMSG=
 set /P GITMSG="[GIT Commit MSG]: "
 IF "%GITMSG%"=="" (
 set GITMSG=Update Pelican blog content
