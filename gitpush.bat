@@ -25,7 +25,7 @@ REM - Then, use ghp-import to push the compiled source back to master branch
 REM Create source post in content folder and run the following commands
 set /P GITMSG="[GIT Commit MSG]: "
 IF "%GITMSG%"=="" (
-GITMSG="Update Pelican blog content"
+set GITMSG=Update Pelican blog content
 )
 git pull origin source
 git add .
