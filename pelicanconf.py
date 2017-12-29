@@ -13,7 +13,6 @@ DATE_FORMATS = {
 
 TIMEZONE = 'Asia/Taipei'
 DEFAULT_LANG = u'zh'
-LOCALE = 'en_US'
 
 # Feed generation is usually not desired when developing
 FEED_ALL_ATOM = None
