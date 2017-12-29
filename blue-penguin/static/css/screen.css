@@ -342,6 +342,10 @@ footer p { margin: 0; }
 .clear { clear: both; }
 
 sp {
-	padding-left: 10px;
+	text-indent: 2em;
+}
+
+tab {
+	text-indent: 4em;
 }
 
