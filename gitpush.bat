@@ -27,8 +27,11 @@ set /P GITMSG="[GIT Commit MSG]: "
 IF "%GITMSG%"=="" (
 set GITMSG=Update Pelican blog content
 )
+@echo Remote sync to local before push
 git pull origin source
+@echo Going to commit local change to remote branch
 git add .
 git commit -am "%GITMSG%"
 @echo Add Git commit message: [ %GITMSG% ]
 git push -f origin source
+@echo Done!
