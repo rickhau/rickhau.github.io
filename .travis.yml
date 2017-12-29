@@ -12,6 +12,6 @@ script:
 - git clone https://github.com/getpelican/pelican-plugins.git
 - git clone https://github.com/jody-frankowski/blue-penguin.git
 # - git clone https://github.com/MrSenko/pelican-octopress-theme.git
-# - pygmentize -S monokai -f html -a .highlight > pygment.css
-- make travis 
-# - cp pygment.css /home/travis/build/rickhau/rickhau.github.io/output/theme/css
+- make travis
+
+

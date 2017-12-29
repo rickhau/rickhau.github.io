@@ -110,9 +110,3 @@ MENU_INTERNAL_PAGES = (
     ('HOME', HOME_URL, HOME_SAVE_AS),
     ('Archives', ARTICLE_URL, ARTICLE_SAVE_AS)
 )
-
-# additional menu items
-# MENUITEMS = (
-#     ('GitHub' 'https://github.com/rickhau'),
-#     ('Linux Kernel', 'https://www.kernel.org'),
-# )
