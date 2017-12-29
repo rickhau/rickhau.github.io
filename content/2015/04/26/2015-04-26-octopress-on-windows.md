@@ -25,12 +25,11 @@ Windows 7
 - Download and install rubyinstaller.exe  
 <sp>
   [rubyinstaller](http://rubyinstaller.org/downloads/)
-</sp>
 
   I picked up ruby-2.1.4(x64) to install   
 
   [2.1.4(x64)](http://dl.bintray.com/oneclick/rubyinstaller/rubyinstaller-2.1.4-x64.exe)   
-
+</sp>
   
 #### STEP 2: Install Ruby Development Kit
 
