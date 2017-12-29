@@ -17,11 +17,9 @@ Markdwon Cheatsheet
 ```
   1. Use "pre" html tag to preserve the format w/o rendering
   2. Use CSS to render <space> tag with white-space: pre-wrap;
-     ```css
     space {
         whitespace: pre-wrap;
     }
-     ```
   3. `&nbsp;` : space
   4. `&ensp;` : 2 space
   5. `&emsp;` : 4 space

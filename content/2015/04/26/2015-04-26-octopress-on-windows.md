@@ -24,7 +24,7 @@ Windows 7
 
 - Download and install rubyinstaller.exe
 
-  [rubyinstaller](http://rubyinstaller.org/downloads/)
+<sp>[rubyinstaller](http://rubyinstaller.org/downloads/)</sp>
   
   I picked up ruby-2.1.4(x64) to install   
   
