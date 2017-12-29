@@ -4,13 +4,16 @@ from __future__ import unicode_literals
 
 AUTHOR = u'rickhau'
 SITENAME = u'\u96a8\u610f\u96dc\u8a18 (Casual Notes)'
-SITEURL = 'http://rickhau.github.io'
+SITEURL = 'https://rickhau.github.io'
 
 PATH = 'content'
+DATE_FORMATS = {
+    'zh_TW': '%Y-%m-%d %H:%M:%S'
+}
 
 TIMEZONE = 'Asia/Taipei'
-
 DEFAULT_LANG = u'zh'
+LOCALE = ('en_US')
 
 # Feed generation is usually not desired when developing
 FEED_ALL_ATOM = None
@@ -94,3 +97,23 @@ SEARCH_BOX = True
 
 # THEME: blue-penguin
 # https://github.com/jody-frankowski/blue-penguin
+# all defaults to True.
+DISPLAY_HEADER = True
+DISPLAY_FOOTER = True
+DISPLAY_HOME   = True
+DISPLAY_MENU   = True
+# provided as examples, they make ‘clean’ urls. used by MENU_INTERNAL_PAGES.
+HOME_URL = 'index'
+HOME_SAVE_AS = 'index.html'
+
+# use those if you want pelican standard pages to appear in your menu
+MENU_INTERNAL_PAGES = (
+    ('HOME', HOME_URL, HOME_SAVE_AS),
+    ('Archives', ARTICLE_URL, ARTICLE_SAVE_AS)
+)
+
+# additional menu items
+MENUITEMS = (
+    ('GitHub' 'https://github.com/rickhau'),
+    ('Linux Kernel', 'https://www.kernel.org'),
+)
