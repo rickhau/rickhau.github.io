@@ -16,9 +16,9 @@ Markdwon Cheatsheet
 
 ```
   1. Use "pre" html tag to preserve the format w/o rendering
-  2. Use CSS to render <div> tag with white-space: pre-wrap;
+  2. Use CSS to render <sp> tag with white-space: pre-wrap;
      ```css
-    div {
+    sp {
         whitespace: pre-wrap;
     }
      ```
