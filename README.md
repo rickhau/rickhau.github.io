@@ -14,9 +14,15 @@ Markdwon Cheatsheet
 - [PDF](https://guides.github.com/pdfs/markdown-cheatsheet-online.pdf)
 - [Mastering Markdown](https://guides.github.com/features/mastering-markdown/)
 
-<pre>
-  1. Using "pre" html tag to preserve the format
-  2. `&nbsp;` : space
-  3. `&ensp;` : 2 space
-  4. `&emsp;` : 4 space
-</pre>
+```
+  1. Use "pre" html tag to preserve the format w/o rendering
+  2. Use CSS to render <div> tag with white-space: pre-wrap;
+     ```css
+    div {
+        whitespace: pre-wrap;
+    }
+     ```
+  3. `&nbsp;` : space
+  4. `&ensp;` : 2 space
+  5. `&emsp;` : 4 space
+```
