@@ -164,9 +164,3 @@ Windows 7
 ```
 
 #### HAPPY WRITING!!!! #####
-
-<sp>
- One Space
-  Two Space
-    Four Space
-</sp>

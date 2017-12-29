@@ -340,7 +340,3 @@ footer p { margin: 0; }
 .right { float: right; }
 
 .clear { clear: both; }
-
-sp {
-	white-space: pre-wrap;
-}
