@@ -14,7 +14,6 @@ REM Put your image(test.jpg) under content/images folder
 REM The path will be as following
 REM ![Test Image](https://github.com/rickhau/rickhau.github.io/raw/master/images/test.png)
 
-
 REM Use "source" branch to create new post under "content" folder
 REM Commit and push back to remote origin/source branch
 REM Travis CI will run the Makefile 
