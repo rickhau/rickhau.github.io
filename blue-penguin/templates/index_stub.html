@@ -15,7 +15,8 @@
                 
 
                 {% if article.summary %}
-                {{ article.summary|truncate(200) }}
+                <!-- truncate(100): show the summary of that page on the home page -->
+                {{ article.summary|truncate(100) }}  
                 {% endif %}
                 <div class="clear"></div>
 
