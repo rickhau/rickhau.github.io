@@ -33,9 +33,9 @@
                     {% endif %}
                 </div>
 		{% if articles_page %}
-		<a href="{{ SITEURL }}/{{ article.url }}#disqus_thread">Click to read and post comments</a>
-		{% else %}
-        {% endif %}
+        <a href="{{ SITEURL }}/{{ article.url }}#disqus_thread">Click to read and post comments</a>
         <!-- Add addsense.html  -->
         {% include "adsense.html" %}
+		{% else %}
+        {% endif %}
             </article>
