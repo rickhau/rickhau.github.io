@@ -4,6 +4,7 @@
 # Put your image(test.jpg) under content/images folder
 # The path will be as following
 # ![Test Image](https://github.com/rickhau/rickhau.github.io/raw/master/images/test.png)
+# Be careful your image filename (ex: test.png vs test.PNG)
 
 import sys
 from datetime import datetime
