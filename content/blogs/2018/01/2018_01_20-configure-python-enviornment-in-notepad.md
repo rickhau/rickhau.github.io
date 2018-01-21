@@ -5,7 +5,9 @@ category: Editor
 comments: True
 slug: configure-python-enviornment-in-notepad++
 ---
-在 Notepad++ 編輯器中建立 Python 的執行環境  
+如何在 Notepad++ 編輯器中建立 Python 的執行環境  
+
+透過以下簡單的步驟就可以快速的完成。 
 
 STEP1: 按 F5 或是選擇選單中的 執行 (如下圖)  
 
