@@ -85,20 +85,19 @@
             {% if DISPLAY_FOOTER or DISPLAY_FOOTER is not defined %}
             <div class="clear"></div>
             <footer>
-                <p>
-                 {% if FEED_ALL_ATOM %}
-                &middot;
-                <a href="{{ SITEURL }}/{{ FEED_ALL_ATOM }}" rel="alternate">Atom Feed</a>
-                 {% endif %}
-                 {% if FEED_ALL_RSS %}
-                &middot;
-                <a href="{{ SITEURL }}/{{ FEED_ALL_RSS }}" rel="alternate">Rss Feed</a>
-                 {% endif %}
                  <p>
                      Copyright by rickhau
                      &middot;
-                     This work is licensed under a 
+                     licensed @
                      <a href="http://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>
+					&middot;
+					{% if FEED_ALL_ATOM %}
+					<a href="{{ SITEURL }}/{{ FEED_ALL_ATOM }}" rel="alternate">Atom Feed</a>
+					{% endif %}
+					{% if FEED_ALL_RSS %}
+					&middot;
+					<a href="{{ SITEURL }}/{{ FEED_ALL_RSS }}" rel="alternate">Rss Feed</a>
+					{% endif %}					 
                  </p>
             </footer>
             {% endif %}
