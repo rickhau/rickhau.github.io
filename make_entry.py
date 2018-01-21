@@ -33,7 +33,7 @@ def make_entry(title):
                                 hour=today.hour,
                                 minute=today.minute,
                                 slug=slug)
-    target_folder = 'content/{}/{:02d}/{:02d}'.format(today.year, today.month, today.day)
+    target_folder = 'content/{:04d}/{:02d}/{:02d}'.format(today.year, today.month, today.day)
     print("{}".format(target_folder))
     if not os.path.exists(target_folder):
         try:
