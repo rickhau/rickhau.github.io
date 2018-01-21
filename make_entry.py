@@ -12,7 +12,7 @@ import os
 
 TEMPLATE = """
 ---
-{title}
+title: {title}
 date: {year}-{month:02d}-{day} {hour}:{minute:02d}
 category:
 comments: True
@@ -34,7 +34,7 @@ def make_entry(title):
                                 hour=today.hour,
                                 minute=today.minute,
                                 slug=slug)
-    target_folder = 'content/{:04d}/{:02d}'.format(today.year, today.month)
+    target_folder = 'content/blogs/{:04d}/{:02d}'.format(today.year, today.month)
     print("{}".format(target_folder))
     if not os.path.exists(target_folder):
         try:
