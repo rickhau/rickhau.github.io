@@ -1,5 +1,5 @@
 ---
-Configure Python Enviornment in Notepad++
+title: Configure Python Enviornment in Notepad++
 date: 2018-01-20 23:44
 category: Editor
 comments: True
