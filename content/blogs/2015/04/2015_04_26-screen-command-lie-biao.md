@@ -71,6 +71,6 @@ Usage:
   - istrip/-istrip: Clear/keep the eight bit in each received byte    
 
 
-#### Reference link
+#### @icon-info-circle Reference link
   >- http://www.cyberciti.biz/faq/unix-linux-apple-osx-bsd-screen-set-baud-rate    
   >- http://www.cyberciti.biz/tips/linux-screen-command-howto.html    
