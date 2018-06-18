@@ -23,23 +23,30 @@ slug: setup-python-3.6.4-+-pyqt5-+-pyinstaller-3.3.1-environment
 
 # STEPS
 
-1. 下載 [Python 3.6.4(64-bit)](https://www.python.org/downloads/release/python-364/)  
-2. 安裝 Python 3.6.4 到 `C:\Python36`  
-3. 將 `C:\Python36` 和 `C:\Python36\Scripts` 路徑加到系統環境變數 **PATH**  
-4. 安裝 PyQt5 (PyQt5-5.10.1)  
+STEP1: 下載 [Python 3.6.4(64-bit)](https://www.python.org/downloads/release/python-364/)  
+
+STEP2: 安裝 Python 3.6.4 到 `C:\Python36`  
+
+STEP3: 將 `C:\Python36` 和 `C:\Python36\Scripts` 路徑加到系統環境變數 **PATH**  
+
+STEP4: 安裝 PyQt5 (PyQt5-5.10.1)  
+
 ```DOS
 python.exe -m pip install PyQt5
 ```  
 PyQt5 安裝檔位置在 @ `C:\Python36\Lib\site-packages\PyQt5`  
 
-5. 安裝 PyQt5 的工具像是 Qt Designer 
+STEP5: 安裝 PyQt5 的工具像是 Qt Designer  
+
 ```DOS
 python.exe -m pip install PyQt5-tools  
 ```  
 工具會安裝在 @ `C:\Python36\Lib\site-packages\pyqt5-tools`  
 
-6. 將 `C:\Python36\Lib\site-packages\pyqt5-tools` 加到系統環境變數 **PATH** 裡
-7. 最後安裝 PyInstaller(3.3.1)，一樣也是透過 pip install command
+STEP6: 將 `C:\Python36\Lib\site-packages\pyqt5-tools` 加到系統環境變數 **PATH** 裡  
+
+STEP7: 最後安裝 PyInstaller(3.3.1)，一樣也是透過 pip install command  
+
 ```DOS
 python.exe -m pip install PyInstaller
 或
@@ -48,7 +55,7 @@ python.exe -m pip install PyInstaller==3.3.1
 
 # Package and Verification  
 
-1. 寫一個 PyQt5 的 GUI 小程式  
+a. 寫一個 PyQt5 的 GUI 小程式  
 
 ```python
 #-*- coding: utf-8 -*-
@@ -72,21 +79,21 @@ if __name__ == "__main__":
     sys.exit(app.exec_())
 ```  
 
-2. 把上面的程式打包成 EXE 看能不能單獨執行  
+b. 把上面的程式打包成 EXE 看能不能單獨執行  
 
 ```DOS
 PyInstaller -F -w PyQt5Sample.py --noupx
 ```  
 
-3. 執行完會出現下面的檔案與目錄  
+c. 執行完會出現下面的檔案與目錄  
 
 ![Output Directory](https://github.com/rickhau/rickhau.github.io/raw/master/images/20180618/PyQt5_01.png)  
 
-4. 打包的 EXE 檔會放在 dist 目錄裡  
+d. 打包的 EXE 檔會放在 dist 目錄裡  
 
 ![EXE](https://github.com/rickhau/rickhau.github.io/raw/master/images/20180618/PyQt5_02.png)  
 
-5. Double Click 執行檔  
+e. Double Click 執行檔  
 
 ![Output](https://github.com/rickhau/rickhau.github.io/raw/master/images/20180618/PyQt5_03.png)  
 
