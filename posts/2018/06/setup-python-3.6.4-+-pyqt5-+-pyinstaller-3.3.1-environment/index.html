@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+        <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>隨意雜記 (Casual Notes) | Setup Python 3.6.4 + PyQt5 + PyInstaller 3.3.1&nbsp;Environment</title>
+    <link rel="shortcut icon" type="image/png" href="https://rickhau.github.io/favicon.png">
+    <link rel="shortcut icon" type="image/x-icon" href="https://rickhau.github.io/favicon.ico">
+    <link href="https://rickhau.github.io/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="隨意雜記 (Casual Notes) Full Atom Feed" />
+    <link href="https://rickhau.github.io/feeds/python.atom.xml" type="application/atom+xml" rel="alternate" title="隨意雜記 (Casual Notes) Categories Atom Feed" />
+    <link rel="stylesheet" href="https://rickhau.github.io/theme/css/screen.css" type="text/css" />
+    <link rel="stylesheet" href="https://rickhau.github.io/theme/css/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="https://rickhau.github.io/theme/css/print.css" type="text/css" media="print" />
+    <meta name="generator" content="Pelican" />
+    <meta name="description" content="" />
+    <meta name="author" content="rickhau" />
+
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="https://rickhau.github.io">Home</a></li>
+            </ul>
+        </nav>
+        <div class="header_box">
+            <h1><a href="https://rickhau.github.io">隨意雜記 (Casual Notes)</a></h1>
+        </div>
+    </header>
+    <div id="wrapper">
+        <div id="content">            <h4 class="date">Jun 18, 2018</h4>
+
+            <article class="post">
+                <h2 class="title">
+                    <a href="https://rickhau.github.io/posts/2018/06/setup-python-3.6.4-+-pyqt5-+-pyinstaller-3.3.1-environment" rel="bookmark" title="Permanent Link to &quot;Setup Python 3.6.4 + PyQt5 + PyInstaller 3.3.1&nbsp;Environment&quot;">Setup Python 3.6.4 + PyQt5 + PyInstaller 3.3.1&nbsp;Environment</a>
+                </h2>
+
+                
+                
+
+                <h1>Background</h1>
+<p>我原本的<code>PyQt</code>開發環境是  </p>
+<ol>
+<li>Python&nbsp;3.4.3(64-bit)  </li>
+<li>PyQt 4.11.4  (Note: PyQt GPLv4.11.4 for Python&nbsp;v3.4(x64))  </li>
+<li>PyInstaller 3.1.1&nbsp;(安裝在C:)  </li>
+</ol>
+<p>最近剛好想試著把 <code>Python</code> 升級到 <em>3.6.4 (64-bit)</em> 就想順道把 <code>PyQt</code>升級到 5 以上<br>&nbsp;就順便試一下新環境的打包是不是可行，也把一些過程記錄下來。  </p>
+<ol>
+<li>Python&nbsp;3.6.4(64bit)  </li>
+<li>PyQt&nbsp;5.10.1  </li>
+<li>PyInstaller&nbsp;3.3.1  </li>
+</ol>
+<h1><span class="caps">STEPS</span></h1>
+<p><span class="caps">STEP1</span>: 下載 <a href="https://www.python.org/downloads/release/python-364/">Python&nbsp;3.6.4(64-bit)</a>  </p>
+<p><span class="caps">STEP2</span>: 安裝 Python 3.6.4 到 <code>C:\Python36</code>  </p>
+<p><span class="caps">STEP3</span>: 將 <code>C:\Python36</code> 和 <code>C:\Python36\Scripts</code> 路徑加到系統環境變數 <strong><span class="caps">PATH</span></strong>  </p>
+<p><span class="caps">STEP4</span>: 安裝 PyQt5&nbsp;(PyQt5-5.10.1)  </p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="highlight"><pre><span></span>python.exe -m pip install PyQt5
+</pre></div>
+</td></tr></table>
+
+<p>PyQt5 安裝檔位置在 @ <code>C:\Python36\Lib\site-packages\PyQt5</code>  </p>
+<p><span class="caps">STEP5</span>: 安裝 PyQt5 的工具像是 Qt&nbsp;Designer  </p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="highlight"><pre><span></span>python.exe -m pip install PyQt5-tools  
+</pre></div>
+</td></tr></table>
+
+<p>工具會安裝在 @ <code>C:\Python36\Lib\site-packages\pyqt5-tools</code>  </p>
+<p><span class="caps">STEP6</span>: 將 <code>C:\Python36\Lib\site-packages\pyqt5-tools</code> 加到系統環境變數 <strong><span class="caps">PATH</span></strong>&nbsp;裡  </p>
+<p><span class="caps">STEP7</span>: 最後安裝 PyInstaller(3.3.1)，一樣也是透過 pip install&nbsp;command  </p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="highlight"><pre><span></span>python.exe -m pip install PyInstaller
+</pre></div>
+</td></tr></table>
+
+<p>或是指定版號也可以  </p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="highlight"><pre><span></span>python.exe -m pip install PyInstaller==3.3.1
+</pre></div>
+</td></tr></table>
+
+<h1>Package and&nbsp;Verification</h1>
+<p>a. 寫一個 PyQt5 的 <span class="caps">GUI</span>&nbsp;小程式  </p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="c1">#-*- coding: utf-8 -*-</span>
+<span class="c1"># PyQt5Sample.py</span>
+
+<span class="kn">from</span> <span class="nn">PyQt5.QtWidgets</span> <span class="kn">import</span> <span class="n">QApplication</span><span class="p">,</span> <span class="n">QWidget</span>
+<span class="kn">from</span> <span class="nn">PyQt5.QtCore</span> <span class="kn">import</span> <span class="n">Qt</span>
+<span class="kn">import</span> <span class="nn">sys</span>
+
+<span class="k">class</span> <span class="nc">SampleGUI</span><span class="p">(</span><span class="n">QWidget</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">setWindowTitle</span><span class="p">(</span><span class="s1">&#39;PyQt5 GUI Application&#39;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">setGeometry</span><span class="p">(</span><span class="mi">500</span><span class="p">,</span> <span class="mi">500</span><span class="p">,</span> <span class="mi">500</span><span class="p">,</span> <span class="mi">500</span><span class="p">)</span>
+
+
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
+    <span class="n">app</span> <span class="o">=</span> <span class="n">QApplication</span><span class="p">(</span><span class="n">sys</span><span class="o">.</span><span class="n">argv</span><span class="p">)</span>
+    <span class="n">myapp</span> <span class="o">=</span> <span class="n">SampleGUI</span><span class="p">()</span>
+    <span class="n">myapp</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+    <span class="n">sys</span><span class="o">.</span><span class="n">exit</span><span class="p">(</span><span class="n">app</span><span class="o">.</span><span class="n">exec_</span><span class="p">())</span>
+</pre></div>
+</td></tr></table>
+
+<p>b. 把上面的程式打包成 <span class="caps">EXE</span>&nbsp;看能不能單獨執行  </p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="highlight"><pre><span></span>PyInstaller -F -w PyQt5Sample.py --noupx
+</pre></div>
+</td></tr></table>
+
+<p>c.&nbsp;執行完會出現下面的檔案與目錄  </p>
+<p><img alt="Output Directory" src="https://github.com/rickhau/rickhau.github.io/raw/master/images/20180618/PyQt5_01.png">  </p>
+<p>d. 打包的 <span class="caps">EXE</span> 檔會放在 dist&nbsp;目錄裡  </p>
+<p><img alt="EXE" src="https://github.com/rickhau/rickhau.github.io/raw/master/images/20180618/PyQt5_02.png">  </p>
+<p>e. Double Click&nbsp;執行檔  </p>
+<p><img alt="Output" src="https://github.com/rickhau/rickhau.github.io/raw/master/images/20180618/PyQt5_03.png">  </p>
+<blockquote>
+<p>Note:<br>
+若打包參數少了 <code>--noupx</code> 執行 <span class="caps">EXE</span> 會出現下面的 <em>Error</em><br>
+<img alt="ERROR" src="https://github.com/rickhau/rickhau.github.io/raw/master/images/20180618/PyQt5_LoadError.png">  </p>
+</blockquote>
+                <div class="clear"></div>
+
+                <div class="info">
+                    <a href="https://rickhau.github.io/posts/2018/06/setup-python-3.6.4-+-pyqt5-+-pyinstaller-3.3.1-environment">posted at 19:19</a>
+                    &nbsp;&middot;&nbsp;<a href="https://rickhau.github.io/category/python.html" rel="tag">Python</a>
+                </div>
+<div id="disqus_thread"></div>
+<script type="text/javascript">
+    var disqus_shortname = 'rickhau-github-io';
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+            </article>
+            <div class="clear"></div>
+            <footer>
+                 <p>
+                     Copyright by rickhau
+                     &middot;
+                     Licensed @
+                     <a href="http://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>
+					&middot;
+					<a href="https://rickhau.github.io/feeds/all.atom.xml" rel="alternate">Atom Feed</a>
+					 
+                 </p>
+            </footer>
+        </div>
+        <div class="clear"></div>
+    </div>
+<!-- Add addsense.html  -->
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<script>
+  (adsbygoogle = window.adsbygoogle || []).push({
+    google_ad_client: "ca-pub-7683780377655294",
+    enable_page_level_ads: true
+  });
+</script></body>
+</html>

@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+        <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>隨意雜記 (Casual Notes) | How to write your blog using Octopress +&nbsp;Github</title>
+    <link rel="shortcut icon" type="image/png" href="https://rickhau.github.io/favicon.png">
+    <link rel="shortcut icon" type="image/x-icon" href="https://rickhau.github.io/favicon.ico">
+    <link href="https://rickhau.github.io/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="隨意雜記 (Casual Notes) Full Atom Feed" />
+    <link href="https://rickhau.github.io/feeds/blog.atom.xml" type="application/atom+xml" rel="alternate" title="隨意雜記 (Casual Notes) Categories Atom Feed" />
+    <link rel="stylesheet" href="https://rickhau.github.io/theme/css/screen.css" type="text/css" />
+    <link rel="stylesheet" href="https://rickhau.github.io/theme/css/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="https://rickhau.github.io/theme/css/print.css" type="text/css" media="print" />
+    <meta name="generator" content="Pelican" />
+    <meta name="description" content="" />
+    <meta name="author" content="rickhau" />
+
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="https://rickhau.github.io">Home</a></li>
+            </ul>
+        </nav>
+        <div class="header_box">
+            <h1><a href="https://rickhau.github.io">隨意雜記 (Casual Notes)</a></h1>
+        </div>
+    </header>
+    <div id="wrapper">
+        <div id="content">            <h4 class="date">Apr 26, 2015</h4>
+
+            <article class="post">
+                <h2 class="title">
+                    <a href="https://rickhau.github.io/posts/2015/04/octopress-blog" rel="bookmark" title="Permanent Link to &quot;How to write your blog using Octopress +&nbsp;Github&quot;">How to write your blog using Octopress +&nbsp;Github</a>
+                </h2>
+
+                
+                
+
+                <h2>Environment</h2>
+<p>Mac <span class="caps">OS</span></p>
+<p><strong> <span class="caps">STEP</span> 1: Create your github account </strong>  <br>
+- Please register your github account  <br>
+- Create a repository name called <code>username.github.io</code>    </p>
+<p><strong> <span class="caps">STEP</span> 2: Install Octopress </strong>  <br>
+- Install <span class="caps">RVM</span> (Use <span class="caps">RVM</span> to install ruby&nbsp;later)     </p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="highlight"><pre><span></span>    curl -L https://get.rvm.io | bash -s stable --ruby
+</pre></div>
+</td></tr></table>
+
+<ul>
+<li>Install ruby and relative&nbsp;stuff</li>
+</ul>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6
+7</pre></div></td><td class="code"><div class="highlight"><pre><span></span>    $ rvm install 2.1.4 &amp;&amp; rvm use 2.1.4
+    $ git clone git://github.com/imathis/octopress.git octopress
+    $ cd octopress 
+    $ ruby --version
+    $ gem install bundler
+    $ bundle install
+    $ rake install
+</pre></div>
+</td></tr></table>
+
+<p><strong> <span class="caps">STEP</span> 3: Deploy to Github </strong>
+- Initialize your new github&nbsp;pages    </p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="highlight"><pre><span></span>    $ rake setup_github_pages
+</pre></div>
+</td></tr></table>
+
+<blockquote>
+<p>Input your Github page repository you created in step 1  <br>
+Ex: <code>git@github.com:rickhau/rickhau.github.io.git</code>   </p>
+</blockquote>
+<ul>
+<li>
+<p>Edit <code>_config.yml</code></p>
+<blockquote>
+<p>tailor this configuration file to your&nbsp;needs</p>
+</blockquote>
+</li>
+<li>
+<p>Deploy to&nbsp;github   </p>
+</li>
+</ul>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5</pre></div></td><td class="code"><div class="highlight"><pre><span></span>    $ rake generate
+    $ rake deploy
+    $ git add .
+    $ git commit -m &quot;Push octopress blog to Thegithub&quot;
+    $ git push -u origin source
+</pre></div>
+</td></tr></table>
+
+<p><strong> <span class="caps">STEP</span> 4: Write New&nbsp;Post </strong> </p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="highlight"><pre><span></span>    $ rake new_post[&quot;Your blog post title&quot;]
+</pre></div>
+</td></tr></table>
+
+<blockquote>
+<p>Then, it will create a markdown file under <code>source/_posts</code>.<br>
+Please edit this .markdown to write your new&nbsp;article  </p>
+</blockquote>
+<p><strong> <span class="caps">STEP</span> 5: Enable your Octopress to support table&nbsp;sytanx </strong></p>
+<ul>
+<li>Add data-table.css to <code>source/stylesheets</code>  </li>
+</ul>
+<blockquote>
+<p><a href="https://gist.githubusercontent.com/programus/1993032/raw/data-table.css">data-table.css</a>    </p>
+</blockquote>
+<ul>
+<li>Add the following informaiton into <code>source/_include/head.html</code>    </li>
+</ul>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="highlight"><pre><span></span>&lt;link href=&quot;/stylesheets/data-table.css&quot; media=&quot;screen, projection&quot; rel=&quot;stylesheet&quot; type=&quot;text/css&quot; /&gt;
+</pre></div>
+</td></tr></table>
+
+<p>Like&nbsp;this:    </p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="nt">&lt;head&gt;</span>
+...
+   <span class="nt">&lt;script</span> <span class="na">src=</span><span class="s">&quot;</span><span class="cp">{{</span> <span class="nv">root_url</span> <span class="cp">}}</span><span class="s">/javascripts/octopress.js&quot;</span> <span class="na">type=</span><span class="s">&quot;text/javascript&quot;</span><span class="nt">&gt;&lt;/script&gt;</span>
+   <span class="nt">&lt;link</span> <span class="na">href=</span><span class="s">&quot;/stylesheets/data-table.css&quot;</span> <span class="na">media=</span><span class="s">&quot;screen, projection&quot;</span> <span class="na">rel=</span><span class="s">&quot;stylesheet&quot;</span> <span class="na">type=</span><span class="s">&quot;text/css&quot;</span> <span class="nt">/&gt;</span>
+...
+<span class="nt">&lt;/head&gt;</span>     
+</pre></div>
+</td></tr></table>
+
+<p><strong> <span class="caps">STEP</span> 6: Publish your new&nbsp;post  </strong></p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4</pre></div></td><td class="code"><div class="highlight"><pre><span></span>    $ rake generate
+    $ rake preview  
+    # Check your post preview by `http://localhost:4000`
+    # Modify your post until done
+</pre></div>
+</td></tr></table>
+
+<ul>
+<li>Publish    </li>
+</ul>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2</pre></div></td><td class="code"><div class="highlight"><pre><span></span>    $ rake generate
+    $ rake deploy
+</pre></div>
+</td></tr></table>
+
+<ul>
+<li>Commit your source&nbsp;change</li>
+</ul>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3</pre></div></td><td class="code"><div class="highlight"><pre><span></span>    $ git add .
+    $ git commit -am &quot;Push message you&#39;d like to say&quot;
+    $ git push origin source
+</pre></div>
+</td></tr></table>
+
+<p>Reference links:  <br>
+- http://samwize.com/2012/09/11/how-to-setup-octopress-on-github-pages  <br>
+- http://samwize.com/2012/09/24/octopress-table-stylesheet  <br>
+- http://octopress.org/docs/deploying/github/  <br>
+- http://zerodie.github.io/blog/2012/01/19/octopress-github-pages  <br>
+- http://shaching.github.io/2014/06/25/how-to-install-octopress-blog-with-github  <br>
+-&nbsp;https://gist.github.com/benbalter/5555251</p>
+                <div class="clear"></div>
+
+                <div class="info">
+                    <a href="https://rickhau.github.io/posts/2015/04/octopress-blog">posted at 14:49</a>
+                    &nbsp;&middot;&nbsp;<a href="https://rickhau.github.io/category/blog.html" rel="tag">blog</a>
+                </div>
+<div id="disqus_thread"></div>
+<script type="text/javascript">
+    var disqus_shortname = 'rickhau-github-io';
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+            </article>
+            <div class="clear"></div>
+            <footer>
+                 <p>
+                     Copyright by rickhau
+                     &middot;
+                     Licensed @
+                     <a href="http://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>
+					&middot;
+					<a href="https://rickhau.github.io/feeds/all.atom.xml" rel="alternate">Atom Feed</a>
+					 
+                 </p>
+            </footer>
+        </div>
+        <div class="clear"></div>
+    </div>
+<!-- Add addsense.html  -->
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<script>
+  (adsbygoogle = window.adsbygoogle || []).push({
+    google_ad_client: "ca-pub-7683780377655294",
+    enable_page_level_ads: true
+  });
+</script></body>
+</html>

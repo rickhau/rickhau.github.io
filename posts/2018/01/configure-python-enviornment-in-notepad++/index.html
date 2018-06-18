@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+        <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>隨意雜記 (Casual Notes) | Configure Python Enviornment in&nbsp;Notepad++</title>
+    <link rel="shortcut icon" type="image/png" href="https://rickhau.github.io/favicon.png">
+    <link rel="shortcut icon" type="image/x-icon" href="https://rickhau.github.io/favicon.ico">
+    <link href="https://rickhau.github.io/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="隨意雜記 (Casual Notes) Full Atom Feed" />
+    <link href="https://rickhau.github.io/feeds/editor.atom.xml" type="application/atom+xml" rel="alternate" title="隨意雜記 (Casual Notes) Categories Atom Feed" />
+    <link rel="stylesheet" href="https://rickhau.github.io/theme/css/screen.css" type="text/css" />
+    <link rel="stylesheet" href="https://rickhau.github.io/theme/css/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="https://rickhau.github.io/theme/css/print.css" type="text/css" media="print" />
+    <meta name="generator" content="Pelican" />
+    <meta name="description" content="" />
+    <meta name="author" content="rickhau" />
+
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="https://rickhau.github.io">Home</a></li>
+            </ul>
+        </nav>
+        <div class="header_box">
+            <h1><a href="https://rickhau.github.io">隨意雜記 (Casual Notes)</a></h1>
+        </div>
+    </header>
+    <div id="wrapper">
+        <div id="content">            <h4 class="date">Jan 20, 2018</h4>
+
+            <article class="post">
+                <h2 class="title">
+                    <a href="https://rickhau.github.io/posts/2018/01/configure-python-enviornment-in-notepad++" rel="bookmark" title="Permanent Link to &quot;Configure Python Enviornment in&nbsp;Notepad++&quot;">Configure Python Enviornment in&nbsp;Notepad++</a>
+                </h2>
+
+                
+                
+
+                <p>如何在 Notepad++ 編輯器中建立 Python&nbsp;的執行環境  </p>
+<p>透過以下簡單的步驟就可以快速的完成。 </p>
+<p><span class="caps">STEP1</span>: 按 F5 或是選擇選單中的 執行&nbsp;(如下圖)  </p>
+<p><img alt="STEP1" src="https://github.com/rickhau/rickhau.github.io/raw/master/images/20180120/01.png">  </p>
+<p><span class="caps">STEP2</span>:&nbsp;接下來會跳出執行視窗會要求輸入要執行的程式  </p>
+<p>在這邊我設定了Python 3.4的安裝路徑 C:\Python34\python.exe<br>
+在加上參數&nbsp;&#8220;$(FULL_CURRENT_PATH)&#8221;  </p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="nf">C</span><span class="o">:</span>\<span class="n">Python</span>34\<span class="n">python</span>.<span class="n">exe</span> &quot;<span class="k">$(</span><span class="nv">FULL_CURRENT_PATH</span><span class="k">)</span>&quot;
+</pre></div>
+</td></tr></table>
+
+<p><img alt="STEP2" src="https://github.com/rickhau/rickhau.github.io/raw/master/images/20180120/02.png"></p>
+<p>輸入完選擇儲存</p>
+<p><span class="caps">STEP3</span>: 跳出 Shortcut 視窗後，輸入名稱 <code>Python</code> 和你想設定的熱鍵  </p>
+<p>在這邊的例子是用 <code>Ctrl + Shift + A</code></p>
+<p><img alt="STEP3" src="https://github.com/rickhau/rickhau.github.io/raw/master/images/20180120/03.png"></p>
+<p>選擇完畢後，選擇 <span class="caps">OK</span></p>
+<p><span class="caps">STEP4</span>: 你可以到執行下拉選單中看到你新增的 Python&nbsp;執行選項</p>
+<p><img alt="STEP4" src="https://github.com/rickhau/rickhau.github.io/raw/master/images/20180120/04.png"></p>
+<p><span class="caps">STEP5</span>: 接下來就動手寫個簡單的 <code>Hello</code>程式囉  </p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">hello</span><span class="p">(</span><span class="nb">str</span><span class="p">):</span>
+    <span class="k">print</span><span class="p">(</span><span class="s2">&quot;Hello, {}&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="nb">str</span><span class="p">))</span>
+
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
+    <span class="n">hello</span><span class="p">(</span><span class="s2">&quot;Notepad++&quot;</span><span class="p">)</span>
+    <span class="nb">input</span><span class="p">()</span> <span class="c1"># 這個是為了讓執行視不要馬上結束</span>
+</pre></div>
+</td></tr></table>
+
+<p><img alt="STEP5" src="https://github.com/rickhau/rickhau.github.io/raw/master/images/20180120/05.png"></p>
+<p><span class="caps">STEP6</span>:&nbsp;收工</p>
+                <div class="clear"></div>
+
+                <div class="info">
+                    <a href="https://rickhau.github.io/posts/2018/01/configure-python-enviornment-in-notepad++">posted at 23:44</a>
+                    &nbsp;&middot;&nbsp;<a href="https://rickhau.github.io/category/editor.html" rel="tag">Editor</a>
+                </div>
+<div id="disqus_thread"></div>
+<script type="text/javascript">
+    var disqus_shortname = 'rickhau-github-io';
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+            </article>
+            <div class="clear"></div>
+            <footer>
+                 <p>
+                     Copyright by rickhau
+                     &middot;
+                     Licensed @
+                     <a href="http://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>
+					&middot;
+					<a href="https://rickhau.github.io/feeds/all.atom.xml" rel="alternate">Atom Feed</a>
+					 
+                 </p>
+            </footer>
+        </div>
+        <div class="clear"></div>
+    </div>
+<!-- Add addsense.html  -->
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<script>
+  (adsbygoogle = window.adsbygoogle || []).push({
+    google_ad_client: "ca-pub-7683780377655294",
+    enable_page_level_ads: true
+  });
+</script></body>
+</html>

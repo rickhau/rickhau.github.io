@@ -1,0 +1,1051 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom"><title>隨意雜記 (Casual Notes)</title><link href="https://rickhau.github.io/" rel="alternate"></link><link href="https://rickhau.github.io/feeds/all.atom.xml" rel="self"></link><id>https://rickhau.github.io/</id><updated>2018-06-18T19:19:00+08:00</updated><entry><title>Setup Python 3.6.4 + PyQt5 + PyInstaller 3.3.1 Environment</title><link href="https://rickhau.github.io/posts/2018/06/setup-python-3.6.4-+-pyqt5-+-pyinstaller-3.3.1-environment" rel="alternate"></link><published>2018-06-18T19:19:00+08:00</published><updated>2018-06-18T19:19:00+08:00</updated><author><name>rickhau</name></author><id>tag:rickhau.github.io,2018-06-18:/posts/2018/06/setup-python-3.6.4-+-pyqt5-+-pyinstaller-3.3.1-environment</id><summary type="html">&lt;h1&gt;Background&lt;/h1&gt;
+&lt;p&gt;我原本的&lt;code&gt;PyQt&lt;/code&gt;開發環境是  &lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Python&amp;nbsp;3.4.3(64-bit)  &lt;/li&gt;
+&lt;li&gt;PyQt 4.11.4  (Note: PyQt GPLv4.11.4 for Python&amp;nbsp;v3.4(x64))  &lt;/li&gt;
+&lt;li&gt;PyInstaller 3.1.1&amp;nbsp;(安裝在C:)  &lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;最近剛好想試著把 &lt;code&gt;Python&lt;/code&gt; 升級到 &lt;em&gt;3.6.4 (64-bit)&lt;/em&gt; 就想順道把 &lt;code&gt;PyQt&lt;/code&gt;升級到 5 以上&lt;br&gt;&amp;nbsp;就順便試一下新環境的打包是不是可行，也把一些過程記錄下來。  &lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Python&amp;nbsp;3.6.4(64bit)  &lt;/li&gt;
+&lt;li&gt;PyQt&amp;nbsp;5.10 …&lt;/li&gt;&lt;/ol&gt;</summary><content type="html">&lt;h1&gt;Background&lt;/h1&gt;
+&lt;p&gt;我原本的&lt;code&gt;PyQt&lt;/code&gt;開發環境是  &lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Python&amp;nbsp;3.4.3(64-bit)  &lt;/li&gt;
+&lt;li&gt;PyQt 4.11.4  (Note: PyQt GPLv4.11.4 for Python&amp;nbsp;v3.4(x64))  &lt;/li&gt;
+&lt;li&gt;PyInstaller 3.1.1&amp;nbsp;(安裝在C:)  &lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;最近剛好想試著把 &lt;code&gt;Python&lt;/code&gt; 升級到 &lt;em&gt;3.6.4 (64-bit)&lt;/em&gt; 就想順道把 &lt;code&gt;PyQt&lt;/code&gt;升級到 5 以上&lt;br&gt;&amp;nbsp;就順便試一下新環境的打包是不是可行，也把一些過程記錄下來。  &lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Python&amp;nbsp;3.6.4(64bit)  &lt;/li&gt;
+&lt;li&gt;PyQt&amp;nbsp;5.10.1  &lt;/li&gt;
+&lt;li&gt;PyInstaller&amp;nbsp;3.3.1  &lt;/li&gt;
+&lt;/ol&gt;
+&lt;h1&gt;&lt;span class="caps"&gt;STEPS&lt;/span&gt;&lt;/h1&gt;
+&lt;p&gt;&lt;span class="caps"&gt;STEP1&lt;/span&gt;: 下載 &lt;a href="https://www.python.org/downloads/release/python-364/"&gt;Python&amp;nbsp;3.6.4(64-bit)&lt;/a&gt;  &lt;/p&gt;
+&lt;p&gt;&lt;span class="caps"&gt;STEP2&lt;/span&gt;: 安裝 Python 3.6.4 到 &lt;code&gt;C:\Python36&lt;/code&gt;  &lt;/p&gt;
+&lt;p&gt;&lt;span class="caps"&gt;STEP3&lt;/span&gt;: 將 &lt;code&gt;C:\Python36&lt;/code&gt; 和 &lt;code&gt;C:\Python36\Scripts&lt;/code&gt; 路徑加到系統環境變數 &lt;strong&gt;&lt;span class="caps"&gt;PATH&lt;/span&gt;&lt;/strong&gt;  &lt;/p&gt;
+&lt;p&gt;&lt;span class="caps"&gt;STEP4&lt;/span&gt;: 安裝 PyQt5&amp;nbsp;(PyQt5-5.10.1)  &lt;/p&gt;
+&lt;table class="highlighttable"&gt;&lt;tr&gt;&lt;td class="linenos"&gt;&lt;div class="linenodiv"&gt;&lt;pre&gt;1&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class="code"&gt;&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;python.exe -m pip install PyQt5
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+
+&lt;p&gt;PyQt5 安裝檔位置在 @ &lt;code&gt;C:\Python36\Lib\site-packages\PyQt5&lt;/code&gt;  &lt;/p&gt;
+&lt;p&gt;&lt;span class="caps"&gt;STEP5&lt;/span&gt;: 安裝 PyQt5 的工具像是 Qt&amp;nbsp;Designer  &lt;/p&gt;
+&lt;table class="highlighttable"&gt;&lt;tr&gt;&lt;td class="linenos"&gt;&lt;div class="linenodiv"&gt;&lt;pre&gt;1&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class="code"&gt;&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;python.exe -m pip install PyQt5-tools  
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+
+&lt;p&gt;工具會安裝在 @ &lt;code&gt;C:\Python36\Lib\site-packages\pyqt5-tools&lt;/code&gt;  &lt;/p&gt;
+&lt;p&gt;&lt;span class="caps"&gt;STEP6&lt;/span&gt;: 將 &lt;code&gt;C:\Python36\Lib\site-packages\pyqt5-tools&lt;/code&gt; 加到系統環境變數 &lt;strong&gt;&lt;span class="caps"&gt;PATH&lt;/span&gt;&lt;/strong&gt;&amp;nbsp;裡  &lt;/p&gt;
+&lt;p&gt;&lt;span class="caps"&gt;STEP7&lt;/span&gt;: 最後安裝 PyInstaller(3.3.1)，一樣也是透過 pip install&amp;nbsp;command  &lt;/p&gt;
+&lt;table class="highlighttable"&gt;&lt;tr&gt;&lt;td class="linenos"&gt;&lt;div class="linenodiv"&gt;&lt;pre&gt;1&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class="code"&gt;&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;python.exe -m pip install PyInstaller
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+
+&lt;p&gt;或是指定版號也可以  &lt;/p&gt;
+&lt;table class="highlighttable"&gt;&lt;tr&gt;&lt;td class="linenos"&gt;&lt;div class="linenodiv"&gt;&lt;pre&gt;1&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class="code"&gt;&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;python.exe -m pip install PyInstaller==3.3.1
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+
+&lt;h1&gt;Package and&amp;nbsp;Verification&lt;/h1&gt;
+&lt;p&gt;a. 寫一個 PyQt5 的 &lt;span class="caps"&gt;GUI&lt;/span&gt;&amp;nbsp;小程式  &lt;/p&gt;
+&lt;table class="highlighttable"&gt;&lt;tr&gt;&lt;td class="linenos"&gt;&lt;div class="linenodiv"&gt;&lt;pre&gt; 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class="code"&gt;&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="c1"&gt;#-*- coding: utf-8 -*-&lt;/span&gt;
+&lt;span class="c1"&gt;# PyQt5Sample.py&lt;/span&gt;
+
+&lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;PyQt5.QtWidgets&lt;/span&gt; &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="n"&gt;QApplication&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;QWidget&lt;/span&gt;
+&lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;PyQt5.QtCore&lt;/span&gt; &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="n"&gt;Qt&lt;/span&gt;
+&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;sys&lt;/span&gt;
+
+&lt;span class="k"&gt;class&lt;/span&gt; &lt;span class="nc"&gt;SampleGUI&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;QWidget&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+    &lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="fm"&gt;__init__&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+        &lt;span class="nb"&gt;super&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="fm"&gt;__init__&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
+        &lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;setWindowTitle&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;PyQt5 GUI Application&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+        &lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;setGeometry&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;500&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;500&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;500&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;500&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+
+
+&lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="vm"&gt;__name__&lt;/span&gt; &lt;span class="o"&gt;==&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;__main__&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+    &lt;span class="n"&gt;app&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;QApplication&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;sys&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;argv&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+    &lt;span class="n"&gt;myapp&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;SampleGUI&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
+    &lt;span class="n"&gt;myapp&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;show&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
+    &lt;span class="n"&gt;sys&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;exit&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;app&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;exec_&lt;/span&gt;&lt;span class="p"&gt;())&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+
+&lt;p&gt;b. 把上面的程式打包成 &lt;span class="caps"&gt;EXE&lt;/span&gt;&amp;nbsp;看能不能單獨執行  &lt;/p&gt;
+&lt;table class="highlighttable"&gt;&lt;tr&gt;&lt;td class="linenos"&gt;&lt;div class="linenodiv"&gt;&lt;pre&gt;1&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class="code"&gt;&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;PyInstaller -F -w PyQt5Sample.py --noupx
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+
+&lt;p&gt;c.&amp;nbsp;執行完會出現下面的檔案與目錄  &lt;/p&gt;
+&lt;p&gt;&lt;img alt="Output Directory" src="https://github.com/rickhau/rickhau.github.io/raw/master/images/20180618/PyQt5_01.png"&gt;  &lt;/p&gt;
+&lt;p&gt;d. 打包的 &lt;span class="caps"&gt;EXE&lt;/span&gt; 檔會放在 dist&amp;nbsp;目錄裡  &lt;/p&gt;
+&lt;p&gt;&lt;img alt="EXE" src="https://github.com/rickhau/rickhau.github.io/raw/master/images/20180618/PyQt5_02.png"&gt;  &lt;/p&gt;
+&lt;p&gt;e. Double Click&amp;nbsp;執行檔  &lt;/p&gt;
+&lt;p&gt;&lt;img alt="Output" src="https://github.com/rickhau/rickhau.github.io/raw/master/images/20180618/PyQt5_03.png"&gt;  &lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Note:&lt;br&gt;
+若打包參數少了 &lt;code&gt;--noupx&lt;/code&gt; 執行 &lt;span class="caps"&gt;EXE&lt;/span&gt; 會出現下面的 &lt;em&gt;Error&lt;/em&gt;&lt;br&gt;
+&lt;img alt="ERROR" src="https://github.com/rickhau/rickhau.github.io/raw/master/images/20180618/PyQt5_LoadError.png"&gt;  &lt;/p&gt;
+&lt;/blockquote&gt;</content></entry><entry><title>Use python to query man page on windows</title><link href="https://rickhau.github.io/posts/2018/05/use-python-to-query-man-page-on-windows" rel="alternate"></link><published>2018-05-05T16:30:00+08:00</published><updated>2018-05-05T16:30:00+08:00</updated><author><name>rickhau</name></author><id>tag:rickhau.github.io,2018-05-05:/posts/2018/05/use-python-to-query-man-page-on-windows</id><summary type="html">&lt;h1&gt;Background&lt;/h1&gt;
+&lt;p&gt;因為最近常常在使用Cmder看程式碼，但在Windows上面除非裝了&lt;span class="caps"&gt;WSL&lt;/span&gt;&lt;br&gt;
+不然要臨時想man某個function or library不是很方便&lt;br&gt;
+所以很快的就想說來爬個文看有沒有什麼快速的方式可以寫個小程式&lt;br&gt;&amp;nbsp;就能幫我做到這件事  &lt;/p&gt;
+&lt;h1&gt;Search&lt;/h1&gt;
+&lt;p&gt;Google了很久有找到幾個方式，不過比較方便的是透過curl和sed就可以達到&amp;nbsp;這樣的話只要去parse命令式參數就可以很快的搞定了&lt;/p&gt;
+&lt;table class="highlighttable"&gt;&lt;tr&gt;&lt;td class="linenos"&gt;&lt;div class="linenodiv"&gt;&lt;pre&gt;1&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class="code"&gt;&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;curl -v --silent &lt;span class="se"&gt;\&amp;quot;&lt;/span&gt;http://man.he.net/?topic&lt;span class="o"&gt;=&lt;/span&gt;&amp;lt;command&amp;gt;section&lt;span class="o"&gt;=&lt;/span&gt;all&lt;span class="se"&gt;\&amp;quot;&lt;/span&gt; &lt;span class="m"&gt;2&lt;/span&gt;&amp;gt;&lt;span class="p"&gt;&amp;amp;&lt;/span&gt;&lt;span class="m"&gt;1&lt;/span&gt; &lt;span class="p"&gt;|&lt;/span&gt; sed -n &lt;span class="se"&gt;\&amp;quot;&lt;/span&gt;/&amp;lt;PRE&amp;gt;/,/&amp;lt;&lt;span class="se"&gt;\/&lt;/span&gt;PRE&amp;gt;/p&lt;span class="se"&gt;\&amp;quot;&lt;/span&gt; &lt;span class="p"&gt;|&lt;/span&gt; more
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+
+&lt;h1&gt;Code&amp;nbsp;Snippet&lt;/h1&gt;
+&lt;p&gt;一開始先用了&lt;code&gt;Batch&lt;/code&gt;script去弄，但覺得要處理字串還是有點麻煩&lt;br&gt;
+想了一下還是用&lt;code&gt;Python&lt;/code&gt;來處理比較快，所以就很簡單的弄了二個版本&lt;/p&gt;
+&lt;table class="highlighttable"&gt;&lt;tr&gt;&lt;td class="linenos"&gt;&lt;div class="linenodiv"&gt;&lt;pre&gt; 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7 …&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;</summary><content type="html">&lt;h1&gt;Background&lt;/h1&gt;
+&lt;p&gt;因為最近常常在使用Cmder看程式碼，但在Windows上面除非裝了&lt;span class="caps"&gt;WSL&lt;/span&gt;&lt;br&gt;
+不然要臨時想man某個function or library不是很方便&lt;br&gt;
+所以很快的就想說來爬個文看有沒有什麼快速的方式可以寫個小程式&lt;br&gt;&amp;nbsp;就能幫我做到這件事  &lt;/p&gt;
+&lt;h1&gt;Search&lt;/h1&gt;
+&lt;p&gt;Google了很久有找到幾個方式，不過比較方便的是透過curl和sed就可以達到&amp;nbsp;這樣的話只要去parse命令式參數就可以很快的搞定了&lt;/p&gt;
+&lt;table class="highlighttable"&gt;&lt;tr&gt;&lt;td class="linenos"&gt;&lt;div class="linenodiv"&gt;&lt;pre&gt;1&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class="code"&gt;&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;curl -v --silent &lt;span class="se"&gt;\&amp;quot;&lt;/span&gt;http://man.he.net/?topic&lt;span class="o"&gt;=&lt;/span&gt;&amp;lt;command&amp;gt;section&lt;span class="o"&gt;=&lt;/span&gt;all&lt;span class="se"&gt;\&amp;quot;&lt;/span&gt; &lt;span class="m"&gt;2&lt;/span&gt;&amp;gt;&lt;span class="p"&gt;&amp;amp;&lt;/span&gt;&lt;span class="m"&gt;1&lt;/span&gt; &lt;span class="p"&gt;|&lt;/span&gt; sed -n &lt;span class="se"&gt;\&amp;quot;&lt;/span&gt;/&amp;lt;PRE&amp;gt;/,/&amp;lt;&lt;span class="se"&gt;\/&lt;/span&gt;PRE&amp;gt;/p&lt;span class="se"&gt;\&amp;quot;&lt;/span&gt; &lt;span class="p"&gt;|&lt;/span&gt; more
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+
+&lt;h1&gt;Code&amp;nbsp;Snippet&lt;/h1&gt;
+&lt;p&gt;一開始先用了&lt;code&gt;Batch&lt;/code&gt;script去弄，但覺得要處理字串還是有點麻煩&lt;br&gt;
+想了一下還是用&lt;code&gt;Python&lt;/code&gt;來處理比較快，所以就很簡單的弄了二個版本&lt;/p&gt;
+&lt;table class="highlighttable"&gt;&lt;tr&gt;&lt;td class="linenos"&gt;&lt;div class="linenodiv"&gt;&lt;pre&gt; 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class="code"&gt;&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;@echo off
+setlocal enabledelayedexpansion
+
+&lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;%1&amp;quot;&lt;/span&gt;&lt;span class="o"&gt;==&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;&amp;quot;&lt;/span&gt; goto usage
+&lt;span class="nb"&gt;echo&lt;/span&gt; Going to query &lt;span class="o"&gt;[&lt;/span&gt;%1&lt;span class="o"&gt;]&lt;/span&gt; &lt;span class="k"&gt;function&lt;/span&gt;
+
+curl -v --silent &lt;span class="s2"&gt;&amp;quot;http://man.he.net/?topic=%1&amp;amp;section=all&amp;quot;&lt;/span&gt; &lt;span class="m"&gt;2&lt;/span&gt;&amp;gt;&lt;span class="p"&gt;&amp;amp;&lt;/span&gt;&lt;span class="m"&gt;1&lt;/span&gt; &lt;span class="p"&gt;|&lt;/span&gt; sed -n &lt;span class="s2"&gt;&amp;quot;/&amp;lt;PRE&amp;gt;/,/&amp;lt;\/PRE&amp;gt;/p&amp;quot;&lt;/span&gt; &lt;span class="p"&gt;|&lt;/span&gt; more
+
+&lt;span class="k"&gt;if&lt;/span&gt; errorlevel &lt;span class="m"&gt;0&lt;/span&gt; goto end
+
+:usage
+@echo.
+@echo %~n0 usage:
+@echo -------------------------
+@echo &lt;span class="m"&gt;1&lt;/span&gt;&lt;span class="o"&gt;)&lt;/span&gt; man optarg
+@echo.
+@echo.
+@echo This will go to the following url &lt;span class="k"&gt;for&lt;/span&gt; man query.
+@echo &lt;span class="s2"&gt;&amp;quot;http://man.he.net/?topic=&amp;lt;command_name&amp;gt;&amp;amp;section=all&amp;quot;&lt;/span&gt;
+@echo.
+
+:end
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+
+&lt;p&gt;最後還是用Python寫了一個很小的程式，順手把&lt;code&gt;man&lt;/code&gt;page的數字定義也查了一下&lt;br&gt;
+這樣在查的時候可以看要查哪一個section&lt;br&gt;
+雖然還是有一些網頁的html tag不過可以滿足我很快想查找資訊的目的&amp;nbsp;當然也可以把程式寫成去找網頁，不過這樣就要多開視窗覺得麻煩  &lt;/p&gt;
+&lt;table class="highlighttable"&gt;&lt;tr&gt;&lt;td class="linenos"&gt;&lt;div class="linenodiv"&gt;&lt;pre&gt; 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class="code"&gt;&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="c1"&gt;# man.py&lt;/span&gt;
+&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;sys&lt;/span&gt;
+
+&lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;usage&lt;/span&gt;&lt;span class="p"&gt;():&lt;/span&gt;
+    &lt;span class="n"&gt;page_num_help&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;&amp;quot;&amp;quot;&lt;/span&gt;
+&lt;span class="s2"&gt;    1     Executable programs or shell commands&lt;/span&gt;
+&lt;span class="s2"&gt;    2     System calls (functions provided by the kernel)&lt;/span&gt;
+&lt;span class="s2"&gt;    3     Library calls (functions within program libraries)&lt;/span&gt;
+&lt;span class="s2"&gt;    4     Special files (usually found in /dev)&lt;/span&gt;
+&lt;span class="s2"&gt;    5     File formats and conventions eg /etc/passwd&lt;/span&gt;
+&lt;span class="s2"&gt;    6     Games&lt;/span&gt;
+&lt;span class="s2"&gt;    7     Miscellaneous  (including  macro  packages and conventions), e.g. man(7), groff(7)&lt;/span&gt;
+&lt;span class="s2"&gt;    8     System administration commands (usually only for root)&lt;/span&gt;
+&lt;span class="s2"&gt;    9     Kernel routines&lt;/span&gt;
+
+&lt;span class="s2"&gt;    1) man &amp;lt;command&amp;gt;&lt;/span&gt;
+&lt;span class="s2"&gt;    2) man &amp;lt;1-9&amp;gt; &amp;lt;command&amp;gt;&lt;/span&gt;
+&lt;span class="s2"&gt;    Ex:&lt;/span&gt;
+&lt;span class="s2"&gt;       man optarg&lt;/span&gt;
+&lt;span class="s2"&gt;       man 2 open&lt;/span&gt;
+&lt;span class="s2"&gt;       man 3 fopen&lt;/span&gt;
+&lt;span class="s2"&gt;    &amp;quot;&amp;quot;&amp;quot;&lt;/span&gt;
+    &lt;span class="k"&gt;print&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;page_num_help&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+
+
+&lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;call_man&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;cmd&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;section&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;all&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+    &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;os&lt;/span&gt;
+    &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="n"&gt;section&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;lower&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt; &lt;span class="o"&gt;!=&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;all&amp;#39;&lt;/span&gt; &lt;span class="ow"&gt;and&lt;/span&gt; &lt;span class="n"&gt;section&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;isnumeric&lt;/span&gt;&lt;span class="p"&gt;():&lt;/span&gt;
+        &lt;span class="n"&gt;section&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="nb"&gt;int&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;section&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+        &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="mi"&gt;1&lt;/span&gt; &lt;span class="o"&gt;&amp;lt;=&lt;/span&gt; &lt;span class="n"&gt;section&lt;/span&gt; &lt;span class="o"&gt;&amp;lt;=&lt;/span&gt; &lt;span class="mi"&gt;9&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+            &lt;span class="n"&gt;os&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;system&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;curl -v --silent &lt;/span&gt;&lt;span class="se"&gt;\&amp;quot;&lt;/span&gt;&lt;span class="s2"&gt;http://man.he.net/?topic={0}&amp;amp;section={1}&lt;/span&gt;&lt;span class="se"&gt;\&amp;quot;&lt;/span&gt;&lt;span class="s2"&gt; 2&amp;gt;&amp;amp;1 | sed -n &lt;/span&gt;&lt;span class="se"&gt;\&amp;quot;&lt;/span&gt;&lt;span class="s2"&gt;/&amp;lt;PRE&amp;gt;/,/&amp;lt;\/PRE&amp;gt;/p&lt;/span&gt;&lt;span class="se"&gt;\&amp;quot;&lt;/span&gt;&lt;span class="s2"&gt; | more&amp;quot;&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;format&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;cmd&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;section&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
+    &lt;span class="k"&gt;else&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+        &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="n"&gt;cmd&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+            &lt;span class="n"&gt;os&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;system&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;curl -v --silent &lt;/span&gt;&lt;span class="se"&gt;\&amp;quot;&lt;/span&gt;&lt;span class="s2"&gt;http://man.he.net/?topic={0}&amp;amp;section={1}&lt;/span&gt;&lt;span class="se"&gt;\&amp;quot;&lt;/span&gt;&lt;span class="s2"&gt; 2&amp;gt;&amp;amp;1 | sed -n &lt;/span&gt;&lt;span class="se"&gt;\&amp;quot;&lt;/span&gt;&lt;span class="s2"&gt;/&amp;lt;PRE&amp;gt;/,/&amp;lt;\/PRE&amp;gt;/p&lt;/span&gt;&lt;span class="se"&gt;\&amp;quot;&lt;/span&gt;&lt;span class="s2"&gt; | more&amp;quot;&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;format&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;cmd&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;section&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
+
+&lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;main&lt;/span&gt;&lt;span class="p"&gt;():&lt;/span&gt;
+    &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="nb"&gt;len&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;sys&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;argv&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="o"&gt;==&lt;/span&gt; &lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;  &lt;span class="c1"&gt;# man &amp;lt;name&amp;gt;&lt;/span&gt;
+        &lt;span class="n"&gt;command&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;sys&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;argv&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
+        &lt;span class="n"&gt;call_man&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;command&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;all&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+    &lt;span class="k"&gt;elif&lt;/span&gt; &lt;span class="nb"&gt;len&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;sys&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;argv&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="o"&gt;==&lt;/span&gt; &lt;span class="mi"&gt;3&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;  &lt;span class="c1"&gt;# man 3 open&lt;/span&gt;
+        &lt;span class="n"&gt;section&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;sys&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;argv&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;   &lt;span class="c1"&gt;# section = 1~9 and all&lt;/span&gt;
+        &lt;span class="n"&gt;command&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;sys&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;argv&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;   &lt;span class="c1"&gt;# commmand = open&lt;/span&gt;
+        &lt;span class="n"&gt;call_man&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;command&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;section&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+    &lt;span class="k"&gt;else&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+        &lt;span class="n"&gt;usage&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
+
+
+&lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="vm"&gt;__name__&lt;/span&gt; &lt;span class="o"&gt;==&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;__main__&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+    &lt;span class="n"&gt;main&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+
+&lt;h1&gt;結果圖&lt;/h1&gt;
+&lt;p&gt;最後長這樣  &lt;/p&gt;
+&lt;p&gt;&lt;img alt="Output" src="https://github.com/rickhau/rickhau.github.io/raw/master/images/20180505/man_cmder.gif"&gt;&lt;/p&gt;
+&lt;p&gt;收工&lt;/p&gt;</content></entry><entry><title>Configure Python Enviornment in Notepad++</title><link href="https://rickhau.github.io/posts/2018/01/configure-python-enviornment-in-notepad++" rel="alternate"></link><published>2018-01-20T23:44:00+08:00</published><updated>2018-01-20T23:44:00+08:00</updated><author><name>rickhau</name></author><id>tag:rickhau.github.io,2018-01-20:/posts/2018/01/configure-python-enviornment-in-notepad++</id><summary type="html">&lt;p&gt;如何在 Notepad++ 編輯器中建立 Python&amp;nbsp;的執行環境  &lt;/p&gt;
+&lt;p&gt;透過以下簡單的步驟就可以快速的完成。 &lt;/p&gt;
+&lt;p&gt;&lt;span class="caps"&gt;STEP1&lt;/span&gt;: 按 F5 或是選擇選單中的 執行&amp;nbsp;(如下圖)  &lt;/p&gt;
+&lt;p&gt;&lt;img alt="STEP1" src="https://github.com/rickhau/rickhau.github.io/raw/master/images/20180120/01.png"&gt;  &lt;/p&gt;
+&lt;p&gt;&lt;span class="caps"&gt;STEP2&lt;/span&gt;:&amp;nbsp;接下來會跳出執行視窗會要求輸入要執行的程式  &lt;/p&gt;
+&lt;p&gt;在這邊我設定了Python 3.4的安裝路徑 C:\Python34\python.exe&lt;br&gt;
+在加上參數&amp;nbsp;&amp;#8220;$(FULL_CURRENT_PATH)&amp;#8221;  &lt;/p&gt;
+&lt;table class="highlighttable"&gt;&lt;tr&gt;&lt;td class="linenos"&gt;&lt;div class="linenodiv"&gt;&lt;pre&gt;1&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class="code"&gt;&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="nf"&gt;C&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;\&lt;span class="n"&gt;Python&lt;/span&gt;34\&lt;span class="n"&gt;python&lt;/span&gt;.&lt;span class="n"&gt;exe&lt;/span&gt; &amp;quot;&lt;span class="k"&gt;$(&lt;/span&gt;&lt;span class="nv"&gt;FULL_CURRENT_PATH&lt;/span&gt;&lt;span class="k"&gt;)&lt;/span&gt;&amp;quot;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+
+&lt;p&gt;&lt;img alt="STEP2" src="https://github.com/rickhau/rickhau.github.io/raw/master/images/20180120/02.png"&gt;&lt;/p&gt;
+&lt;p&gt;輸入完選擇儲存&lt;/p&gt;
+&lt;p&gt;&lt;span class="caps"&gt;STEP3&lt;/span&gt;: 跳出 Shortcut 視窗後，輸入名稱 &lt;code&gt;Python&lt;/code&gt; 和你想設定的熱鍵  &lt;/p&gt;
+&lt;p&gt;在這邊的例子是用 &lt;code&gt;Ctrl + Shift + A&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="STEP3" src="https://github.com/rickhau/rickhau.github.io/raw/master/images/20180120/03.png"&gt;&lt;/p&gt;
+&lt;p&gt;選擇完畢後，選擇 &lt;span class="caps"&gt;OK&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span class="caps"&gt;STEP4&lt;/span&gt;: 你可以到執行下拉選單中看到你新增的 Python&amp;nbsp;執行選項&lt;/p&gt;
+&lt;p&gt;&lt;img alt="STEP4" src="https://github.com/rickhau/rickhau.github.io/raw/master/images/20180120/04.png"&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span class="caps"&gt;STEP5 …&lt;/span&gt;&lt;/p&gt;</summary><content type="html">&lt;p&gt;如何在 Notepad++ 編輯器中建立 Python&amp;nbsp;的執行環境  &lt;/p&gt;
+&lt;p&gt;透過以下簡單的步驟就可以快速的完成。 &lt;/p&gt;
+&lt;p&gt;&lt;span class="caps"&gt;STEP1&lt;/span&gt;: 按 F5 或是選擇選單中的 執行&amp;nbsp;(如下圖)  &lt;/p&gt;
+&lt;p&gt;&lt;img alt="STEP1" src="https://github.com/rickhau/rickhau.github.io/raw/master/images/20180120/01.png"&gt;  &lt;/p&gt;
+&lt;p&gt;&lt;span class="caps"&gt;STEP2&lt;/span&gt;:&amp;nbsp;接下來會跳出執行視窗會要求輸入要執行的程式  &lt;/p&gt;
+&lt;p&gt;在這邊我設定了Python 3.4的安裝路徑 C:\Python34\python.exe&lt;br&gt;
+在加上參數&amp;nbsp;&amp;#8220;$(FULL_CURRENT_PATH)&amp;#8221;  &lt;/p&gt;
+&lt;table class="highlighttable"&gt;&lt;tr&gt;&lt;td class="linenos"&gt;&lt;div class="linenodiv"&gt;&lt;pre&gt;1&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class="code"&gt;&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="nf"&gt;C&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;\&lt;span class="n"&gt;Python&lt;/span&gt;34\&lt;span class="n"&gt;python&lt;/span&gt;.&lt;span class="n"&gt;exe&lt;/span&gt; &amp;quot;&lt;span class="k"&gt;$(&lt;/span&gt;&lt;span class="nv"&gt;FULL_CURRENT_PATH&lt;/span&gt;&lt;span class="k"&gt;)&lt;/span&gt;&amp;quot;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+
+&lt;p&gt;&lt;img alt="STEP2" src="https://github.com/rickhau/rickhau.github.io/raw/master/images/20180120/02.png"&gt;&lt;/p&gt;
+&lt;p&gt;輸入完選擇儲存&lt;/p&gt;
+&lt;p&gt;&lt;span class="caps"&gt;STEP3&lt;/span&gt;: 跳出 Shortcut 視窗後，輸入名稱 &lt;code&gt;Python&lt;/code&gt; 和你想設定的熱鍵  &lt;/p&gt;
+&lt;p&gt;在這邊的例子是用 &lt;code&gt;Ctrl + Shift + A&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="STEP3" src="https://github.com/rickhau/rickhau.github.io/raw/master/images/20180120/03.png"&gt;&lt;/p&gt;
+&lt;p&gt;選擇完畢後，選擇 &lt;span class="caps"&gt;OK&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span class="caps"&gt;STEP4&lt;/span&gt;: 你可以到執行下拉選單中看到你新增的 Python&amp;nbsp;執行選項&lt;/p&gt;
+&lt;p&gt;&lt;img alt="STEP4" src="https://github.com/rickhau/rickhau.github.io/raw/master/images/20180120/04.png"&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span class="caps"&gt;STEP5&lt;/span&gt;: 接下來就動手寫個簡單的 &lt;code&gt;Hello&lt;/code&gt;程式囉  &lt;/p&gt;
+&lt;table class="highlighttable"&gt;&lt;tr&gt;&lt;td class="linenos"&gt;&lt;div class="linenodiv"&gt;&lt;pre&gt;1
+2
+3
+4
+5
+6&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class="code"&gt;&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;hello&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;str&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+    &lt;span class="k"&gt;print&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;Hello, {}&amp;quot;&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;format&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;str&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
+
+&lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="vm"&gt;__name__&lt;/span&gt; &lt;span class="o"&gt;==&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;__main__&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+    &lt;span class="n"&gt;hello&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;Notepad++&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+    &lt;span class="nb"&gt;input&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt; &lt;span class="c1"&gt;# 這個是為了讓執行視不要馬上結束&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+
+&lt;p&gt;&lt;img alt="STEP5" src="https://github.com/rickhau/rickhau.github.io/raw/master/images/20180120/05.png"&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span class="caps"&gt;STEP6&lt;/span&gt;:&amp;nbsp;收工&lt;/p&gt;</content></entry><entry><title>Install libnfs-python on Fedora 20</title><link href="https://rickhau.github.io/posts/2015/05/libnfs-python" rel="alternate"></link><published>2015-05-08T23:10:51+08:00</published><updated>2015-05-08T23:10:51+08:00</updated><author><name>rickhau</name></author><id>tag:rickhau.github.io,2015-05-08:/posts/2015/05/libnfs-python</id><summary type="html">&lt;h3&gt;0 -&amp;nbsp;Pre-requisite&lt;/h3&gt;
+&lt;p&gt;Before you start to install the libnfs-python package, you need to install the following packages. Otherwise, you might encounter some errors while running ./bootstrap on&amp;nbsp;Fedora&lt;/p&gt;
+&lt;table class="highlighttable"&gt;&lt;tr&gt;&lt;td class="linenos"&gt;&lt;div class="linenodiv"&gt;&lt;pre&gt;1
+2
+3
+4
+5
+6&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class="code"&gt;&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;$ sudo yum install python-devel*
+$ sudo yum install libtool*
+$ sudo yum install automake*
+$ sudo yum install autoconf …&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;</summary><content type="html">&lt;h3&gt;0 -&amp;nbsp;Pre-requisite&lt;/h3&gt;
+&lt;p&gt;Before you start to install the libnfs-python package, you need to install the following packages. Otherwise, you might encounter some errors while running ./bootstrap on&amp;nbsp;Fedora&lt;/p&gt;
+&lt;table class="highlighttable"&gt;&lt;tr&gt;&lt;td class="linenos"&gt;&lt;div class="linenodiv"&gt;&lt;pre&gt;1
+2
+3
+4
+5
+6&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class="code"&gt;&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;$ sudo yum install python-devel*
+$ sudo yum install libtool*
+$ sudo yum install automake*
+$ sudo yum install autoconf*
+$ sudo yum install aclocal*      &lt;span class="c1"&gt;# This can be ignored&lt;/span&gt;
+$ sudo yum install autoheader*   &lt;span class="c1"&gt;# This can be ignored&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+
+&lt;h3&gt;1 - Install libnfs&amp;nbsp;package/library&lt;/h3&gt;
+&lt;p&gt;You have to install the libnfs package/library which libnfs-python needs.
+libnfs-python relies on the libnfs library to support &lt;span class="caps"&gt;NFS&lt;/span&gt;&amp;nbsp;protocol.&lt;/p&gt;
+&lt;table class="highlighttable"&gt;&lt;tr&gt;&lt;td class="linenos"&gt;&lt;div class="linenodiv"&gt;&lt;pre&gt; 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class="code"&gt;&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;$ wget https://github.com/sahlberg/libnfs/archive/libnfs-1.9.7.tar.gz
+$ tar -xzf libnfs-1.9.7.tar.gz
+$ &lt;span class="nb"&gt;cd&lt;/span&gt; libnfs-1.9.7
+$ ./bootstrap
+$ ./configure --prefix&lt;span class="o"&gt;=&lt;/span&gt;/usr
+$ make
+$ sudo make install
+$ su -c &lt;span class="s1"&gt;&amp;#39;echo /usr/local/lib &amp;gt; /etc/ld.so.conf.d/local-libs.conf&amp;#39;&lt;/span&gt;
+$ sudo ldconfig
+$ &lt;span class="nb"&gt;cd&lt;/span&gt; ..
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+
+&lt;h3&gt;2 - Install libnfs-python&amp;nbsp;package/library&lt;/h3&gt;
+&lt;p&gt;With libnfs library installed, you can start to install libnfs-python library&amp;nbsp;now.    &lt;/p&gt;
+&lt;p&gt;If you follow the &lt;span class="caps"&gt;README&lt;/span&gt; to install the package, you might not be able to use the libnfs-python module successfully after&amp;nbsp;installation. &lt;/p&gt;
+&lt;table class="highlighttable"&gt;&lt;tr&gt;&lt;td class="linenos"&gt;&lt;div class="linenodiv"&gt;&lt;pre&gt; 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class="code"&gt;&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;$ git clone https://github.com/sahlberg/libnfs-python.git
+$ sudo python setup.py install
+running install
+running bdist_egg
+running egg_info
+writing libnfs.egg-info/PKG-INFO
+writing top-level names to libnfs.egg-info/top_level.txt
+writing dependency_links to libnfs.egg-info/dependency_links.txt
+reading manifest file &lt;span class="s1"&gt;&amp;#39;libnfs.egg-info/SOURCES.txt&amp;#39;&lt;/span&gt;
+reading manifest template &lt;span class="s1"&gt;&amp;#39;MANIFEST.in&amp;#39;&lt;/span&gt;
+writing manifest file &lt;span class="s1"&gt;&amp;#39;libnfs.egg-info/SOURCES.txt&amp;#39;&lt;/span&gt;
+installing library code to build/bdist.linux-x86_64/egg
+running install_lib
+running build_py
+running build_ext
+creating build/bdist.linux-x86_64/egg
+creating build/bdist.linux-x86_64/egg/libnfs
+copying build/lib.linux-x86_64-2.7/libnfs/__init__.py -&amp;gt; build/bdist.linux-x86_64/egg/libnfs
+copying build/lib.linux-x86_64-2.7/libnfs/_libnfs.so -&amp;gt; build/bdist.linux-x86_64/egg/libnfs
+copying build/lib.linux-x86_64-2.7/libnfs/libnfs.py -&amp;gt; build/bdist.linux-x86_64/egg/libnfs
+byte-compiling build/bdist.linux-x86_64/egg/libnfs/__init__.py to __init__.pyc
+byte-compiling build/bdist.linux-x86_64/egg/libnfs/libnfs.py to libnfs.pyc
+creating stub loader &lt;span class="k"&gt;for&lt;/span&gt; libnfs/_libnfs.so
+byte-compiling build/bdist.linux-x86_64/egg/libnfs/_libnfs.py to _libnfs.pyc
+creating build/bdist.linux-x86_64/egg/EGG-INFO
+copying libnfs.egg-info/PKG-INFO -&amp;gt; build/bdist.linux-x86_64/egg/EGG-INFO
+copying libnfs.egg-info/SOURCES.txt -&amp;gt; build/bdist.linux-x86_64/egg/EGG-INFO
+copying libnfs.egg-info/dependency_links.txt -&amp;gt; build/bdist.linux-x86_64/egg/EGG-INFO
+copying libnfs.egg-info/top_level.txt -&amp;gt; build/bdist.linux-x86_64/egg/EGG-INFO
+writing build/bdist.linux-x86_64/egg/EGG-INFO/native_libs.txt
+zip_safe flag not set&lt;span class="p"&gt;;&lt;/span&gt; analyzing archive contents...
+libnfs.libnfs: module references __file__
+creating &lt;span class="s1"&gt;&amp;#39;dist/libnfs-1.0_1-py2.7-linux-x86_64.egg&amp;#39;&lt;/span&gt; and adding &lt;span class="s1"&gt;&amp;#39;build/bdist.linux-x86_64/egg&amp;#39;&lt;/span&gt; to it
+removing &lt;span class="s1"&gt;&amp;#39;build/bdist.linux-x86_64/egg&amp;#39;&lt;/span&gt; &lt;span class="o"&gt;(&lt;/span&gt;and everything under it&lt;span class="o"&gt;)&lt;/span&gt;
+Processing libnfs-1.0_1-py2.7-linux-x86_64.egg
+removing &lt;span class="s1"&gt;&amp;#39;/usr/lib64/python2.7/site-packages/libnfs-1.0_1-py2.7-linux-x86_64.egg&amp;#39;&lt;/span&gt; &lt;span class="o"&gt;(&lt;/span&gt;and everything under it&lt;span class="o"&gt;)&lt;/span&gt;
+creating /usr/lib64/python2.7/site-packages/libnfs-1.0_1-py2.7-linux-x86_64.egg
+Extracting libnfs-1.0_1-py2.7-linux-x86_64.egg to /usr/lib64/python2.7/site-packages
+libnfs &lt;span class="m"&gt;1&lt;/span&gt;.0-1 is already the active version in easy-install.pth
+
+Installed /usr/lib64/python2.7/site-packages/libnfs-1.0_1-py2.7-linux-x86_64.egg
+Processing dependencies &lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="nv"&gt;libnfs&lt;/span&gt;&lt;span class="o"&gt;==&lt;/span&gt;&lt;span class="m"&gt;1&lt;/span&gt;.0-1
+Finished processing dependencies &lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="nv"&gt;libnfs&lt;/span&gt;&lt;span class="o"&gt;==&lt;/span&gt;&lt;span class="m"&gt;1&lt;/span&gt;.0-1
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+
+&lt;p&gt;You can try &lt;code&gt;import libnfs&lt;/code&gt; to see if you hit any&amp;nbsp;error.&lt;/p&gt;
+&lt;table class="highlighttable"&gt;&lt;tr&gt;&lt;td class="linenos"&gt;&lt;div class="linenodiv"&gt;&lt;pre&gt; 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class="code"&gt;&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;Python&lt;/span&gt; &lt;span class="mf"&gt;2.7&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="mi"&gt;5&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;default&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;Nov&lt;/span&gt;  &lt;span class="mi"&gt;3&lt;/span&gt; &lt;span class="mi"&gt;2014&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;14&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="mi"&gt;26&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="mi"&gt;24&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="n"&gt;GCC&lt;/span&gt; &lt;span class="mf"&gt;4.8&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="mi"&gt;3&lt;/span&gt; &lt;span class="mi"&gt;20140911&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;Red&lt;/span&gt; &lt;span class="n"&gt;Hat&lt;/span&gt; &lt;span class="mf"&gt;4.8&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="mi"&gt;3&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="mi"&gt;7&lt;/span&gt;&lt;span class="p"&gt;)]&lt;/span&gt; &lt;span class="n"&gt;on&lt;/span&gt; &lt;span class="n"&gt;linux2&lt;/span&gt;
+&lt;span class="n"&gt;Type&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;help&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;copyright&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;credits&amp;quot;&lt;/span&gt; &lt;span class="ow"&gt;or&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;license&amp;quot;&lt;/span&gt; &lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="n"&gt;more&lt;/span&gt; &lt;span class="n"&gt;information&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;
+&lt;span class="o"&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;libnfs&lt;/span&gt;
+&lt;span class="n"&gt;Traceback&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;most&lt;/span&gt; &lt;span class="n"&gt;recent&lt;/span&gt; &lt;span class="n"&gt;call&lt;/span&gt; &lt;span class="n"&gt;last&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+  &lt;span class="n"&gt;File&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;&amp;lt;stdin&amp;gt;&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;line&lt;/span&gt; &lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="ow"&gt;in&lt;/span&gt; &lt;span class="o"&gt;&amp;lt;&lt;/span&gt;&lt;span class="n"&gt;module&lt;/span&gt;&lt;span class="o"&gt;&amp;gt;&lt;/span&gt;
+  &lt;span class="n"&gt;File&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;libnfs.py&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;line&lt;/span&gt; &lt;span class="mi"&gt;28&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="ow"&gt;in&lt;/span&gt; &lt;span class="o"&gt;&amp;lt;&lt;/span&gt;&lt;span class="n"&gt;module&lt;/span&gt;&lt;span class="o"&gt;&amp;gt;&lt;/span&gt;
+    &lt;span class="n"&gt;_libnfs&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;swig_import_helper&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
+  &lt;span class="n"&gt;File&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;libnfs.py&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;line&lt;/span&gt; &lt;span class="mi"&gt;20&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="ow"&gt;in&lt;/span&gt; &lt;span class="n"&gt;swig_import_helper&lt;/span&gt;
+    &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;_libnfs&lt;/span&gt;
+&lt;span class="ne"&gt;ImportError&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="n"&gt;No&lt;/span&gt; &lt;span class="n"&gt;module&lt;/span&gt; &lt;span class="n"&gt;named&lt;/span&gt; &lt;span class="n"&gt;_libnfs&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+
+&lt;p&gt;If you run into the same ImportError like me, it needs to call the library which needs to be compiled under &lt;code&gt;libnfs-python/libnfs&lt;/code&gt;.    &lt;/p&gt;
+&lt;p&gt;So, Go to [/home/fitbranded/libnfs-python/libnfs] and run &lt;code&gt;make&lt;/code&gt;   &lt;/p&gt;
+&lt;table class="highlighttable"&gt;&lt;tr&gt;&lt;td class="linenos"&gt;&lt;div class="linenodiv"&gt;&lt;pre&gt;1
+2&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class="code"&gt;&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;$ &lt;span class="nb"&gt;cd&lt;/span&gt; libnfs-python/libnfs
+$ make
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+
+&lt;p&gt;Then, re-run the python to import libnfs and test &lt;span class="caps"&gt;NFS&lt;/span&gt;&amp;nbsp;service.&lt;/p&gt;
+&lt;table class="highlighttable"&gt;&lt;tr&gt;&lt;td class="linenos"&gt;&lt;div class="linenodiv"&gt;&lt;pre&gt;1
+2
+3
+4
+5
+6&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class="code"&gt;&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;libnfs&lt;/span&gt;
+&lt;span class="n"&gt;nfs&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;libnfs&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;NFS&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;nfs://127.0.0.1/data/tmp/&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="n"&gt;a&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;nfs&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;open&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;/foo-test&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;mode&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;w+&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="n"&gt;a&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;write&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;Test string&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="n"&gt;a&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;close&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
+&lt;span class="k"&gt;print&lt;/span&gt; &lt;span class="n"&gt;nfs&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;open&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;/foo-test&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;mode&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;r&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;read&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+
+&lt;p&gt;Congratulations!!! You can enjoy this powerful &lt;span class="caps"&gt;NFS&lt;/span&gt; python&amp;nbsp;library.&lt;/p&gt;
+&lt;h3&gt;&lt;span class="caps"&gt;APPENDIX&lt;/span&gt;&lt;/h3&gt;
+&lt;p&gt;1) Compile older libnfs&amp;nbsp;library&lt;/p&gt;
+&lt;p&gt;In the beginning, I did not install the latest libnfs package. I ran into some issue while doing the&amp;nbsp;compilation. &lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Need to add &lt;code&gt;-I/home/fitbranded/include&lt;/code&gt; to&amp;nbsp;Makefile&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;table class="highlighttable"&gt;&lt;tr&gt;&lt;td class="linenos"&gt;&lt;div class="linenodiv"&gt;&lt;pre&gt;1&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class="code"&gt;&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;  &lt;span class="nv"&gt;INCLUDE&lt;/span&gt;    &lt;span class="o"&gt;=&lt;/span&gt; -I/usr/include -I/home/fitbranded/include
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+
+&lt;p&gt;&lt;strong&gt;Note:&lt;/strong&gt;   &lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Please run the &lt;code&gt;make clean&lt;/code&gt; before &lt;code&gt;make&lt;/code&gt; again!  &lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;2) Tells setup.py where to include the library for &lt;code&gt;libnfs-python&lt;/code&gt; package&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Edit setup.py and add one more include&amp;nbsp;file&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;table class="highlighttable"&gt;&lt;tr&gt;&lt;td class="linenos"&gt;&lt;div class="linenodiv"&gt;&lt;pre&gt;1
+2
+3
+4
+5&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class="code"&gt;&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;_libnfs&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;Extension&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;name&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;libnfs._libnfs&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+                   &lt;span class="n"&gt;sources&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;libnfs/libnfs_wrap.c&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;],&lt;/span&gt;
+                   &lt;span class="n"&gt;libraries&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;nfs&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;],&lt;/span&gt;
+                   &lt;span class="n"&gt;include_dirs&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;/home/fitbranded/include&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;],&lt;/span&gt;    &lt;span class="c1"&gt;# Add this one&lt;/span&gt;
+&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+
+&lt;p&gt;3) &lt;span class="caps"&gt;GNU&lt;/span&gt;&amp;nbsp;Autotools&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;libnfs packages requires &lt;span class="caps"&gt;GNU&lt;/span&gt; Autotools. If you want to know more about it, you can refer to the following&amp;nbsp;resources.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://bbs.archlinux.org/viewtopic.php?id=161452"&gt;ArchLinux&lt;/a&gt;    &lt;/li&gt;
+&lt;li&gt;&lt;a href="http://kodi.wiki/view/HOW-TO:Compile_Kodi_for_Linux_on_Fedora_Red_Hat_Enterprise_Linux_CentOS"&gt;Compile Kodi on&amp;nbsp;Fedora&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;table class="highlighttable"&gt;&lt;tr&gt;&lt;td class="linenos"&gt;&lt;div class="linenodiv"&gt;&lt;pre&gt;1
+2&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class="code"&gt;&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;$ sudo pacman -S pkg-config xorg-server-devel libtool automake
+$ libtoolize --force
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+
+&lt;p&gt;Consider adding AC_CONFIG_MACRO_DIR([m4]) to configure.ac and re-run libtoolize&amp;nbsp;&amp;#8212;force.    &lt;/p&gt;
+&lt;table class="highlighttable"&gt;&lt;tr&gt;&lt;td class="linenos"&gt;&lt;div class="linenodiv"&gt;&lt;pre&gt;1
+2
+3
+4
+5
+6&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class="code"&gt;&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;$ vim configure.ac
+$ libtoolize --force
+$ aclocal
+$ autoheader
+$ automake --force-missing --add-missing
+$ autoconf
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+
+&lt;p&gt;Reference  &lt;br&gt;
+1) &lt;a href="https://github.com/sahlberg/libnfs-python/issues/1"&gt;Discussion with Author&lt;/a&gt;  &lt;br&gt;
+2) &lt;a href="https://asciinema.org/a/19474"&gt;Step-by-Step Video&lt;/a&gt; &lt;br&gt;
+3) &lt;a href="https://docs.python.org/2/extending/building.html"&gt;Python&amp;nbsp;Build&lt;/a&gt;&lt;/p&gt;</content></entry><entry><title>Octopress on Windows</title><link href="https://rickhau.github.io/posts/2015/04/octopress-windows" rel="alternate"></link><published>2015-04-26T17:18:10+08:00</published><updated>2015-04-26T17:18:10+08:00</updated><author><name>rickhau</name></author><id>tag:rickhau.github.io,2015-04-26:/posts/2015/04/octopress-windows</id><summary type="html">&lt;h2&gt;Environment&lt;/h2&gt;
+&lt;p&gt;Windows&amp;nbsp;7&lt;/p&gt;
+&lt;h3&gt;Pre-requisite&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;This article is to setup my Windows 7 environment to write blog&amp;nbsp;posts    &lt;/li&gt;
+&lt;li&gt;Use octopress environment pushed by&amp;nbsp;MacOS&lt;/li&gt;
+&lt;li&gt;You have python 2.7 installed on your Windows&amp;nbsp;7&lt;/li&gt;
+&lt;li&gt;Remaining taks on Windows&amp;nbsp;7:&lt;/li&gt;
+&lt;li&gt;Install&amp;nbsp;RubyInstaller    &lt;/li&gt;
+&lt;li&gt;Clone git repository&amp;nbsp;:octocat:    &lt;/li&gt;
+&lt;li&gt;Configure and continue the&amp;nbsp;post    &lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;Configure …&lt;/h3&gt;</summary><content type="html">&lt;h2&gt;Environment&lt;/h2&gt;
+&lt;p&gt;Windows&amp;nbsp;7&lt;/p&gt;
+&lt;h3&gt;Pre-requisite&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;This article is to setup my Windows 7 environment to write blog&amp;nbsp;posts    &lt;/li&gt;
+&lt;li&gt;Use octopress environment pushed by&amp;nbsp;MacOS&lt;/li&gt;
+&lt;li&gt;You have python 2.7 installed on your Windows&amp;nbsp;7&lt;/li&gt;
+&lt;li&gt;Remaining taks on Windows&amp;nbsp;7:&lt;/li&gt;
+&lt;li&gt;Install&amp;nbsp;RubyInstaller    &lt;/li&gt;
+&lt;li&gt;Clone git repository&amp;nbsp;:octocat:    &lt;/li&gt;
+&lt;li&gt;Configure and continue the&amp;nbsp;post    &lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;Configure&amp;nbsp;environment&lt;/h3&gt;
+&lt;h4&gt;&lt;span class="caps"&gt;STEP&lt;/span&gt; 1: Install&amp;nbsp;RubyInstaller&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;Download and install&amp;nbsp;rubyinstaller.exe  &lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&lt;a href="http://rubyinstaller.org/downloads/"&gt;rubyinstaller&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;I picked up ruby-2.1.4(x64) to&amp;nbsp;install  &lt;/p&gt;
+&lt;p&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&lt;a href="http://dl.bintray.com/oneclick/rubyinstaller/rubyinstaller-2.1.4-x64.exe"&gt;2.1.4(x64)&lt;/a&gt;   &lt;/p&gt;
+&lt;h4&gt;&lt;span class="caps"&gt;STEP&lt;/span&gt; 2: Install Ruby Development&amp;nbsp;Kit&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;Download and install &lt;code&gt;DevKit-mingw64-64-4.7.2-20130224-1432-sfx&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;I installed Ruby 2.1.4(x64), so the development kit I have to use&amp;nbsp;is:    &lt;/p&gt;
+&lt;p&gt;&lt;a href="http://dl.bintray.com/oneclick/rubyinstaller/DevKit-mingw64-64-4.7.2-20130224-1432-sfx.exe"&gt;For use with Ruby 2.0 and 2.1 (x64 - 64bits&amp;nbsp;only)&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;I extract to &lt;code&gt;C:\Ruby21-Devkit&lt;/code&gt; where my ruby was installed under &lt;code&gt;C:\Ruby21-x64&lt;/code&gt;&lt;/p&gt;
+&lt;h4&gt;&lt;span class="caps"&gt;STEP&lt;/span&gt; 3: Create ruby&amp;nbsp;config.yml&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;Open your windows&amp;nbsp;terminal &lt;/li&gt;
+&lt;/ul&gt;
+&lt;table class="highlighttable"&gt;&lt;tr&gt;&lt;td class="linenos"&gt;&lt;div class="linenodiv"&gt;&lt;pre&gt;1
+2
+3&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class="code"&gt;&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;   &amp;gt; cd C:\Ruby21-Devkit    
+   &amp;gt; ruby dk.rb init
+   # This will generate a config.yml
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Edit config.yml to add where you install the&amp;nbsp;ruby&lt;/li&gt;
+&lt;/ul&gt;
+&lt;table class="highlighttable"&gt;&lt;tr&gt;&lt;td class="linenos"&gt;&lt;div class="linenodiv"&gt;&lt;pre&gt;1
+2&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class="code"&gt;&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;    ---
+    - C:/Ruby21-x64
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Install&amp;nbsp;it&lt;/li&gt;
+&lt;/ul&gt;
+&lt;table class="highlighttable"&gt;&lt;tr&gt;&lt;td class="linenos"&gt;&lt;div class="linenodiv"&gt;&lt;pre&gt;1&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class="code"&gt;&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;    &amp;gt; ruby dk.rb install
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+
+&lt;h4&gt;&lt;span class="caps"&gt;STEP&lt;/span&gt; 4: Update&amp;nbsp;gem&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;Run the following&amp;nbsp;command:&lt;/li&gt;
+&lt;/ul&gt;
+&lt;table class="highlighttable"&gt;&lt;tr&gt;&lt;td class="linenos"&gt;&lt;div class="linenodiv"&gt;&lt;pre&gt;1&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class="code"&gt;&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;    &amp;gt; gem update --system
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+
+&lt;p&gt;Then, you will see the following&amp;nbsp;messages:&lt;/p&gt;
+&lt;table class="highlighttable"&gt;&lt;tr&gt;&lt;td class="linenos"&gt;&lt;div class="linenodiv"&gt;&lt;pre&gt;1&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class="code"&gt;&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;    SSL_connect returned=1 errno=0 state=SSLv3 read server certificate B: certificate verify failed
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Solve the &lt;span class="caps"&gt;SSL&lt;/span&gt;&amp;nbsp;issue    &lt;/li&gt;
+&lt;/ul&gt;
+&lt;table class="highlighttable"&gt;&lt;tr&gt;&lt;td class="linenos"&gt;&lt;div class="linenodiv"&gt;&lt;pre&gt;1
+2&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class="code"&gt;&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;    # To get what gem version you have installed
+   &amp;gt; gem --version
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+
+&lt;p&gt;1) Download RubyGems based on the gem version you have&amp;nbsp;installed. &lt;/p&gt;
+&lt;p&gt;Picked up 2.2.x due to my system reports 2.2.2  &lt;br&gt;
+   * &lt;a href="https://github.com/rubygems/rubygems/releases/tag/v2.2.3"&gt;2.2.x&lt;/a&gt;    &lt;/p&gt;
+&lt;p&gt;Others:  &lt;br&gt;
+   * &lt;a href="https://github.com/rubygems/rubygems/releases/tag/v1.8.30"&gt;1.8.x&lt;/a&gt; &lt;br&gt;
+   * &lt;a href="https://github.com/rubygems/rubygems/releases/tag/v2.0.15"&gt;2.0.x&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;2) Run the following&amp;nbsp;commands:&lt;/p&gt;
+&lt;table class="highlighttable"&gt;&lt;tr&gt;&lt;td class="linenos"&gt;&lt;div class="linenodiv"&gt;&lt;pre&gt;1
+2
+3&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class="code"&gt;&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;    C:\&amp;gt;gem install --local C:\rubygems-update-1.8.30.gem
+    C:\&amp;gt;update_rubygems --no-ri --no-rdoc
+    C:\&amp;gt;gem uninstall rubygems-update -x
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+
+&lt;p&gt;Congratulations! &lt;/p&gt;
+&lt;p&gt;3) Now, let&amp;#8217;s update&amp;nbsp;gem  &lt;/p&gt;
+&lt;table class="highlighttable"&gt;&lt;tr&gt;&lt;td class="linenos"&gt;&lt;div class="linenodiv"&gt;&lt;pre&gt;1&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class="code"&gt;&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;     gem update --system
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+
+&lt;p&gt;Reference&amp;nbsp;link:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://gist.github.com/luislavena/f064211759ee0f806c88"&gt;&lt;span class="caps"&gt;SSL&lt;/span&gt;&amp;nbsp;issue&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/blockquote&gt;
+&lt;h4&gt;&lt;span class="caps"&gt;STEP&lt;/span&gt; 5: Clone your git&amp;nbsp;repository&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;Please git clone your &amp;#8220;source&amp;#8221; branch not &amp;#8220;master&amp;#8221; branch  &lt;br&gt;
+  You can configure your github page using &amp;#8220;source&amp;#8221; as the default&amp;nbsp;branch&lt;/li&gt;
+&lt;/ul&gt;
+&lt;table class="highlighttable"&gt;&lt;tr&gt;&lt;td class="linenos"&gt;&lt;div class="linenodiv"&gt;&lt;pre&gt;1
+2
+3
+4&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class="code"&gt;&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;    &amp;gt; git clone https://github.com/rickhau/rickhau.github.io.git
+    &amp;gt; cd rickhau.github.io
+    &amp;gt; gem install bundler
+    &amp;gt; bundle install
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Preview your existing&amp;nbsp;posts&lt;/li&gt;
+&lt;/ul&gt;
+&lt;table class="highlighttable"&gt;&lt;tr&gt;&lt;td class="linenos"&gt;&lt;div class="linenodiv"&gt;&lt;pre&gt;1&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class="code"&gt;&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;    &amp;gt; rake preview
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+
+&lt;p&gt;Go to http://localhost:4000 to browse your old&amp;nbsp;posts&lt;/p&gt;
+&lt;h4&gt;&lt;span class="caps"&gt;STEP&lt;/span&gt; 6: Write your new&amp;nbsp;post&lt;/h4&gt;
+&lt;table class="highlighttable"&gt;&lt;tr&gt;&lt;td class="linenos"&gt;&lt;div class="linenodiv"&gt;&lt;pre&gt;1&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class="code"&gt;&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;    &amp;gt; rake new_post[&amp;quot;Your new post title&amp;quot;]
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+
+&lt;p&gt;Go to &lt;code&gt;source\_posts\&lt;/code&gt; directory to edit your new markdown file for new&amp;nbsp;article.&lt;/p&gt;
+&lt;h4&gt;&lt;span class="caps"&gt;STEP&lt;/span&gt; 7: Configure the &lt;span class="caps"&gt;UTF&lt;/span&gt;-8&amp;nbsp;encoding&lt;/h4&gt;
+&lt;table class="highlighttable"&gt;&lt;tr&gt;&lt;td class="linenos"&gt;&lt;div class="linenodiv"&gt;&lt;pre&gt;1
+2&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class="code"&gt;&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;    set LC_ALL=zh_TW.UTF-8
+    set LANG=zh_TW.UTF-8
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Or you can write it in the .bat script to help you set the encoding&amp;nbsp;automatically&lt;/li&gt;
+&lt;/ul&gt;
+&lt;table class="highlighttable"&gt;&lt;tr&gt;&lt;td class="linenos"&gt;&lt;div class="linenodiv"&gt;&lt;pre&gt;1
+2
+3
+4
+5&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class="code"&gt;&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;    @echo off
+    set LC_ALL=zh_TW.UTF-8
+    set LANG=zh_TW.UTF-8
+    rake generate
+    rake preview
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+
+&lt;h4&gt;&lt;span class="caps"&gt;HAPPY&lt;/span&gt; &lt;span class="caps"&gt;WRITING&lt;/span&gt;!!!!&lt;/h4&gt;</content></entry><entry><title>How to write your blog using Octopress + Github</title><link href="https://rickhau.github.io/posts/2015/04/octopress-blog" rel="alternate"></link><published>2015-04-26T14:49:35+08:00</published><updated>2015-04-26T14:49:35+08:00</updated><author><name>rickhau</name></author><id>tag:rickhau.github.io,2015-04-26:/posts/2015/04/octopress-blog</id><summary type="html">&lt;h2&gt;Environment&lt;/h2&gt;
+&lt;p&gt;Mac &lt;span class="caps"&gt;OS&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt; &lt;span class="caps"&gt;STEP&lt;/span&gt; 1: Create your github account &lt;/strong&gt;  &lt;br&gt;
+- Please register your github account  &lt;br&gt;
+- Create a repository name called &lt;code&gt;username.github.io&lt;/code&gt;    &lt;/p&gt;
+&lt;p&gt;&lt;strong&gt; &lt;span class="caps"&gt;STEP&lt;/span&gt; 2: Install Octopress &lt;/strong&gt;  &lt;br&gt;
+- Install &lt;span class="caps"&gt;RVM&lt;/span&gt; (Use &lt;span class="caps"&gt;RVM&lt;/span&gt; to install ruby&amp;nbsp;later)     &lt;/p&gt;
+&lt;table class="highlighttable"&gt;&lt;tr&gt;&lt;td class="linenos"&gt;&lt;div class="linenodiv"&gt;&lt;pre&gt;1&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class="code"&gt;&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;    curl -L https://get.rvm.io | bash -s stable --ruby
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Install ruby and relative&amp;nbsp;stuff …&lt;/li&gt;&lt;/ul&gt;</summary><content type="html">&lt;h2&gt;Environment&lt;/h2&gt;
+&lt;p&gt;Mac &lt;span class="caps"&gt;OS&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt; &lt;span class="caps"&gt;STEP&lt;/span&gt; 1: Create your github account &lt;/strong&gt;  &lt;br&gt;
+- Please register your github account  &lt;br&gt;
+- Create a repository name called &lt;code&gt;username.github.io&lt;/code&gt;    &lt;/p&gt;
+&lt;p&gt;&lt;strong&gt; &lt;span class="caps"&gt;STEP&lt;/span&gt; 2: Install Octopress &lt;/strong&gt;  &lt;br&gt;
+- Install &lt;span class="caps"&gt;RVM&lt;/span&gt; (Use &lt;span class="caps"&gt;RVM&lt;/span&gt; to install ruby&amp;nbsp;later)     &lt;/p&gt;
+&lt;table class="highlighttable"&gt;&lt;tr&gt;&lt;td class="linenos"&gt;&lt;div class="linenodiv"&gt;&lt;pre&gt;1&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class="code"&gt;&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;    curl -L https://get.rvm.io | bash -s stable --ruby
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Install ruby and relative&amp;nbsp;stuff&lt;/li&gt;
+&lt;/ul&gt;
+&lt;table class="highlighttable"&gt;&lt;tr&gt;&lt;td class="linenos"&gt;&lt;div class="linenodiv"&gt;&lt;pre&gt;1
+2
+3
+4
+5
+6
+7&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class="code"&gt;&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;    $ rvm install 2.1.4 &amp;amp;&amp;amp; rvm use 2.1.4
+    $ git clone git://github.com/imathis/octopress.git octopress
+    $ cd octopress 
+    $ ruby --version
+    $ gem install bundler
+    $ bundle install
+    $ rake install
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+
+&lt;p&gt;&lt;strong&gt; &lt;span class="caps"&gt;STEP&lt;/span&gt; 3: Deploy to Github &lt;/strong&gt;
+- Initialize your new github&amp;nbsp;pages    &lt;/p&gt;
+&lt;table class="highlighttable"&gt;&lt;tr&gt;&lt;td class="linenos"&gt;&lt;div class="linenodiv"&gt;&lt;pre&gt;1&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class="code"&gt;&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;    $ rake setup_github_pages
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;Input your Github page repository you created in step 1  &lt;br&gt;
+Ex: &lt;code&gt;git@github.com:rickhau/rickhau.github.io.git&lt;/code&gt;   &lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Edit &lt;code&gt;_config.yml&lt;/code&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;tailor this configuration file to your&amp;nbsp;needs&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Deploy to&amp;nbsp;github   &lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;table class="highlighttable"&gt;&lt;tr&gt;&lt;td class="linenos"&gt;&lt;div class="linenodiv"&gt;&lt;pre&gt;1
+2
+3
+4
+5&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class="code"&gt;&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;    $ rake generate
+    $ rake deploy
+    $ git add .
+    $ git commit -m &amp;quot;Push octopress blog to Thegithub&amp;quot;
+    $ git push -u origin source
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+
+&lt;p&gt;&lt;strong&gt; &lt;span class="caps"&gt;STEP&lt;/span&gt; 4: Write New&amp;nbsp;Post &lt;/strong&gt; &lt;/p&gt;
+&lt;table class="highlighttable"&gt;&lt;tr&gt;&lt;td class="linenos"&gt;&lt;div class="linenodiv"&gt;&lt;pre&gt;1&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class="code"&gt;&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;    $ rake new_post[&amp;quot;Your blog post title&amp;quot;]
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;Then, it will create a markdown file under &lt;code&gt;source/_posts&lt;/code&gt;.&lt;br&gt;
+Please edit this .markdown to write your new&amp;nbsp;article  &lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;strong&gt; &lt;span class="caps"&gt;STEP&lt;/span&gt; 5: Enable your Octopress to support table&amp;nbsp;sytanx &lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Add data-table.css to &lt;code&gt;source/stylesheets&lt;/code&gt;  &lt;/li&gt;
+&lt;/ul&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;a href="https://gist.githubusercontent.com/programus/1993032/raw/data-table.css"&gt;data-table.css&lt;/a&gt;    &lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;ul&gt;
+&lt;li&gt;Add the following informaiton into &lt;code&gt;source/_include/head.html&lt;/code&gt;    &lt;/li&gt;
+&lt;/ul&gt;
+&lt;table class="highlighttable"&gt;&lt;tr&gt;&lt;td class="linenos"&gt;&lt;div class="linenodiv"&gt;&lt;pre&gt;1&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class="code"&gt;&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&amp;lt;link href=&amp;quot;/stylesheets/data-table.css&amp;quot; media=&amp;quot;screen, projection&amp;quot; rel=&amp;quot;stylesheet&amp;quot; type=&amp;quot;text/css&amp;quot; /&amp;gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+
+&lt;p&gt;Like&amp;nbsp;this:    &lt;/p&gt;
+&lt;table class="highlighttable"&gt;&lt;tr&gt;&lt;td class="linenos"&gt;&lt;div class="linenodiv"&gt;&lt;pre&gt;1
+2
+3
+4
+5
+6&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class="code"&gt;&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="nt"&gt;&amp;lt;head&amp;gt;&lt;/span&gt;
+...
+   &lt;span class="nt"&gt;&amp;lt;script&lt;/span&gt; &lt;span class="na"&gt;src=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;&lt;/span&gt;&lt;span class="cp"&gt;{{&lt;/span&gt; &lt;span class="nv"&gt;root_url&lt;/span&gt; &lt;span class="cp"&gt;}}&lt;/span&gt;&lt;span class="s"&gt;/javascripts/octopress.js&amp;quot;&lt;/span&gt; &lt;span class="na"&gt;type=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;text/javascript&amp;quot;&lt;/span&gt;&lt;span class="nt"&gt;&amp;gt;&amp;lt;/script&amp;gt;&lt;/span&gt;
+   &lt;span class="nt"&gt;&amp;lt;link&lt;/span&gt; &lt;span class="na"&gt;href=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;/stylesheets/data-table.css&amp;quot;&lt;/span&gt; &lt;span class="na"&gt;media=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;screen, projection&amp;quot;&lt;/span&gt; &lt;span class="na"&gt;rel=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;stylesheet&amp;quot;&lt;/span&gt; &lt;span class="na"&gt;type=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;text/css&amp;quot;&lt;/span&gt; &lt;span class="nt"&gt;/&amp;gt;&lt;/span&gt;
+...
+&lt;span class="nt"&gt;&amp;lt;/head&amp;gt;&lt;/span&gt;     
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+
+&lt;p&gt;&lt;strong&gt; &lt;span class="caps"&gt;STEP&lt;/span&gt; 6: Publish your new&amp;nbsp;post  &lt;/strong&gt;&lt;/p&gt;
+&lt;table class="highlighttable"&gt;&lt;tr&gt;&lt;td class="linenos"&gt;&lt;div class="linenodiv"&gt;&lt;pre&gt;1
+2
+3
+4&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class="code"&gt;&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;    $ rake generate
+    $ rake preview  
+    # Check your post preview by `http://localhost:4000`
+    # Modify your post until done
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Publish    &lt;/li&gt;
+&lt;/ul&gt;
+&lt;table class="highlighttable"&gt;&lt;tr&gt;&lt;td class="linenos"&gt;&lt;div class="linenodiv"&gt;&lt;pre&gt;1
+2&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class="code"&gt;&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;    $ rake generate
+    $ rake deploy
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Commit your source&amp;nbsp;change&lt;/li&gt;
+&lt;/ul&gt;
+&lt;table class="highlighttable"&gt;&lt;tr&gt;&lt;td class="linenos"&gt;&lt;div class="linenodiv"&gt;&lt;pre&gt;1
+2
+3&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class="code"&gt;&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;    $ git add .
+    $ git commit -am &amp;quot;Push message you&amp;#39;d like to say&amp;quot;
+    $ git push origin source
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+
+&lt;p&gt;Reference links:  &lt;br&gt;
+- http://samwize.com/2012/09/11/how-to-setup-octopress-on-github-pages  &lt;br&gt;
+- http://samwize.com/2012/09/24/octopress-table-stylesheet  &lt;br&gt;
+- http://octopress.org/docs/deploying/github/  &lt;br&gt;
+- http://zerodie.github.io/blog/2012/01/19/octopress-github-pages  &lt;br&gt;
+- http://shaching.github.io/2014/06/25/how-to-install-octopress-blog-with-github  &lt;br&gt;
+-&amp;nbsp;https://gist.github.com/benbalter/5555251&lt;/p&gt;</content></entry><entry><title>Screen command 列表</title><link href="https://rickhau.github.io/posts/2015/04/linux-screen" rel="alternate"></link><published>2015-04-26T12:58:45+08:00</published><updated>2015-04-26T12:58:45+08:00</updated><author><name>rickhau</name></author><id>tag:rickhau.github.io,2015-04-26:/posts/2015/04/linux-screen</id><summary type="html">&lt;h3&gt;Screen command usage &lt;span class="amp"&gt;&amp;amp;&lt;/span&gt; &lt;span class="caps"&gt;COM&lt;/span&gt;&amp;nbsp;port&lt;/h3&gt;
+&lt;h4&gt;Manipulate&amp;nbsp;Sessions&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;Open a screen&amp;nbsp;session    &lt;/li&gt;
+&lt;li&gt;cmd: &lt;strong&gt;screen&lt;/strong&gt;     &lt;/li&gt;
+&lt;li&gt;cmd: &lt;strong&gt;screen -S sessionName&lt;/strong&gt; (Note: screen -S&amp;nbsp;newSession)     &lt;/li&gt;
+&lt;li&gt;Create a new screen&amp;nbsp;session    &lt;/li&gt;
+&lt;li&gt;cmd: &lt;strong&gt;ctrl + a +&amp;nbsp;c&lt;/strong&gt;    &lt;/li&gt;
+&lt;li&gt;Switch between 2 sessions (now and&amp;nbsp;last)    &lt;/li&gt;
+&lt;li&gt;cmd: &lt;strong&gt;ctrl + a +&amp;nbsp;a&lt;/strong&gt;    &lt;/li&gt;
+&lt;li&gt;Switch to the session number you&amp;nbsp;created    &lt;/li&gt;
+&lt;li&gt;cmd: &lt;strong&gt;ctrl …&lt;/strong&gt;&lt;/li&gt;&lt;/ul&gt;</summary><content type="html">&lt;h3&gt;Screen command usage &lt;span class="amp"&gt;&amp;amp;&lt;/span&gt; &lt;span class="caps"&gt;COM&lt;/span&gt;&amp;nbsp;port&lt;/h3&gt;
+&lt;h4&gt;Manipulate&amp;nbsp;Sessions&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;Open a screen&amp;nbsp;session    &lt;/li&gt;
+&lt;li&gt;cmd: &lt;strong&gt;screen&lt;/strong&gt;     &lt;/li&gt;
+&lt;li&gt;cmd: &lt;strong&gt;screen -S sessionName&lt;/strong&gt; (Note: screen -S&amp;nbsp;newSession)     &lt;/li&gt;
+&lt;li&gt;Create a new screen&amp;nbsp;session    &lt;/li&gt;
+&lt;li&gt;cmd: &lt;strong&gt;ctrl + a +&amp;nbsp;c&lt;/strong&gt;    &lt;/li&gt;
+&lt;li&gt;Switch between 2 sessions (now and&amp;nbsp;last)    &lt;/li&gt;
+&lt;li&gt;cmd: &lt;strong&gt;ctrl + a +&amp;nbsp;a&lt;/strong&gt;    &lt;/li&gt;
+&lt;li&gt;Switch to the session number you&amp;nbsp;created    &lt;/li&gt;
+&lt;li&gt;cmd: &lt;strong&gt;ctrl + a + 2&lt;/strong&gt;  &lt;br&gt;
+  (Note: 2 or other session number you created&amp;nbsp;earlier)    &lt;/li&gt;
+&lt;li&gt;Session&amp;nbsp;information    &lt;/li&gt;
+&lt;li&gt;cmd: &lt;strong&gt;ctrl + a +&amp;nbsp;i&lt;/strong&gt;    &lt;/li&gt;
+&lt;li&gt;List all&amp;nbsp;windows    &lt;/li&gt;
+&lt;li&gt;cmd: &lt;strong&gt;ctrl + a +&amp;nbsp;w&lt;/strong&gt;    &lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4&gt;Detach/Re-attach&amp;nbsp;bundle&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;Detach&amp;nbsp;session    &lt;/li&gt;
+&lt;li&gt;cmd: &lt;strong&gt;ctrl + a +&amp;nbsp;d&lt;/strong&gt;     &lt;/li&gt;
+&lt;li&gt;Reattach&amp;nbsp;session    &lt;/li&gt;
+&lt;li&gt;cmd: &lt;strong&gt;screen&amp;nbsp;-r&lt;/strong&gt;    &lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4&gt;Robust de-attach&amp;nbsp;session&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;Force Deattach&amp;nbsp;session    &lt;/li&gt;
+&lt;li&gt;cmd: &lt;strong&gt;screen&amp;nbsp;-D&lt;/strong&gt;    &lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4&gt;Exit&amp;nbsp;session&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;Close&amp;nbsp;session    &lt;/li&gt;
+&lt;li&gt;cmd: &lt;strong&gt;ctrl + a +&amp;nbsp;k&lt;/strong&gt;    &lt;/li&gt;
+&lt;li&gt;Kill&amp;nbsp;session    &lt;/li&gt;
+&lt;li&gt;cmd: &lt;code&gt;ctrl + a + \&lt;/code&gt;    &lt;/li&gt;
+&lt;/ul&gt;
+&lt;h5&gt;Summary&amp;nbsp;Table&lt;/h5&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th align="left"&gt;screen command&lt;/th&gt;
+&lt;th align="left"&gt;Task&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td align="left"&gt;Ctrl+a c&lt;/td&gt;
+&lt;td align="left"&gt;Create new window&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align="left"&gt;Ctrl+a k&lt;/td&gt;
+&lt;td align="left"&gt;Kill the current window / session&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align="left"&gt;Ctrl+a w&lt;/td&gt;
+&lt;td align="left"&gt;List all windows&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align="left"&gt;Ctrl+a 0-9&lt;/td&gt;
+&lt;td align="left"&gt;Go to a window numbered 0 9, use Ctrl+a w to see number&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align="left"&gt;Ctrl+a Ctrl+a&lt;/td&gt;
+&lt;td align="left"&gt;Toggle / switch between the current and previous window&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align="left"&gt;Ctrl+a S&lt;/td&gt;
+&lt;td align="left"&gt;Split terminal horizontally into regions and press&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align="left"&gt;Ctrl+a :resize&lt;/td&gt;
+&lt;td align="left"&gt;Resize region&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align="left"&gt;Ctrl+a :fit&lt;/td&gt;
+&lt;td align="left"&gt;Fit screen size to new terminal size. You can also hit Ctrl+a F for the the same task&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align="left"&gt;Ctrl+a :remove&lt;/td&gt;
+&lt;td align="left"&gt;Remove / delete region. You can also hit Ctrl+a X for the same taks&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align="left"&gt;Ctrl+a tab&lt;/td&gt;
+&lt;td align="left"&gt;Move to next region&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align="left"&gt;Ctrl+a D (Shift-d)&lt;/td&gt;
+&lt;td align="left"&gt;Power detach and logout&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align="left"&gt;Ctrl+a d&lt;/td&gt;
+&lt;td align="left"&gt;Detach but keep shell window open&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align="left"&gt;Ctrl-a Ctrl-\&lt;/td&gt;
+&lt;td align="left"&gt;Quit screen&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align="left"&gt;Ctrl-a ?&lt;/td&gt;
+&lt;td align="left"&gt;Display help screen i.e. display a list of commands&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h4&gt;Screen with &lt;span class="caps"&gt;COM&lt;/span&gt; port&amp;nbsp;(ttyUSB0)&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;Use screen command talking to &lt;span class="caps"&gt;COM&lt;/span&gt; port  &lt;br&gt;
+  cmd: &lt;code&gt;screen /dev/ttyUSB0 115200&lt;/code&gt;  &lt;br&gt;
+Usage: &lt;br&gt;
+&lt;strong&gt;screen /dev/ttySX&amp;nbsp;baud_rate,cs8|cs7,ixon|-ixon,ixoff|-ixoff,istrip|-istrip&lt;/strong&gt;    &lt;/li&gt;
+&lt;li&gt;/dev/ttySX: serial port&amp;nbsp;number    &lt;/li&gt;
+&lt;li&gt;baud_rate: 9600, 115200 or&amp;nbsp;others    &lt;/li&gt;
+&lt;li&gt;cs8 or cs7: transmission of 8 or 7 bits per&amp;nbsp;byte    &lt;/li&gt;
+&lt;li&gt;ixon/-ixon: Enable/disable software flow-control(&lt;span class="caps"&gt;CTRL&lt;/span&gt;-S/&lt;span class="caps"&gt;CTRL&lt;/span&gt;-Q) for sending&amp;nbsp;data    &lt;/li&gt;
+&lt;li&gt;ixoff/-ixoff: Enable/disable software flow-control for receiving&amp;nbsp;data    &lt;/li&gt;
+&lt;li&gt;istrip/-istrip: Clear/keep the eight bit in each received&amp;nbsp;byte    &lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4&gt;Reference&amp;nbsp;link&lt;/h4&gt;
+&lt;blockquote&gt;
+&lt;ul&gt;
+&lt;li&gt;http://www.cyberciti.biz/faq/unix-linux-apple-osx-bsd-screen-set-baud-rate    &lt;/li&gt;
+&lt;li&gt;http://www.cyberciti.biz/tips/linux-screen-command-howto.html    &lt;/li&gt;
+&lt;/ul&gt;
+&lt;/blockquote&gt;</content></entry></feed>

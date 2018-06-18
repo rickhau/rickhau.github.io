@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+        <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>隨意雜記 (Casual Notes) | Screen command&nbsp;列表</title>
+    <link rel="shortcut icon" type="image/png" href="https://rickhau.github.io/favicon.png">
+    <link rel="shortcut icon" type="image/x-icon" href="https://rickhau.github.io/favicon.ico">
+    <link href="https://rickhau.github.io/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="隨意雜記 (Casual Notes) Full Atom Feed" />
+    <link href="https://rickhau.github.io/feeds/linux.atom.xml" type="application/atom+xml" rel="alternate" title="隨意雜記 (Casual Notes) Categories Atom Feed" />
+    <link rel="stylesheet" href="https://rickhau.github.io/theme/css/screen.css" type="text/css" />
+    <link rel="stylesheet" href="https://rickhau.github.io/theme/css/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="https://rickhau.github.io/theme/css/print.css" type="text/css" media="print" />
+    <meta name="generator" content="Pelican" />
+    <meta name="description" content="" />
+    <meta name="author" content="rickhau" />
+
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="https://rickhau.github.io">Home</a></li>
+            </ul>
+        </nav>
+        <div class="header_box">
+            <h1><a href="https://rickhau.github.io">隨意雜記 (Casual Notes)</a></h1>
+        </div>
+    </header>
+    <div id="wrapper">
+        <div id="content">            <h4 class="date">Apr 26, 2015</h4>
+
+            <article class="post">
+                <h2 class="title">
+                    <a href="https://rickhau.github.io/posts/2015/04/linux-screen" rel="bookmark" title="Permanent Link to &quot;Screen command&nbsp;列表&quot;">Screen command&nbsp;列表</a>
+                </h2>
+
+                
+                
+
+                <h3>Screen command usage <span class="amp">&amp;</span> <span class="caps">COM</span>&nbsp;port</h3>
+<h4>Manipulate&nbsp;Sessions</h4>
+<ul>
+<li>Open a screen&nbsp;session    </li>
+<li>cmd: <strong>screen</strong>     </li>
+<li>cmd: <strong>screen -S sessionName</strong> (Note: screen -S&nbsp;newSession)     </li>
+<li>Create a new screen&nbsp;session    </li>
+<li>cmd: <strong>ctrl + a +&nbsp;c</strong>    </li>
+<li>Switch between 2 sessions (now and&nbsp;last)    </li>
+<li>cmd: <strong>ctrl + a +&nbsp;a</strong>    </li>
+<li>Switch to the session number you&nbsp;created    </li>
+<li>cmd: <strong>ctrl + a + 2</strong>  <br>
+  (Note: 2 or other session number you created&nbsp;earlier)    </li>
+<li>Session&nbsp;information    </li>
+<li>cmd: <strong>ctrl + a +&nbsp;i</strong>    </li>
+<li>List all&nbsp;windows    </li>
+<li>cmd: <strong>ctrl + a +&nbsp;w</strong>    </li>
+</ul>
+<h4>Detach/Re-attach&nbsp;bundle</h4>
+<ul>
+<li>Detach&nbsp;session    </li>
+<li>cmd: <strong>ctrl + a +&nbsp;d</strong>     </li>
+<li>Reattach&nbsp;session    </li>
+<li>cmd: <strong>screen&nbsp;-r</strong>    </li>
+</ul>
+<h4>Robust de-attach&nbsp;session</h4>
+<ul>
+<li>Force Deattach&nbsp;session    </li>
+<li>cmd: <strong>screen&nbsp;-D</strong>    </li>
+</ul>
+<h4>Exit&nbsp;session</h4>
+<ul>
+<li>Close&nbsp;session    </li>
+<li>cmd: <strong>ctrl + a +&nbsp;k</strong>    </li>
+<li>Kill&nbsp;session    </li>
+<li>cmd: <code>ctrl + a + \</code>    </li>
+</ul>
+<h5>Summary&nbsp;Table</h5>
+<table>
+<thead>
+<tr>
+<th align="left">screen command</th>
+<th align="left">Task</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">Ctrl+a c</td>
+<td align="left">Create new window</td>
+</tr>
+<tr>
+<td align="left">Ctrl+a k</td>
+<td align="left">Kill the current window / session</td>
+</tr>
+<tr>
+<td align="left">Ctrl+a w</td>
+<td align="left">List all windows</td>
+</tr>
+<tr>
+<td align="left">Ctrl+a 0-9</td>
+<td align="left">Go to a window numbered 0 9, use Ctrl+a w to see number</td>
+</tr>
+<tr>
+<td align="left">Ctrl+a Ctrl+a</td>
+<td align="left">Toggle / switch between the current and previous window</td>
+</tr>
+<tr>
+<td align="left">Ctrl+a S</td>
+<td align="left">Split terminal horizontally into regions and press</td>
+</tr>
+<tr>
+<td align="left">Ctrl+a :resize</td>
+<td align="left">Resize region</td>
+</tr>
+<tr>
+<td align="left">Ctrl+a :fit</td>
+<td align="left">Fit screen size to new terminal size. You can also hit Ctrl+a F for the the same task</td>
+</tr>
+<tr>
+<td align="left">Ctrl+a :remove</td>
+<td align="left">Remove / delete region. You can also hit Ctrl+a X for the same taks</td>
+</tr>
+<tr>
+<td align="left">Ctrl+a tab</td>
+<td align="left">Move to next region</td>
+</tr>
+<tr>
+<td align="left">Ctrl+a D (Shift-d)</td>
+<td align="left">Power detach and logout</td>
+</tr>
+<tr>
+<td align="left">Ctrl+a d</td>
+<td align="left">Detach but keep shell window open</td>
+</tr>
+<tr>
+<td align="left">Ctrl-a Ctrl-\</td>
+<td align="left">Quit screen</td>
+</tr>
+<tr>
+<td align="left">Ctrl-a ?</td>
+<td align="left">Display help screen i.e. display a list of commands</td>
+</tr>
+</tbody>
+</table>
+<h4>Screen with <span class="caps">COM</span> port&nbsp;(ttyUSB0)</h4>
+<ul>
+<li>Use screen command talking to <span class="caps">COM</span> port  <br>
+  cmd: <code>screen /dev/ttyUSB0 115200</code>  <br>
+Usage: <br>
+<strong>screen /dev/ttySX&nbsp;baud_rate,cs8|cs7,ixon|-ixon,ixoff|-ixoff,istrip|-istrip</strong>    </li>
+<li>/dev/ttySX: serial port&nbsp;number    </li>
+<li>baud_rate: 9600, 115200 or&nbsp;others    </li>
+<li>cs8 or cs7: transmission of 8 or 7 bits per&nbsp;byte    </li>
+<li>ixon/-ixon: Enable/disable software flow-control(<span class="caps">CTRL</span>-S/<span class="caps">CTRL</span>-Q) for sending&nbsp;data    </li>
+<li>ixoff/-ixoff: Enable/disable software flow-control for receiving&nbsp;data    </li>
+<li>istrip/-istrip: Clear/keep the eight bit in each received&nbsp;byte    </li>
+</ul>
+<h4>Reference&nbsp;link</h4>
+<blockquote>
+<ul>
+<li>http://www.cyberciti.biz/faq/unix-linux-apple-osx-bsd-screen-set-baud-rate    </li>
+<li>http://www.cyberciti.biz/tips/linux-screen-command-howto.html    </li>
+</ul>
+</blockquote>
+                <div class="clear"></div>
+
+                <div class="info">
+                    <a href="https://rickhau.github.io/posts/2015/04/linux-screen">posted at 12:58</a>
+                    &nbsp;&middot;&nbsp;<a href="https://rickhau.github.io/category/linux.html" rel="tag">Linux</a>
+                </div>
+<div id="disqus_thread"></div>
+<script type="text/javascript">
+    var disqus_shortname = 'rickhau-github-io';
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+            </article>
+            <div class="clear"></div>
+            <footer>
+                 <p>
+                     Copyright by rickhau
+                     &middot;
+                     Licensed @
+                     <a href="http://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>
+					&middot;
+					<a href="https://rickhau.github.io/feeds/all.atom.xml" rel="alternate">Atom Feed</a>
+					 
+                 </p>
+            </footer>
+        </div>
+        <div class="clear"></div>
+    </div>
+<!-- Add addsense.html  -->
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<script>
+  (adsbygoogle = window.adsbygoogle || []).push({
+    google_ad_client: "ca-pub-7683780377655294",
+    enable_page_level_ads: true
+  });
+</script></body>
+</html>

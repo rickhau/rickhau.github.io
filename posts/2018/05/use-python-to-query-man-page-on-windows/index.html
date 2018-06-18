@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+        <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>隨意雜記 (Casual Notes) | Use python to query man page on&nbsp;windows</title>
+    <link rel="shortcut icon" type="image/png" href="https://rickhau.github.io/favicon.png">
+    <link rel="shortcut icon" type="image/x-icon" href="https://rickhau.github.io/favicon.ico">
+    <link href="https://rickhau.github.io/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="隨意雜記 (Casual Notes) Full Atom Feed" />
+    <link href="https://rickhau.github.io/feeds/python.atom.xml" type="application/atom+xml" rel="alternate" title="隨意雜記 (Casual Notes) Categories Atom Feed" />
+    <link rel="stylesheet" href="https://rickhau.github.io/theme/css/screen.css" type="text/css" />
+    <link rel="stylesheet" href="https://rickhau.github.io/theme/css/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="https://rickhau.github.io/theme/css/print.css" type="text/css" media="print" />
+    <meta name="generator" content="Pelican" />
+    <meta name="description" content="" />
+    <meta name="author" content="rickhau" />
+
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="https://rickhau.github.io">Home</a></li>
+            </ul>
+        </nav>
+        <div class="header_box">
+            <h1><a href="https://rickhau.github.io">隨意雜記 (Casual Notes)</a></h1>
+        </div>
+    </header>
+    <div id="wrapper">
+        <div id="content">            <h4 class="date">May 05, 2018</h4>
+
+            <article class="post">
+                <h2 class="title">
+                    <a href="https://rickhau.github.io/posts/2018/05/use-python-to-query-man-page-on-windows" rel="bookmark" title="Permanent Link to &quot;Use python to query man page on&nbsp;windows&quot;">Use python to query man page on&nbsp;windows</a>
+                </h2>
+
+                
+                
+
+                <h1>Background</h1>
+<p>因為最近常常在使用Cmder看程式碼，但在Windows上面除非裝了<span class="caps">WSL</span><br>
+不然要臨時想man某個function or library不是很方便<br>
+所以很快的就想說來爬個文看有沒有什麼快速的方式可以寫個小程式<br>&nbsp;就能幫我做到這件事  </p>
+<h1>Search</h1>
+<p>Google了很久有找到幾個方式，不過比較方便的是透過curl和sed就可以達到&nbsp;這樣的話只要去parse命令式參數就可以很快的搞定了</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="highlight"><pre><span></span>curl -v --silent <span class="se">\&quot;</span>http://man.he.net/?topic<span class="o">=</span>&lt;command&gt;section<span class="o">=</span>all<span class="se">\&quot;</span> <span class="m">2</span>&gt;<span class="p">&amp;</span><span class="m">1</span> <span class="p">|</span> sed -n <span class="se">\&quot;</span>/&lt;PRE&gt;/,/&lt;<span class="se">\/</span>PRE&gt;/p<span class="se">\&quot;</span> <span class="p">|</span> more
+</pre></div>
+</td></tr></table>
+
+<h1>Code&nbsp;Snippet</h1>
+<p>一開始先用了<code>Batch</code>script去弄，但覺得要處理字串還是有點麻煩<br>
+想了一下還是用<code>Python</code>來處理比較快，所以就很簡單的弄了二個版本</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22</pre></div></td><td class="code"><div class="highlight"><pre><span></span>@echo off
+setlocal enabledelayedexpansion
+
+<span class="k">if</span> <span class="s2">&quot;%1&quot;</span><span class="o">==</span><span class="s2">&quot;&quot;</span> goto usage
+<span class="nb">echo</span> Going to query <span class="o">[</span>%1<span class="o">]</span> <span class="k">function</span>
+
+curl -v --silent <span class="s2">&quot;http://man.he.net/?topic=%1&amp;section=all&quot;</span> <span class="m">2</span>&gt;<span class="p">&amp;</span><span class="m">1</span> <span class="p">|</span> sed -n <span class="s2">&quot;/&lt;PRE&gt;/,/&lt;\/PRE&gt;/p&quot;</span> <span class="p">|</span> more
+
+<span class="k">if</span> errorlevel <span class="m">0</span> goto end
+
+:usage
+@echo.
+@echo %~n0 usage:
+@echo -------------------------
+@echo <span class="m">1</span><span class="o">)</span> man optarg
+@echo.
+@echo.
+@echo This will go to the following url <span class="k">for</span> man query.
+@echo <span class="s2">&quot;http://man.he.net/?topic=&lt;command_name&gt;&amp;section=all&quot;</span>
+@echo.
+
+:end
+</pre></div>
+</td></tr></table>
+
+<p>最後還是用Python寫了一個很小的程式，順手把<code>man</code>page的數字定義也查了一下<br>
+這樣在查的時候可以看要查哪一個section<br>
+雖然還是有一些網頁的html tag不過可以滿足我很快想查找資訊的目的&nbsp;當然也可以把程式寫成去找網頁，不過這樣就要多開視窗覺得麻煩  </p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="c1"># man.py</span>
+<span class="kn">import</span> <span class="nn">sys</span>
+
+<span class="k">def</span> <span class="nf">usage</span><span class="p">():</span>
+    <span class="n">page_num_help</span> <span class="o">=</span> <span class="s2">&quot;&quot;&quot;</span>
+<span class="s2">    1     Executable programs or shell commands</span>
+<span class="s2">    2     System calls (functions provided by the kernel)</span>
+<span class="s2">    3     Library calls (functions within program libraries)</span>
+<span class="s2">    4     Special files (usually found in /dev)</span>
+<span class="s2">    5     File formats and conventions eg /etc/passwd</span>
+<span class="s2">    6     Games</span>
+<span class="s2">    7     Miscellaneous  (including  macro  packages and conventions), e.g. man(7), groff(7)</span>
+<span class="s2">    8     System administration commands (usually only for root)</span>
+<span class="s2">    9     Kernel routines</span>
+
+<span class="s2">    1) man &lt;command&gt;</span>
+<span class="s2">    2) man &lt;1-9&gt; &lt;command&gt;</span>
+<span class="s2">    Ex:</span>
+<span class="s2">       man optarg</span>
+<span class="s2">       man 2 open</span>
+<span class="s2">       man 3 fopen</span>
+<span class="s2">    &quot;&quot;&quot;</span>
+    <span class="k">print</span><span class="p">(</span><span class="n">page_num_help</span><span class="p">)</span>
+
+
+<span class="k">def</span> <span class="nf">call_man</span><span class="p">(</span><span class="n">cmd</span><span class="p">,</span> <span class="n">section</span><span class="o">=</span><span class="s1">&#39;all&#39;</span><span class="p">):</span>
+    <span class="kn">import</span> <span class="nn">os</span>
+    <span class="k">if</span> <span class="n">section</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span> <span class="o">!=</span> <span class="s1">&#39;all&#39;</span> <span class="ow">and</span> <span class="n">section</span><span class="o">.</span><span class="n">isnumeric</span><span class="p">():</span>
+        <span class="n">section</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">section</span><span class="p">)</span>
+        <span class="k">if</span> <span class="mi">1</span> <span class="o">&lt;=</span> <span class="n">section</span> <span class="o">&lt;=</span> <span class="mi">9</span><span class="p">:</span>
+            <span class="n">os</span><span class="o">.</span><span class="n">system</span><span class="p">(</span><span class="s2">&quot;curl -v --silent </span><span class="se">\&quot;</span><span class="s2">http://man.he.net/?topic={0}&amp;section={1}</span><span class="se">\&quot;</span><span class="s2"> 2&gt;&amp;1 | sed -n </span><span class="se">\&quot;</span><span class="s2">/&lt;PRE&gt;/,/&lt;\/PRE&gt;/p</span><span class="se">\&quot;</span><span class="s2"> | more&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">cmd</span><span class="p">,</span> <span class="n">section</span><span class="p">))</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">cmd</span><span class="p">:</span>
+            <span class="n">os</span><span class="o">.</span><span class="n">system</span><span class="p">(</span><span class="s2">&quot;curl -v --silent </span><span class="se">\&quot;</span><span class="s2">http://man.he.net/?topic={0}&amp;section={1}</span><span class="se">\&quot;</span><span class="s2"> 2&gt;&amp;1 | sed -n </span><span class="se">\&quot;</span><span class="s2">/&lt;PRE&gt;/,/&lt;\/PRE&gt;/p</span><span class="se">\&quot;</span><span class="s2"> | more&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">cmd</span><span class="p">,</span> <span class="n">section</span><span class="p">))</span>
+
+<span class="k">def</span> <span class="nf">main</span><span class="p">():</span>
+    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">sys</span><span class="o">.</span><span class="n">argv</span><span class="p">)</span> <span class="o">==</span> <span class="mi">2</span><span class="p">:</span>  <span class="c1"># man &lt;name&gt;</span>
+        <span class="n">command</span> <span class="o">=</span> <span class="n">sys</span><span class="o">.</span><span class="n">argv</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+        <span class="n">call_man</span><span class="p">(</span><span class="n">command</span><span class="p">,</span> <span class="s1">&#39;all&#39;</span><span class="p">)</span>
+    <span class="k">elif</span> <span class="nb">len</span><span class="p">(</span><span class="n">sys</span><span class="o">.</span><span class="n">argv</span><span class="p">)</span> <span class="o">==</span> <span class="mi">3</span><span class="p">:</span>  <span class="c1"># man 3 open</span>
+        <span class="n">section</span> <span class="o">=</span> <span class="n">sys</span><span class="o">.</span><span class="n">argv</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>   <span class="c1"># section = 1~9 and all</span>
+        <span class="n">command</span> <span class="o">=</span> <span class="n">sys</span><span class="o">.</span><span class="n">argv</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span>   <span class="c1"># commmand = open</span>
+        <span class="n">call_man</span><span class="p">(</span><span class="n">command</span><span class="p">,</span> <span class="n">section</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">usage</span><span class="p">()</span>
+
+
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
+    <span class="n">main</span><span class="p">()</span>
+</pre></div>
+</td></tr></table>
+
+<h1>結果圖</h1>
+<p>最後長這樣  </p>
+<p><img alt="Output" src="https://github.com/rickhau/rickhau.github.io/raw/master/images/20180505/man_cmder.gif"></p>
+<p>收工</p>
+                <div class="clear"></div>
+
+                <div class="info">
+                    <a href="https://rickhau.github.io/posts/2018/05/use-python-to-query-man-page-on-windows">posted at 16:30</a>
+                    &nbsp;&middot;&nbsp;<a href="https://rickhau.github.io/category/python.html" rel="tag">Python</a>
+                </div>
+<div id="disqus_thread"></div>
+<script type="text/javascript">
+    var disqus_shortname = 'rickhau-github-io';
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+            </article>
+            <div class="clear"></div>
+            <footer>
+                 <p>
+                     Copyright by rickhau
+                     &middot;
+                     Licensed @
+                     <a href="http://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>
+					&middot;
+					<a href="https://rickhau.github.io/feeds/all.atom.xml" rel="alternate">Atom Feed</a>
+					 
+                 </p>
+            </footer>
+        </div>
+        <div class="clear"></div>
+    </div>
+<!-- Add addsense.html  -->
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<script>
+  (adsbygoogle = window.adsbygoogle || []).push({
+    google_ad_client: "ca-pub-7683780377655294",
+    enable_page_level_ads: true
+  });
+</script></body>
+</html>

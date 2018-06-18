@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+        <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>隨意雜記 (Casual Notes) | Install libnfs-python on Fedora&nbsp;20</title>
+    <link rel="shortcut icon" type="image/png" href="https://rickhau.github.io/favicon.png">
+    <link rel="shortcut icon" type="image/x-icon" href="https://rickhau.github.io/favicon.ico">
+    <link href="https://rickhau.github.io/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="隨意雜記 (Casual Notes) Full Atom Feed" />
+    <link href="https://rickhau.github.io/feeds/python.atom.xml" type="application/atom+xml" rel="alternate" title="隨意雜記 (Casual Notes) Categories Atom Feed" />
+    <link rel="stylesheet" href="https://rickhau.github.io/theme/css/screen.css" type="text/css" />
+    <link rel="stylesheet" href="https://rickhau.github.io/theme/css/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="https://rickhau.github.io/theme/css/print.css" type="text/css" media="print" />
+    <meta name="generator" content="Pelican" />
+    <meta name="description" content="" />
+    <meta name="author" content="rickhau" />
+
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="https://rickhau.github.io">Home</a></li>
+            </ul>
+        </nav>
+        <div class="header_box">
+            <h1><a href="https://rickhau.github.io">隨意雜記 (Casual Notes)</a></h1>
+        </div>
+    </header>
+    <div id="wrapper">
+        <div id="content">            <h4 class="date">May 08, 2015</h4>
+
+            <article class="post">
+                <h2 class="title">
+                    <a href="https://rickhau.github.io/posts/2015/05/libnfs-python" rel="bookmark" title="Permanent Link to &quot;Install libnfs-python on Fedora&nbsp;20&quot;">Install libnfs-python on Fedora&nbsp;20</a>
+                </h2>
+
+                
+                
+
+                <h3>0 -&nbsp;Pre-requisite</h3>
+<p>Before you start to install the libnfs-python package, you need to install the following packages. Otherwise, you might encounter some errors while running ./bootstrap on&nbsp;Fedora</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6</pre></div></td><td class="code"><div class="highlight"><pre><span></span>$ sudo yum install python-devel*
+$ sudo yum install libtool*
+$ sudo yum install automake*
+$ sudo yum install autoconf*
+$ sudo yum install aclocal*      <span class="c1"># This can be ignored</span>
+$ sudo yum install autoheader*   <span class="c1"># This can be ignored</span>
+</pre></div>
+</td></tr></table>
+
+<h3>1 - Install libnfs&nbsp;package/library</h3>
+<p>You have to install the libnfs package/library which libnfs-python needs.
+libnfs-python relies on the libnfs library to support <span class="caps">NFS</span>&nbsp;protocol.</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10</pre></div></td><td class="code"><div class="highlight"><pre><span></span>$ wget https://github.com/sahlberg/libnfs/archive/libnfs-1.9.7.tar.gz
+$ tar -xzf libnfs-1.9.7.tar.gz
+$ <span class="nb">cd</span> libnfs-1.9.7
+$ ./bootstrap
+$ ./configure --prefix<span class="o">=</span>/usr
+$ make
+$ sudo make install
+$ su -c <span class="s1">&#39;echo /usr/local/lib &gt; /etc/ld.so.conf.d/local-libs.conf&#39;</span>
+$ sudo ldconfig
+$ <span class="nb">cd</span> ..
+</pre></div>
+</td></tr></table>
+
+<h3>2 - Install libnfs-python&nbsp;package/library</h3>
+<p>With libnfs library installed, you can start to install libnfs-python library&nbsp;now.    </p>
+<p>If you follow the <span class="caps">README</span> to install the package, you might not be able to use the libnfs-python module successfully after&nbsp;installation. </p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43</pre></div></td><td class="code"><div class="highlight"><pre><span></span>$ git clone https://github.com/sahlberg/libnfs-python.git
+$ sudo python setup.py install
+running install
+running bdist_egg
+running egg_info
+writing libnfs.egg-info/PKG-INFO
+writing top-level names to libnfs.egg-info/top_level.txt
+writing dependency_links to libnfs.egg-info/dependency_links.txt
+reading manifest file <span class="s1">&#39;libnfs.egg-info/SOURCES.txt&#39;</span>
+reading manifest template <span class="s1">&#39;MANIFEST.in&#39;</span>
+writing manifest file <span class="s1">&#39;libnfs.egg-info/SOURCES.txt&#39;</span>
+installing library code to build/bdist.linux-x86_64/egg
+running install_lib
+running build_py
+running build_ext
+creating build/bdist.linux-x86_64/egg
+creating build/bdist.linux-x86_64/egg/libnfs
+copying build/lib.linux-x86_64-2.7/libnfs/__init__.py -&gt; build/bdist.linux-x86_64/egg/libnfs
+copying build/lib.linux-x86_64-2.7/libnfs/_libnfs.so -&gt; build/bdist.linux-x86_64/egg/libnfs
+copying build/lib.linux-x86_64-2.7/libnfs/libnfs.py -&gt; build/bdist.linux-x86_64/egg/libnfs
+byte-compiling build/bdist.linux-x86_64/egg/libnfs/__init__.py to __init__.pyc
+byte-compiling build/bdist.linux-x86_64/egg/libnfs/libnfs.py to libnfs.pyc
+creating stub loader <span class="k">for</span> libnfs/_libnfs.so
+byte-compiling build/bdist.linux-x86_64/egg/libnfs/_libnfs.py to _libnfs.pyc
+creating build/bdist.linux-x86_64/egg/EGG-INFO
+copying libnfs.egg-info/PKG-INFO -&gt; build/bdist.linux-x86_64/egg/EGG-INFO
+copying libnfs.egg-info/SOURCES.txt -&gt; build/bdist.linux-x86_64/egg/EGG-INFO
+copying libnfs.egg-info/dependency_links.txt -&gt; build/bdist.linux-x86_64/egg/EGG-INFO
+copying libnfs.egg-info/top_level.txt -&gt; build/bdist.linux-x86_64/egg/EGG-INFO
+writing build/bdist.linux-x86_64/egg/EGG-INFO/native_libs.txt
+zip_safe flag not set<span class="p">;</span> analyzing archive contents...
+libnfs.libnfs: module references __file__
+creating <span class="s1">&#39;dist/libnfs-1.0_1-py2.7-linux-x86_64.egg&#39;</span> and adding <span class="s1">&#39;build/bdist.linux-x86_64/egg&#39;</span> to it
+removing <span class="s1">&#39;build/bdist.linux-x86_64/egg&#39;</span> <span class="o">(</span>and everything under it<span class="o">)</span>
+Processing libnfs-1.0_1-py2.7-linux-x86_64.egg
+removing <span class="s1">&#39;/usr/lib64/python2.7/site-packages/libnfs-1.0_1-py2.7-linux-x86_64.egg&#39;</span> <span class="o">(</span>and everything under it<span class="o">)</span>
+creating /usr/lib64/python2.7/site-packages/libnfs-1.0_1-py2.7-linux-x86_64.egg
+Extracting libnfs-1.0_1-py2.7-linux-x86_64.egg to /usr/lib64/python2.7/site-packages
+libnfs <span class="m">1</span>.0-1 is already the active version in easy-install.pth
+
+Installed /usr/lib64/python2.7/site-packages/libnfs-1.0_1-py2.7-linux-x86_64.egg
+Processing dependencies <span class="k">for</span> <span class="nv">libnfs</span><span class="o">==</span><span class="m">1</span>.0-1
+Finished processing dependencies <span class="k">for</span> <span class="nv">libnfs</span><span class="o">==</span><span class="m">1</span>.0-1
+</pre></div>
+</td></tr></table>
+
+<p>You can try <code>import libnfs</code> to see if you hit any&nbsp;error.</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="n">Python</span> <span class="mf">2.7</span><span class="o">.</span><span class="mi">5</span> <span class="p">(</span><span class="n">default</span><span class="p">,</span> <span class="n">Nov</span>  <span class="mi">3</span> <span class="mi">2014</span><span class="p">,</span> <span class="mi">14</span><span class="p">:</span><span class="mi">26</span><span class="p">:</span><span class="mi">24</span><span class="p">)</span>
+<span class="p">[</span><span class="n">GCC</span> <span class="mf">4.8</span><span class="o">.</span><span class="mi">3</span> <span class="mi">20140911</span> <span class="p">(</span><span class="n">Red</span> <span class="n">Hat</span> <span class="mf">4.8</span><span class="o">.</span><span class="mi">3</span><span class="o">-</span><span class="mi">7</span><span class="p">)]</span> <span class="n">on</span> <span class="n">linux2</span>
+<span class="n">Type</span> <span class="s2">&quot;help&quot;</span><span class="p">,</span> <span class="s2">&quot;copyright&quot;</span><span class="p">,</span> <span class="s2">&quot;credits&quot;</span> <span class="ow">or</span> <span class="s2">&quot;license&quot;</span> <span class="k">for</span> <span class="n">more</span> <span class="n">information</span><span class="o">.</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="kn">import</span> <span class="nn">libnfs</span>
+<span class="n">Traceback</span> <span class="p">(</span><span class="n">most</span> <span class="n">recent</span> <span class="n">call</span> <span class="n">last</span><span class="p">):</span>
+  <span class="n">File</span> <span class="s2">&quot;&lt;stdin&gt;&quot;</span><span class="p">,</span> <span class="n">line</span> <span class="mi">1</span><span class="p">,</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+  <span class="n">File</span> <span class="s2">&quot;libnfs.py&quot;</span><span class="p">,</span> <span class="n">line</span> <span class="mi">28</span><span class="p">,</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+    <span class="n">_libnfs</span> <span class="o">=</span> <span class="n">swig_import_helper</span><span class="p">()</span>
+  <span class="n">File</span> <span class="s2">&quot;libnfs.py&quot;</span><span class="p">,</span> <span class="n">line</span> <span class="mi">20</span><span class="p">,</span> <span class="ow">in</span> <span class="n">swig_import_helper</span>
+    <span class="kn">import</span> <span class="nn">_libnfs</span>
+<span class="ne">ImportError</span><span class="p">:</span> <span class="n">No</span> <span class="n">module</span> <span class="n">named</span> <span class="n">_libnfs</span>
+</pre></div>
+</td></tr></table>
+
+<p>If you run into the same ImportError like me, it needs to call the library which needs to be compiled under <code>libnfs-python/libnfs</code>.    </p>
+<p>So, Go to [/home/fitbranded/libnfs-python/libnfs] and run <code>make</code>   </p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2</pre></div></td><td class="code"><div class="highlight"><pre><span></span>$ <span class="nb">cd</span> libnfs-python/libnfs
+$ make
+</pre></div>
+</td></tr></table>
+
+<p>Then, re-run the python to import libnfs and test <span class="caps">NFS</span>&nbsp;service.</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">libnfs</span>
+<span class="n">nfs</span> <span class="o">=</span> <span class="n">libnfs</span><span class="o">.</span><span class="n">NFS</span><span class="p">(</span><span class="s1">&#39;nfs://127.0.0.1/data/tmp/&#39;</span><span class="p">)</span>
+<span class="n">a</span> <span class="o">=</span> <span class="n">nfs</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="s1">&#39;/foo-test&#39;</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="s1">&#39;w+&#39;</span><span class="p">)</span>
+<span class="n">a</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">&quot;Test string&quot;</span><span class="p">)</span>
+<span class="n">a</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+<span class="k">print</span> <span class="n">nfs</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="s1">&#39;/foo-test&#39;</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="s1">&#39;r&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+</pre></div>
+</td></tr></table>
+
+<p>Congratulations!!! You can enjoy this powerful <span class="caps">NFS</span> python&nbsp;library.</p>
+<h3><span class="caps">APPENDIX</span></h3>
+<p>1) Compile older libnfs&nbsp;library</p>
+<p>In the beginning, I did not install the latest libnfs package. I ran into some issue while doing the&nbsp;compilation. </p>
+<blockquote>
+<p>Need to add <code>-I/home/fitbranded/include</code> to&nbsp;Makefile</p>
+</blockquote>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="highlight"><pre><span></span>  <span class="nv">INCLUDE</span>    <span class="o">=</span> -I/usr/include -I/home/fitbranded/include
+</pre></div>
+</td></tr></table>
+
+<p><strong>Note:</strong>   </p>
+<blockquote>
+<p>Please run the <code>make clean</code> before <code>make</code> again!  </p>
+</blockquote>
+<p>2) Tells setup.py where to include the library for <code>libnfs-python</code> package</p>
+<blockquote>
+<p>Edit setup.py and add one more include&nbsp;file</p>
+</blockquote>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="n">_libnfs</span> <span class="o">=</span> <span class="n">Extension</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s1">&#39;libnfs._libnfs&#39;</span><span class="p">,</span>
+                   <span class="n">sources</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;libnfs/libnfs_wrap.c&#39;</span><span class="p">],</span>
+                   <span class="n">libraries</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;nfs&#39;</span><span class="p">],</span>
+                   <span class="n">include_dirs</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;/home/fitbranded/include&#39;</span><span class="p">],</span>    <span class="c1"># Add this one</span>
+<span class="p">)</span>
+</pre></div>
+</td></tr></table>
+
+<p>3) <span class="caps">GNU</span>&nbsp;Autotools</p>
+<blockquote>
+<p>libnfs packages requires <span class="caps">GNU</span> Autotools. If you want to know more about it, you can refer to the following&nbsp;resources.</p>
+</blockquote>
+<ul>
+<li><a href="https://bbs.archlinux.org/viewtopic.php?id=161452">ArchLinux</a>    </li>
+<li><a href="http://kodi.wiki/view/HOW-TO:Compile_Kodi_for_Linux_on_Fedora_Red_Hat_Enterprise_Linux_CentOS">Compile Kodi on&nbsp;Fedora</a></li>
+</ul>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2</pre></div></td><td class="code"><div class="highlight"><pre><span></span>$ sudo pacman -S pkg-config xorg-server-devel libtool automake
+$ libtoolize --force
+</pre></div>
+</td></tr></table>
+
+<p>Consider adding AC_CONFIG_MACRO_DIR([m4]) to configure.ac and re-run libtoolize&nbsp;&#8212;force.    </p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6</pre></div></td><td class="code"><div class="highlight"><pre><span></span>$ vim configure.ac
+$ libtoolize --force
+$ aclocal
+$ autoheader
+$ automake --force-missing --add-missing
+$ autoconf
+</pre></div>
+</td></tr></table>
+
+<p>Reference  <br>
+1) <a href="https://github.com/sahlberg/libnfs-python/issues/1">Discussion with Author</a>  <br>
+2) <a href="https://asciinema.org/a/19474">Step-by-Step Video</a> <br>
+3) <a href="https://docs.python.org/2/extending/building.html">Python&nbsp;Build</a></p>
+                <div class="clear"></div>
+
+                <div class="info">
+                    <a href="https://rickhau.github.io/posts/2015/05/libnfs-python">posted at 23:10</a>
+                    &nbsp;&middot;&nbsp;<a href="https://rickhau.github.io/category/python.html" rel="tag">python</a>
+                </div>
+<div id="disqus_thread"></div>
+<script type="text/javascript">
+    var disqus_shortname = 'rickhau-github-io';
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+            </article>
+            <div class="clear"></div>
+            <footer>
+                 <p>
+                     Copyright by rickhau
+                     &middot;
+                     Licensed @
+                     <a href="http://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>
+					&middot;
+					<a href="https://rickhau.github.io/feeds/all.atom.xml" rel="alternate">Atom Feed</a>
+					 
+                 </p>
+            </footer>
+        </div>
+        <div class="clear"></div>
+    </div>
+<!-- Add addsense.html  -->
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<script>
+  (adsbygoogle = window.adsbygoogle || []).push({
+    google_ad_client: "ca-pub-7683780377655294",
+    enable_page_level_ads: true
+  });
+</script></body>
+</html>

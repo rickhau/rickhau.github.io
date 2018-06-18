@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom"><title>隨意雜記 (Casual Notes) - Editor</title><link href="https://rickhau.github.io/" rel="alternate"></link><link href="https://rickhau.github.io/feeds/editor.atom.xml" rel="self"></link><id>https://rickhau.github.io/</id><updated>2018-01-20T23:44:00+08:00</updated><entry><title>Configure Python Enviornment in Notepad++</title><link href="https://rickhau.github.io/posts/2018/01/configure-python-enviornment-in-notepad++" rel="alternate"></link><published>2018-01-20T23:44:00+08:00</published><updated>2018-01-20T23:44:00+08:00</updated><author><name>rickhau</name></author><id>tag:rickhau.github.io,2018-01-20:/posts/2018/01/configure-python-enviornment-in-notepad++</id><summary type="html">&lt;p&gt;如何在 Notepad++ 編輯器中建立 Python&amp;nbsp;的執行環境  &lt;/p&gt;
+&lt;p&gt;透過以下簡單的步驟就可以快速的完成。 &lt;/p&gt;
+&lt;p&gt;&lt;span class="caps"&gt;STEP1&lt;/span&gt;: 按 F5 或是選擇選單中的 執行&amp;nbsp;(如下圖)  &lt;/p&gt;
+&lt;p&gt;&lt;img alt="STEP1" src="https://github.com/rickhau/rickhau.github.io/raw/master/images/20180120/01.png"&gt;  &lt;/p&gt;
+&lt;p&gt;&lt;span class="caps"&gt;STEP2&lt;/span&gt;:&amp;nbsp;接下來會跳出執行視窗會要求輸入要執行的程式  &lt;/p&gt;
+&lt;p&gt;在這邊我設定了Python 3.4的安裝路徑 C:\Python34\python.exe&lt;br&gt;
+在加上參數&amp;nbsp;&amp;#8220;$(FULL_CURRENT_PATH)&amp;#8221;  &lt;/p&gt;
+&lt;table class="highlighttable"&gt;&lt;tr&gt;&lt;td class="linenos"&gt;&lt;div class="linenodiv"&gt;&lt;pre&gt;1&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class="code"&gt;&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="nf"&gt;C&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;\&lt;span class="n"&gt;Python&lt;/span&gt;34\&lt;span class="n"&gt;python&lt;/span&gt;.&lt;span class="n"&gt;exe&lt;/span&gt; &amp;quot;&lt;span class="k"&gt;$(&lt;/span&gt;&lt;span class="nv"&gt;FULL_CURRENT_PATH&lt;/span&gt;&lt;span class="k"&gt;)&lt;/span&gt;&amp;quot;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+
+&lt;p&gt;&lt;img alt="STEP2" src="https://github.com/rickhau/rickhau.github.io/raw/master/images/20180120/02.png"&gt;&lt;/p&gt;
+&lt;p&gt;輸入完選擇儲存&lt;/p&gt;
+&lt;p&gt;&lt;span class="caps"&gt;STEP3&lt;/span&gt;: 跳出 Shortcut 視窗後，輸入名稱 &lt;code&gt;Python&lt;/code&gt; 和你想設定的熱鍵  &lt;/p&gt;
+&lt;p&gt;在這邊的例子是用 &lt;code&gt;Ctrl + Shift + A&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="STEP3" src="https://github.com/rickhau/rickhau.github.io/raw/master/images/20180120/03.png"&gt;&lt;/p&gt;
+&lt;p&gt;選擇完畢後，選擇 &lt;span class="caps"&gt;OK&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span class="caps"&gt;STEP4&lt;/span&gt;: 你可以到執行下拉選單中看到你新增的 Python&amp;nbsp;執行選項&lt;/p&gt;
+&lt;p&gt;&lt;img alt="STEP4" src="https://github.com/rickhau/rickhau.github.io/raw/master/images/20180120/04.png"&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span class="caps"&gt;STEP5 …&lt;/span&gt;&lt;/p&gt;</summary><content type="html">&lt;p&gt;如何在 Notepad++ 編輯器中建立 Python&amp;nbsp;的執行環境  &lt;/p&gt;
+&lt;p&gt;透過以下簡單的步驟就可以快速的完成。 &lt;/p&gt;
+&lt;p&gt;&lt;span class="caps"&gt;STEP1&lt;/span&gt;: 按 F5 或是選擇選單中的 執行&amp;nbsp;(如下圖)  &lt;/p&gt;
+&lt;p&gt;&lt;img alt="STEP1" src="https://github.com/rickhau/rickhau.github.io/raw/master/images/20180120/01.png"&gt;  &lt;/p&gt;
+&lt;p&gt;&lt;span class="caps"&gt;STEP2&lt;/span&gt;:&amp;nbsp;接下來會跳出執行視窗會要求輸入要執行的程式  &lt;/p&gt;
+&lt;p&gt;在這邊我設定了Python 3.4的安裝路徑 C:\Python34\python.exe&lt;br&gt;
+在加上參數&amp;nbsp;&amp;#8220;$(FULL_CURRENT_PATH)&amp;#8221;  &lt;/p&gt;
+&lt;table class="highlighttable"&gt;&lt;tr&gt;&lt;td class="linenos"&gt;&lt;div class="linenodiv"&gt;&lt;pre&gt;1&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class="code"&gt;&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="nf"&gt;C&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;\&lt;span class="n"&gt;Python&lt;/span&gt;34\&lt;span class="n"&gt;python&lt;/span&gt;.&lt;span class="n"&gt;exe&lt;/span&gt; &amp;quot;&lt;span class="k"&gt;$(&lt;/span&gt;&lt;span class="nv"&gt;FULL_CURRENT_PATH&lt;/span&gt;&lt;span class="k"&gt;)&lt;/span&gt;&amp;quot;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+
+&lt;p&gt;&lt;img alt="STEP2" src="https://github.com/rickhau/rickhau.github.io/raw/master/images/20180120/02.png"&gt;&lt;/p&gt;
+&lt;p&gt;輸入完選擇儲存&lt;/p&gt;
+&lt;p&gt;&lt;span class="caps"&gt;STEP3&lt;/span&gt;: 跳出 Shortcut 視窗後，輸入名稱 &lt;code&gt;Python&lt;/code&gt; 和你想設定的熱鍵  &lt;/p&gt;
+&lt;p&gt;在這邊的例子是用 &lt;code&gt;Ctrl + Shift + A&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="STEP3" src="https://github.com/rickhau/rickhau.github.io/raw/master/images/20180120/03.png"&gt;&lt;/p&gt;
+&lt;p&gt;選擇完畢後，選擇 &lt;span class="caps"&gt;OK&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span class="caps"&gt;STEP4&lt;/span&gt;: 你可以到執行下拉選單中看到你新增的 Python&amp;nbsp;執行選項&lt;/p&gt;
+&lt;p&gt;&lt;img alt="STEP4" src="https://github.com/rickhau/rickhau.github.io/raw/master/images/20180120/04.png"&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span class="caps"&gt;STEP5&lt;/span&gt;: 接下來就動手寫個簡單的 &lt;code&gt;Hello&lt;/code&gt;程式囉  &lt;/p&gt;
+&lt;table class="highlighttable"&gt;&lt;tr&gt;&lt;td class="linenos"&gt;&lt;div class="linenodiv"&gt;&lt;pre&gt;1
+2
+3
+4
+5
+6&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class="code"&gt;&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;hello&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;str&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+    &lt;span class="k"&gt;print&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;Hello, {}&amp;quot;&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;format&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;str&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
+
+&lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="vm"&gt;__name__&lt;/span&gt; &lt;span class="o"&gt;==&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;__main__&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+    &lt;span class="n"&gt;hello&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;Notepad++&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+    &lt;span class="nb"&gt;input&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt; &lt;span class="c1"&gt;# 這個是為了讓執行視不要馬上結束&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+
+&lt;p&gt;&lt;img alt="STEP5" src="https://github.com/rickhau/rickhau.github.io/raw/master/images/20180120/05.png"&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span class="caps"&gt;STEP6&lt;/span&gt;:&amp;nbsp;收工&lt;/p&gt;</content></entry></feed>

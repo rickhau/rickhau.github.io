@@ -1,0 +1,319 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom"><title>隨意雜記 (Casual Notes) - blog</title><link href="https://rickhau.github.io/" rel="alternate"></link><link href="https://rickhau.github.io/feeds/blog.atom.xml" rel="self"></link><id>https://rickhau.github.io/</id><updated>2015-04-26T17:18:10+08:00</updated><entry><title>Octopress on Windows</title><link href="https://rickhau.github.io/posts/2015/04/octopress-windows" rel="alternate"></link><published>2015-04-26T17:18:10+08:00</published><updated>2015-04-26T17:18:10+08:00</updated><author><name>rickhau</name></author><id>tag:rickhau.github.io,2015-04-26:/posts/2015/04/octopress-windows</id><summary type="html">&lt;h2&gt;Environment&lt;/h2&gt;
+&lt;p&gt;Windows&amp;nbsp;7&lt;/p&gt;
+&lt;h3&gt;Pre-requisite&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;This article is to setup my Windows 7 environment to write blog&amp;nbsp;posts    &lt;/li&gt;
+&lt;li&gt;Use octopress environment pushed by&amp;nbsp;MacOS&lt;/li&gt;
+&lt;li&gt;You have python 2.7 installed on your Windows&amp;nbsp;7&lt;/li&gt;
+&lt;li&gt;Remaining taks on Windows&amp;nbsp;7:&lt;/li&gt;
+&lt;li&gt;Install&amp;nbsp;RubyInstaller    &lt;/li&gt;
+&lt;li&gt;Clone git repository&amp;nbsp;:octocat:    &lt;/li&gt;
+&lt;li&gt;Configure and continue the&amp;nbsp;post    &lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;Configure …&lt;/h3&gt;</summary><content type="html">&lt;h2&gt;Environment&lt;/h2&gt;
+&lt;p&gt;Windows&amp;nbsp;7&lt;/p&gt;
+&lt;h3&gt;Pre-requisite&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;This article is to setup my Windows 7 environment to write blog&amp;nbsp;posts    &lt;/li&gt;
+&lt;li&gt;Use octopress environment pushed by&amp;nbsp;MacOS&lt;/li&gt;
+&lt;li&gt;You have python 2.7 installed on your Windows&amp;nbsp;7&lt;/li&gt;
+&lt;li&gt;Remaining taks on Windows&amp;nbsp;7:&lt;/li&gt;
+&lt;li&gt;Install&amp;nbsp;RubyInstaller    &lt;/li&gt;
+&lt;li&gt;Clone git repository&amp;nbsp;:octocat:    &lt;/li&gt;
+&lt;li&gt;Configure and continue the&amp;nbsp;post    &lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;Configure&amp;nbsp;environment&lt;/h3&gt;
+&lt;h4&gt;&lt;span class="caps"&gt;STEP&lt;/span&gt; 1: Install&amp;nbsp;RubyInstaller&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;Download and install&amp;nbsp;rubyinstaller.exe  &lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&lt;a href="http://rubyinstaller.org/downloads/"&gt;rubyinstaller&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;I picked up ruby-2.1.4(x64) to&amp;nbsp;install  &lt;/p&gt;
+&lt;p&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&lt;a href="http://dl.bintray.com/oneclick/rubyinstaller/rubyinstaller-2.1.4-x64.exe"&gt;2.1.4(x64)&lt;/a&gt;   &lt;/p&gt;
+&lt;h4&gt;&lt;span class="caps"&gt;STEP&lt;/span&gt; 2: Install Ruby Development&amp;nbsp;Kit&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;Download and install &lt;code&gt;DevKit-mingw64-64-4.7.2-20130224-1432-sfx&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;I installed Ruby 2.1.4(x64), so the development kit I have to use&amp;nbsp;is:    &lt;/p&gt;
+&lt;p&gt;&lt;a href="http://dl.bintray.com/oneclick/rubyinstaller/DevKit-mingw64-64-4.7.2-20130224-1432-sfx.exe"&gt;For use with Ruby 2.0 and 2.1 (x64 - 64bits&amp;nbsp;only)&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;I extract to &lt;code&gt;C:\Ruby21-Devkit&lt;/code&gt; where my ruby was installed under &lt;code&gt;C:\Ruby21-x64&lt;/code&gt;&lt;/p&gt;
+&lt;h4&gt;&lt;span class="caps"&gt;STEP&lt;/span&gt; 3: Create ruby&amp;nbsp;config.yml&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;Open your windows&amp;nbsp;terminal &lt;/li&gt;
+&lt;/ul&gt;
+&lt;table class="highlighttable"&gt;&lt;tr&gt;&lt;td class="linenos"&gt;&lt;div class="linenodiv"&gt;&lt;pre&gt;1
+2
+3&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class="code"&gt;&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;   &amp;gt; cd C:\Ruby21-Devkit    
+   &amp;gt; ruby dk.rb init
+   # This will generate a config.yml
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Edit config.yml to add where you install the&amp;nbsp;ruby&lt;/li&gt;
+&lt;/ul&gt;
+&lt;table class="highlighttable"&gt;&lt;tr&gt;&lt;td class="linenos"&gt;&lt;div class="linenodiv"&gt;&lt;pre&gt;1
+2&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class="code"&gt;&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;    ---
+    - C:/Ruby21-x64
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Install&amp;nbsp;it&lt;/li&gt;
+&lt;/ul&gt;
+&lt;table class="highlighttable"&gt;&lt;tr&gt;&lt;td class="linenos"&gt;&lt;div class="linenodiv"&gt;&lt;pre&gt;1&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class="code"&gt;&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;    &amp;gt; ruby dk.rb install
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+
+&lt;h4&gt;&lt;span class="caps"&gt;STEP&lt;/span&gt; 4: Update&amp;nbsp;gem&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;Run the following&amp;nbsp;command:&lt;/li&gt;
+&lt;/ul&gt;
+&lt;table class="highlighttable"&gt;&lt;tr&gt;&lt;td class="linenos"&gt;&lt;div class="linenodiv"&gt;&lt;pre&gt;1&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class="code"&gt;&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;    &amp;gt; gem update --system
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+
+&lt;p&gt;Then, you will see the following&amp;nbsp;messages:&lt;/p&gt;
+&lt;table class="highlighttable"&gt;&lt;tr&gt;&lt;td class="linenos"&gt;&lt;div class="linenodiv"&gt;&lt;pre&gt;1&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class="code"&gt;&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;    SSL_connect returned=1 errno=0 state=SSLv3 read server certificate B: certificate verify failed
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Solve the &lt;span class="caps"&gt;SSL&lt;/span&gt;&amp;nbsp;issue    &lt;/li&gt;
+&lt;/ul&gt;
+&lt;table class="highlighttable"&gt;&lt;tr&gt;&lt;td class="linenos"&gt;&lt;div class="linenodiv"&gt;&lt;pre&gt;1
+2&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class="code"&gt;&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;    # To get what gem version you have installed
+   &amp;gt; gem --version
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+
+&lt;p&gt;1) Download RubyGems based on the gem version you have&amp;nbsp;installed. &lt;/p&gt;
+&lt;p&gt;Picked up 2.2.x due to my system reports 2.2.2  &lt;br&gt;
+   * &lt;a href="https://github.com/rubygems/rubygems/releases/tag/v2.2.3"&gt;2.2.x&lt;/a&gt;    &lt;/p&gt;
+&lt;p&gt;Others:  &lt;br&gt;
+   * &lt;a href="https://github.com/rubygems/rubygems/releases/tag/v1.8.30"&gt;1.8.x&lt;/a&gt; &lt;br&gt;
+   * &lt;a href="https://github.com/rubygems/rubygems/releases/tag/v2.0.15"&gt;2.0.x&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;2) Run the following&amp;nbsp;commands:&lt;/p&gt;
+&lt;table class="highlighttable"&gt;&lt;tr&gt;&lt;td class="linenos"&gt;&lt;div class="linenodiv"&gt;&lt;pre&gt;1
+2
+3&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class="code"&gt;&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;    C:\&amp;gt;gem install --local C:\rubygems-update-1.8.30.gem
+    C:\&amp;gt;update_rubygems --no-ri --no-rdoc
+    C:\&amp;gt;gem uninstall rubygems-update -x
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+
+&lt;p&gt;Congratulations! &lt;/p&gt;
+&lt;p&gt;3) Now, let&amp;#8217;s update&amp;nbsp;gem  &lt;/p&gt;
+&lt;table class="highlighttable"&gt;&lt;tr&gt;&lt;td class="linenos"&gt;&lt;div class="linenodiv"&gt;&lt;pre&gt;1&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class="code"&gt;&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;     gem update --system
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+
+&lt;p&gt;Reference&amp;nbsp;link:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://gist.github.com/luislavena/f064211759ee0f806c88"&gt;&lt;span class="caps"&gt;SSL&lt;/span&gt;&amp;nbsp;issue&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/blockquote&gt;
+&lt;h4&gt;&lt;span class="caps"&gt;STEP&lt;/span&gt; 5: Clone your git&amp;nbsp;repository&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;Please git clone your &amp;#8220;source&amp;#8221; branch not &amp;#8220;master&amp;#8221; branch  &lt;br&gt;
+  You can configure your github page using &amp;#8220;source&amp;#8221; as the default&amp;nbsp;branch&lt;/li&gt;
+&lt;/ul&gt;
+&lt;table class="highlighttable"&gt;&lt;tr&gt;&lt;td class="linenos"&gt;&lt;div class="linenodiv"&gt;&lt;pre&gt;1
+2
+3
+4&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class="code"&gt;&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;    &amp;gt; git clone https://github.com/rickhau/rickhau.github.io.git
+    &amp;gt; cd rickhau.github.io
+    &amp;gt; gem install bundler
+    &amp;gt; bundle install
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Preview your existing&amp;nbsp;posts&lt;/li&gt;
+&lt;/ul&gt;
+&lt;table class="highlighttable"&gt;&lt;tr&gt;&lt;td class="linenos"&gt;&lt;div class="linenodiv"&gt;&lt;pre&gt;1&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class="code"&gt;&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;    &amp;gt; rake preview
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+
+&lt;p&gt;Go to http://localhost:4000 to browse your old&amp;nbsp;posts&lt;/p&gt;
+&lt;h4&gt;&lt;span class="caps"&gt;STEP&lt;/span&gt; 6: Write your new&amp;nbsp;post&lt;/h4&gt;
+&lt;table class="highlighttable"&gt;&lt;tr&gt;&lt;td class="linenos"&gt;&lt;div class="linenodiv"&gt;&lt;pre&gt;1&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class="code"&gt;&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;    &amp;gt; rake new_post[&amp;quot;Your new post title&amp;quot;]
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+
+&lt;p&gt;Go to &lt;code&gt;source\_posts\&lt;/code&gt; directory to edit your new markdown file for new&amp;nbsp;article.&lt;/p&gt;
+&lt;h4&gt;&lt;span class="caps"&gt;STEP&lt;/span&gt; 7: Configure the &lt;span class="caps"&gt;UTF&lt;/span&gt;-8&amp;nbsp;encoding&lt;/h4&gt;
+&lt;table class="highlighttable"&gt;&lt;tr&gt;&lt;td class="linenos"&gt;&lt;div class="linenodiv"&gt;&lt;pre&gt;1
+2&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class="code"&gt;&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;    set LC_ALL=zh_TW.UTF-8
+    set LANG=zh_TW.UTF-8
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Or you can write it in the .bat script to help you set the encoding&amp;nbsp;automatically&lt;/li&gt;
+&lt;/ul&gt;
+&lt;table class="highlighttable"&gt;&lt;tr&gt;&lt;td class="linenos"&gt;&lt;div class="linenodiv"&gt;&lt;pre&gt;1
+2
+3
+4
+5&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class="code"&gt;&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;    @echo off
+    set LC_ALL=zh_TW.UTF-8
+    set LANG=zh_TW.UTF-8
+    rake generate
+    rake preview
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+
+&lt;h4&gt;&lt;span class="caps"&gt;HAPPY&lt;/span&gt; &lt;span class="caps"&gt;WRITING&lt;/span&gt;!!!!&lt;/h4&gt;</content></entry><entry><title>How to write your blog using Octopress + Github</title><link href="https://rickhau.github.io/posts/2015/04/octopress-blog" rel="alternate"></link><published>2015-04-26T14:49:35+08:00</published><updated>2015-04-26T14:49:35+08:00</updated><author><name>rickhau</name></author><id>tag:rickhau.github.io,2015-04-26:/posts/2015/04/octopress-blog</id><summary type="html">&lt;h2&gt;Environment&lt;/h2&gt;
+&lt;p&gt;Mac &lt;span class="caps"&gt;OS&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt; &lt;span class="caps"&gt;STEP&lt;/span&gt; 1: Create your github account &lt;/strong&gt;  &lt;br&gt;
+- Please register your github account  &lt;br&gt;
+- Create a repository name called &lt;code&gt;username.github.io&lt;/code&gt;    &lt;/p&gt;
+&lt;p&gt;&lt;strong&gt; &lt;span class="caps"&gt;STEP&lt;/span&gt; 2: Install Octopress &lt;/strong&gt;  &lt;br&gt;
+- Install &lt;span class="caps"&gt;RVM&lt;/span&gt; (Use &lt;span class="caps"&gt;RVM&lt;/span&gt; to install ruby&amp;nbsp;later)     &lt;/p&gt;
+&lt;table class="highlighttable"&gt;&lt;tr&gt;&lt;td class="linenos"&gt;&lt;div class="linenodiv"&gt;&lt;pre&gt;1&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class="code"&gt;&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;    curl -L https://get.rvm.io | bash -s stable --ruby
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Install ruby and relative&amp;nbsp;stuff …&lt;/li&gt;&lt;/ul&gt;</summary><content type="html">&lt;h2&gt;Environment&lt;/h2&gt;
+&lt;p&gt;Mac &lt;span class="caps"&gt;OS&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt; &lt;span class="caps"&gt;STEP&lt;/span&gt; 1: Create your github account &lt;/strong&gt;  &lt;br&gt;
+- Please register your github account  &lt;br&gt;
+- Create a repository name called &lt;code&gt;username.github.io&lt;/code&gt;    &lt;/p&gt;
+&lt;p&gt;&lt;strong&gt; &lt;span class="caps"&gt;STEP&lt;/span&gt; 2: Install Octopress &lt;/strong&gt;  &lt;br&gt;
+- Install &lt;span class="caps"&gt;RVM&lt;/span&gt; (Use &lt;span class="caps"&gt;RVM&lt;/span&gt; to install ruby&amp;nbsp;later)     &lt;/p&gt;
+&lt;table class="highlighttable"&gt;&lt;tr&gt;&lt;td class="linenos"&gt;&lt;div class="linenodiv"&gt;&lt;pre&gt;1&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class="code"&gt;&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;    curl -L https://get.rvm.io | bash -s stable --ruby
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Install ruby and relative&amp;nbsp;stuff&lt;/li&gt;
+&lt;/ul&gt;
+&lt;table class="highlighttable"&gt;&lt;tr&gt;&lt;td class="linenos"&gt;&lt;div class="linenodiv"&gt;&lt;pre&gt;1
+2
+3
+4
+5
+6
+7&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class="code"&gt;&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;    $ rvm install 2.1.4 &amp;amp;&amp;amp; rvm use 2.1.4
+    $ git clone git://github.com/imathis/octopress.git octopress
+    $ cd octopress 
+    $ ruby --version
+    $ gem install bundler
+    $ bundle install
+    $ rake install
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+
+&lt;p&gt;&lt;strong&gt; &lt;span class="caps"&gt;STEP&lt;/span&gt; 3: Deploy to Github &lt;/strong&gt;
+- Initialize your new github&amp;nbsp;pages    &lt;/p&gt;
+&lt;table class="highlighttable"&gt;&lt;tr&gt;&lt;td class="linenos"&gt;&lt;div class="linenodiv"&gt;&lt;pre&gt;1&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class="code"&gt;&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;    $ rake setup_github_pages
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;Input your Github page repository you created in step 1  &lt;br&gt;
+Ex: &lt;code&gt;git@github.com:rickhau/rickhau.github.io.git&lt;/code&gt;   &lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Edit &lt;code&gt;_config.yml&lt;/code&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;tailor this configuration file to your&amp;nbsp;needs&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Deploy to&amp;nbsp;github   &lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;table class="highlighttable"&gt;&lt;tr&gt;&lt;td class="linenos"&gt;&lt;div class="linenodiv"&gt;&lt;pre&gt;1
+2
+3
+4
+5&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class="code"&gt;&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;    $ rake generate
+    $ rake deploy
+    $ git add .
+    $ git commit -m &amp;quot;Push octopress blog to Thegithub&amp;quot;
+    $ git push -u origin source
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+
+&lt;p&gt;&lt;strong&gt; &lt;span class="caps"&gt;STEP&lt;/span&gt; 4: Write New&amp;nbsp;Post &lt;/strong&gt; &lt;/p&gt;
+&lt;table class="highlighttable"&gt;&lt;tr&gt;&lt;td class="linenos"&gt;&lt;div class="linenodiv"&gt;&lt;pre&gt;1&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class="code"&gt;&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;    $ rake new_post[&amp;quot;Your blog post title&amp;quot;]
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;Then, it will create a markdown file under &lt;code&gt;source/_posts&lt;/code&gt;.&lt;br&gt;
+Please edit this .markdown to write your new&amp;nbsp;article  &lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;strong&gt; &lt;span class="caps"&gt;STEP&lt;/span&gt; 5: Enable your Octopress to support table&amp;nbsp;sytanx &lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Add data-table.css to &lt;code&gt;source/stylesheets&lt;/code&gt;  &lt;/li&gt;
+&lt;/ul&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;a href="https://gist.githubusercontent.com/programus/1993032/raw/data-table.css"&gt;data-table.css&lt;/a&gt;    &lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;ul&gt;
+&lt;li&gt;Add the following informaiton into &lt;code&gt;source/_include/head.html&lt;/code&gt;    &lt;/li&gt;
+&lt;/ul&gt;
+&lt;table class="highlighttable"&gt;&lt;tr&gt;&lt;td class="linenos"&gt;&lt;div class="linenodiv"&gt;&lt;pre&gt;1&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class="code"&gt;&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&amp;lt;link href=&amp;quot;/stylesheets/data-table.css&amp;quot; media=&amp;quot;screen, projection&amp;quot; rel=&amp;quot;stylesheet&amp;quot; type=&amp;quot;text/css&amp;quot; /&amp;gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+
+&lt;p&gt;Like&amp;nbsp;this:    &lt;/p&gt;
+&lt;table class="highlighttable"&gt;&lt;tr&gt;&lt;td class="linenos"&gt;&lt;div class="linenodiv"&gt;&lt;pre&gt;1
+2
+3
+4
+5
+6&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class="code"&gt;&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="nt"&gt;&amp;lt;head&amp;gt;&lt;/span&gt;
+...
+   &lt;span class="nt"&gt;&amp;lt;script&lt;/span&gt; &lt;span class="na"&gt;src=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;&lt;/span&gt;&lt;span class="cp"&gt;{{&lt;/span&gt; &lt;span class="nv"&gt;root_url&lt;/span&gt; &lt;span class="cp"&gt;}}&lt;/span&gt;&lt;span class="s"&gt;/javascripts/octopress.js&amp;quot;&lt;/span&gt; &lt;span class="na"&gt;type=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;text/javascript&amp;quot;&lt;/span&gt;&lt;span class="nt"&gt;&amp;gt;&amp;lt;/script&amp;gt;&lt;/span&gt;
+   &lt;span class="nt"&gt;&amp;lt;link&lt;/span&gt; &lt;span class="na"&gt;href=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;/stylesheets/data-table.css&amp;quot;&lt;/span&gt; &lt;span class="na"&gt;media=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;screen, projection&amp;quot;&lt;/span&gt; &lt;span class="na"&gt;rel=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;stylesheet&amp;quot;&lt;/span&gt; &lt;span class="na"&gt;type=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;text/css&amp;quot;&lt;/span&gt; &lt;span class="nt"&gt;/&amp;gt;&lt;/span&gt;
+...
+&lt;span class="nt"&gt;&amp;lt;/head&amp;gt;&lt;/span&gt;     
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+
+&lt;p&gt;&lt;strong&gt; &lt;span class="caps"&gt;STEP&lt;/span&gt; 6: Publish your new&amp;nbsp;post  &lt;/strong&gt;&lt;/p&gt;
+&lt;table class="highlighttable"&gt;&lt;tr&gt;&lt;td class="linenos"&gt;&lt;div class="linenodiv"&gt;&lt;pre&gt;1
+2
+3
+4&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class="code"&gt;&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;    $ rake generate
+    $ rake preview  
+    # Check your post preview by `http://localhost:4000`
+    # Modify your post until done
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Publish    &lt;/li&gt;
+&lt;/ul&gt;
+&lt;table class="highlighttable"&gt;&lt;tr&gt;&lt;td class="linenos"&gt;&lt;div class="linenodiv"&gt;&lt;pre&gt;1
+2&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class="code"&gt;&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;    $ rake generate
+    $ rake deploy
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Commit your source&amp;nbsp;change&lt;/li&gt;
+&lt;/ul&gt;
+&lt;table class="highlighttable"&gt;&lt;tr&gt;&lt;td class="linenos"&gt;&lt;div class="linenodiv"&gt;&lt;pre&gt;1
+2
+3&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class="code"&gt;&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;    $ git add .
+    $ git commit -am &amp;quot;Push message you&amp;#39;d like to say&amp;quot;
+    $ git push origin source
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+
+&lt;p&gt;Reference links:  &lt;br&gt;
+- http://samwize.com/2012/09/11/how-to-setup-octopress-on-github-pages  &lt;br&gt;
+- http://samwize.com/2012/09/24/octopress-table-stylesheet  &lt;br&gt;
+- http://octopress.org/docs/deploying/github/  &lt;br&gt;
+- http://zerodie.github.io/blog/2012/01/19/octopress-github-pages  &lt;br&gt;
+- http://shaching.github.io/2014/06/25/how-to-install-octopress-blog-with-github  &lt;br&gt;
+-&amp;nbsp;https://gist.github.com/benbalter/5555251&lt;/p&gt;</content></entry></feed>
