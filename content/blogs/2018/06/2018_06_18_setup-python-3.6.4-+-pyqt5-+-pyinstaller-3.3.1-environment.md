@@ -49,7 +49,9 @@ STEP7: 最後安裝 PyInstaller(3.3.1)，一樣也是透過 pip install command
 
 ```DOS
 python.exe -m pip install PyInstaller
-或
+```
+或是指定版號也可以  
+```DOS
 python.exe -m pip install PyInstaller==3.3.1
 ```
 
